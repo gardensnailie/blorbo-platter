@@ -1,13 +1,13 @@
 window.CAST = [
   [
     {
-      "label": "Sasha",
+      "label": "Default",
       "name": "Aleksandr Nikonovich Vashchenko",
       "subtitle": "",
-      "icon": "hgi-note",
+      "icon": "",
       "iconColor": "",
-      "img": "icons/Sasha.png",
-      "gender": "Male",
+      "img": "https://f2.toyhou.se/file/f2-toyhou-se/thumbnails/98982058_ykW.png",
+      "gender": "Female",
       "age": "37",
       "birthday": "Feb. 12",
       "height": "5'4\"",
@@ -15,32 +15,32 @@ window.CAST = [
       "race": "Ruska Roma",
       "job": "University Professor",
       "tags": "setting: five-keys; role: crew engineer; age: adult",
-      "desc": "Алекса́ндр Никонович Ва́щенко"
+      "desc": "🙏❤️ СЛАВА РОССИИ 🙏❤️"
     }
   ],
   [
     {
-      "label": "Haru",
-      "name": "Kamiya Haru",
-      "subtitle": "神谷 春",
-      "icon": "hgi-cat",
-      "iconColor": "#cc729a",
-      "img": "icons/Haru2.png",
+      "label": "MMX",
+      "name": "Eight ( 4A )",
+      "subtitle": "YKN-0148-A",
+      "icon": "fa-sparkles",
+      "iconColor": "",
+      "img": "https://f2.toyhou.se/file/f2-toyhou-se/thumbnails/111465800_cxV.png",
       "gender": "Male",
-      "age": "25",
+      "age": "24",
       "birthday": "Aug. 8",
       "height": "5'8\"",
       "flag": "bisexual",
-      "race": "Japanese",
-      "job": "Pediatric Nurse",
-      "tags": "setting: therapy-au; role: medical lab-experiment; age: adult",
+      "race": "Reploid",
+      "job": "Navigator",
+      "tags": "setting: space; role: crew engineer; age: adult",
       "desc": "hey have you ever heard of the hit animated series pretty kitty mew mew"
     },
     {
       "label": "TOK-EIGHT",
       "name": "Kamiya Haru",
       "subtitle": "神谷 春",
-      "icon": "hgi-sparkle",
+      "icon": "fa-sparkles",
       "iconColor": "",
       "img": "https://f2.toyhou.se/file/f2-toyhou-se/thumbnails/98979834_dpc.png",
       "gender": "Male",
