@@ -69,6 +69,7 @@
       const l = el('label', '', label), s = el('select'); s.dataset.flag = pos;
       s.append(new Option('(none)', ''));
       for (const [n, d] of Object.entries(FLAGS)) s.append(new Option(d.label || n, n));
+      if (val && !Object.hasOwn(FLAGS, val)) s.append(new Option('(missing from flags.js: ' + val + ')', val)); // never show a blank
       s.value = val; l.append(s); f.append(l);
     }
     const tl = el('label', '', 'Tags (category: value value; category: value)'), ti = el('input'); ti.dataset.k = 'tags'; ti.value = v.tags; tl.append(ti); f.append(tl);
@@ -148,7 +149,9 @@
   });
 
   function signOut() { tok = ''; try { localStorage.removeItem(KEY); } catch { /* ignore */ } cast = []; cur = null; dirty = false; show(); }
-  function show() { $('auth').hidden = !!tok; $('bar').hidden = $('app').hidden = !tok; if (tok) renderAll(); }
+  // Non-secret marker so index.html can show an "Edit" link on devices where you are connected
+  const mark = () => { try { if (tok) localStorage.setItem('cast-editor-owner', '1'); else localStorage.removeItem('cast-editor-owner'); } catch { /* ignore */ } };
+  function show() { mark(); $('auth').hidden = !!tok; $('bar').hidden = $('app').hidden = !tok; if (tok) renderAll(); }
 
   $('connect').addEventListener('click', () => {
     const t = $('token').value.trim(); if (!t) return;
