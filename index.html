@@ -60,7 +60,11 @@
 
 <!-- ===== FOOTER (customize) ===== -->
 <footer id="site-footer">
-  <p>Made with care.</p>
+  <a id="edit-link" href="editor.html" hidden>Edit cast</a>
+<script>
+  // Shows the link only in a browser where the editor has been connected
+  try { if (localStorage.getItem('cast-editor-owner')) document.getElementById('edit-link').hidden = false; } catch (e) {}
+</script>
 </footer>
 
 </body>
