@@ -49,6 +49,8 @@ I know the fancy people usually include git commands here, but it's literally ju
 
 That being said, if anyone is interested in contributing then please by all means make whatever forks, pulls, and pushes you'd like. This project is very selfishly designed but I'm always more than happy to help make this into something useful for more people than me.
 
+I haven't had the chance to test this extensively outside my own use case, so do please open a ticket if something breaks so I can fix it.
+
 ### Future Plans
 - The ability to allow for multiple authors for worldbuilding projects
 - Eventually I'd like to take this base work and expand it to create a lightweight template for hosting worldbuilding and settings, specifically designed for collaborative roleplay and general lore nerdery. Basic map support, optional pages for organizations or bestiaries, etc. If I get my way then someday it'll have discord bot support to automatically populate an archive/timeline with roleplay threads.
@@ -57,3 +59,8 @@ That being said, if anyone is interested in contributing then please by all mean
 - [HugeIcons](https://hugeicons.com/icons/stroke-rounded) is the CSS icon font used, specifically the rounded set. No personal kit needed unlike fontawesome.
 - [The HTML flags used on character cards](https://github.com/VynxTH/VynxCodes/tree/main/Pride%20Flags) came from here. You can easily add more by copy-pasting the gradient code from these into the flags.js file and making sure you give it a name so it shows up in the editor.
 - [CodePen is my homie](https://codepen.io/) for editing the CSS or card layouts. Nice live editor that loads all the files at once so it looks identical to live but without the ~10 minute deployment time of pages.
+
+## License
+This repository is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
