@@ -33,15 +33,29 @@
     return i;
   };
 
-  // Flag: one name, or "left right" for a half-and-half flag (second name = right half)
+  // A flag entry is one gradient, or a stack of layers: { label, layers: [ { gradient, clip? }, ... ] }.
+  // The first layer fills the flag; later layers are drawn on top, optionally cut to a shape with clip.
+  const RIGHT_HALF = 'polygon(50% 0, 100% 0, 100% 100%, 50% 100%)';
+  const GRADIENT = /^linear-gradient\(/i, SHAPE = /^(polygon|inset|circle|ellipse)\(/i;
+  const layersOf = d => (d ? (Array.isArray(d.layers) ? d.layers : [d]) : []);
+
+  // A character's flag is one name, or "left right": the second flag is layered over the right half of the first
   function buildFlag(names) {
     const defs = String(names || '').trim().split(/\s+/).filter(Boolean).slice(0, 2)
       .map(n => (Object.hasOwn(FLAGS, n) ? FLAGS[n] : null));
     if (!defs.length) return null;
-    if (defs.some(d => !d || !/^linear-gradient\(/i.test(d.gradient || ''))) { console.warn('[cast] Unknown flag:', names); return null; }
+    const layers = [];
+    defs.forEach((d, i) => layersOf(d).forEach(l => layers.push(i && !l.clip ? { ...l, clip: RIGHT_HALF } : l)));
+    if (defs.includes(null) || !layers.length || layers.some(l => !GRADIENT.test(l.gradient || '') || (l.clip && !SHAPE.test(l.clip)))) {
+      console.warn('[cast] Unknown or invalid flag:', names); return null;
+    }
     const f = el('span', 'flag');
-    f.style.backgroundImage = defs[0].gradient;
-    if (defs[1]) { const right = el('span'); right.style.backgroundImage = defs[1].gradient; f.append(right); }
+    layers.forEach((l, i) => {
+      if (!i) { f.style.backgroundImage = l.gradient; return; }
+      const top = el('span');
+      top.style.backgroundImage = l.gradient; top.style.clipPath = l.clip || 'none';
+      f.append(top);
+    });
     const label = defs.map(d => d.label || '').join(' / ');
     f.title = label; f.setAttribute('role', 'img'); f.setAttribute('aria-label', label);
     return f;
