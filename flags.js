@@ -15,7 +15,7 @@ window.FLAGS = {
   bisexual: { label: "Bisexual",   gradient: "linear-gradient(#d70170,#d70170 40%,#734f94 40%,#734f94 60%,#0039a7 60%)" },
   gay:    { label: "Gay",      gradient: "linear-gradient(#ef2d1f,#ef2d1f 16.7%,#f58024 16.7%,#f58024 33.4%,#fff000 33.3%,#fff000 50.1%,#57ba45 50.1%,#57ba45 66.8%,#0053a7 66.8%,#0053a7 83.5%,#a01f90 83.5%)" }, 
    lesbian:    { label: "Lesbian",      gradient: "linear-gradient(#d42c00,#d42c00 20%,#fd9855 20%,#fd9855 40%,#fff 40%,#fff 60%,#d161a2 60%,#d161a2 80%,#a20161 80%)" },
-   mlm:    { label: "Vincian (MLM)",      gradient: "linear-gradient(#018e71,#018e71 20%,#9ae9c3 20%,#9ae9c3 40%,#fff 40%,#fff 60%,#7cafe4 60%,#7cafe4 80%,#3c1379 80%)" },
+    ace:    { label: "Asexual",      gradient: "linear-gradient(#000,#000 25%,#7f7f7f 25%,#7f7f7f 50%,#fff 50%,#fff 75%,#670066 75%)" },
    gyno:    { label: "Gynosexual",      gradient: "linear-gradient(#f5acba,#f5acba 33.3%,#934532 33.3%,#934532 66.6%,#609740 66.6%)" },
    andro:    { label: "Androsexual",      gradient: "linear-gradient(#01ccff,#01ccff 33.3%,#603524 33.3%,#603524 66.6%,#b799de 66.6%)" },
    
