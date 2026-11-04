@@ -24,26 +24,10 @@ window.FLAGS = {
 "homoflex": { label: "Homoflexible", layers: [{ gradient: "linear-gradient(#ef2d1f,#ef2d1f 16.7%,#f58024 16.7%,#f58024 33.4%,#fff000 33.3%,#fff000 50.1%,#57ba45 50.1%,#57ba45 66.8%,#0053a7 66.8%,#0053a7 83.5%,#a01f90 83.5%)" },{ gradient: "linear-gradient(#000,#000 16.7%,#303030 16.7%,#303030 33.4%,#666666 33.3%,#666666 50.1%,#9a9a9a 50.1%,#9a9a9a 66.8%,#bcbcbc 66.8%,#bcbcbc 83.5%,#fff 83.5%)", clip: "polygon(40% 0,60% 0,60% 100%,40% 100%)" }] },
 
    questioning:    { label: "Questioning",      gradient: "linear-gradient(#ed7735,#ed7735 25%,#f4ec2b 25%,#f4ec2b 50%,#5ab34d 50%,#5ab34d 75%,#5168b0 75%)" },
-
-   :    { label: "",      gradient: "linear-gradient()" },
-
-   :    { label: "",      gradient: "linear-gradient()" },
-
-   :    { label: "",      gradient: "linear-gradient()" },
-
-   :    { label: "",      gradient: "linear-gradient()" },
    
    /* ========================== GENDER ================================ */
 
-   :    { label: "",      gradient: "linear-gradient()" },
 
-   :    { label: "",      gradient: "linear-gradient()" },
-
-   :    { label: "",      gradient: "linear-gradient()" },
-
-   :    { label: "",      gradient: "linear-gradient()" },
-
-   :    { label: "",      gradient: "linear-gradient()" },
    
    /* ========================== OTHER ================================ */
    
@@ -58,10 +42,6 @@ window.FLAGS = {
     { gradient: "linear-gradient(#fff,#fff)",       clip: "polygon(10.78% 50%, 0% 30%, 0% 70%)" }
   ] },
 
-   :    { label: "",      gradient: "linear-gradient()" },
 
-   :    { label: "",      gradient: "linear-gradient()" },
-
-   :    { label: "",      gradient: "linear-gradient()" }
    
 };
