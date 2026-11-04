@@ -47,10 +47,12 @@ This exclusively uses HTML5, CSS, and lightweight Javascript and only calls on-s
 
 ## Under the Hood
 - Data is stored in `character.js`  and `flags.js` which are then compiled by `card.js` using some java regex chicanery. The resulting HTML is then spit out at the index page to be viewed at the front end with a simple filter that sorts using id tags.
-- The dashboard uses an api token to read the repo instead of the published page so it's always up-to-date. It constructs a preview based on `card.js`  and loads the data from `characters.js` to allow edits. When you save, it replaces the entire file with the one you edited by pushing to the repo.
-- Everything uses textContent and createElement and never exposes innerHTML. The flags are HTML gradients, not images.
-- API tokens are also stored locally on your browser, never write to repo, and is never touched by anything else. Hash input is allow-listed on URLs to avoid funny business with filter tags.
-- Runtime order `flags.js` -> `characters.js` -> `card.js` -> `script.js` -> front-end.
+- The editor dashboard uses an api token to read the repo instead of the published page so it's always up-to-date. It constructs a preview based on `card.js`  and loads the data from `characters.js` to allow edits. When you save, it replaces the entire file with the one you edited by pushing to the repo.
+- Everything uses textContent and createElement and never exposes innerHTML.
+- The only external assets it calls on are a couple fonts. Flags are HTML, not images.
+- Your API token is stored locally on your browser, never writes to repo, and is never touched by anything else.
+- Hash input is allow-listed on URLs to avoid funny business with filter tags.
+- Runtime order is `flags.js` -> `characters.js` -> `card.js` -> `script.js` -> html/css files
 
 I ended up dividing a lot of the javascript into seperate files to make it easier to edit and maintain. Characters and flags are stored separately so they're easy to read and edit since they see the most manual traffic, and making the card compiler it's own file lets everything reference it so only one spot needs changed if you want to edit the layout (very useful since it has a lot of manually set values).
 
