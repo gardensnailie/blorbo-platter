@@ -2,9 +2,10 @@ window.CAST = [
   [
     {
       "label": "Default",
-      "tab": "",
       "name": "Aleksandr Nikonovich Vashchenko",
-      "id": "",
+      "subtitle": "",
+      "icon": "",
+      "iconColor": "",
       "img": "https://f2.toyhou.se/file/f2-toyhou-se/thumbnails/98982058_ykW.png",
       "gender": "Female",
       "age": "37",
@@ -20,9 +21,10 @@ window.CAST = [
   [
     {
       "label": "MMX",
-      "tab": "hgi-sparkle",
       "name": "Eight ( 4A )",
-      "id": "YKN-0148-A",
+      "subtitle": "YKN-0148-A",
+      "icon": "hgi-sparkle",
+      "iconColor": "",
       "img": "https://f2.toyhou.se/file/f2-toyhou-se/thumbnails/111465800_cxV.png",
       "gender": "Male",
       "age": "24",
@@ -36,9 +38,10 @@ window.CAST = [
     },
     {
       "label": "TOK-EIGHT",
-      "tab": "hgi-sparkle",
       "name": "Kamiya Haru",
-      "id": "神谷 春",
+      "subtitle": "神谷 春",
+      "icon": "hgi-sparkle",
+      "iconColor": "",
       "img": "https://f2.toyhou.se/file/f2-toyhou-se/thumbnails/98979834_dpc.png",
       "gender": "Male",
       "age": "24",
