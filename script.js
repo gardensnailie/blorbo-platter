@@ -4,7 +4,7 @@
   'use strict';
 
   /* ===== SETTINGS ===== */
-  const CATEGORY_ORDER = ['gender', 'setting', 'role', 'age']; // sidebar order; others follow in page order
+  const CATEGORY_ORDER = ['setting', 'gender', 'role', 'age']; // sidebar order; others follow in page order
 
   const $ = id => document.getElementById(id);
   const grid = $('grid'), filters = $('filters'), clearBtn = $('clear-filters'),
