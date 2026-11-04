@@ -25,7 +25,7 @@ window.CAST = [
       "subtitle": "神谷 春",
       "icon": "hgi-cat",
       "iconColor": "#cc729a",
-      "img": "icons/Haru.png",
+      "img": "icons/Haru2.png",
       "gender": "Male",
       "age": "25",
       "birthday": "Aug. 8",
