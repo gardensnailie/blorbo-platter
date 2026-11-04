@@ -9,6 +9,7 @@
   --tab-active-text: #fff;
   --tab-size: 22px;
   --tab-inset: 5px;        /* gap between version buttons and image edge */
+  --tab-tint: 35%;         /* how much of a version's icon color shows on its button */
   --accent: #3a3a3a;       /* focus outlines */
   --card-w: 500px;
   --img-size: 150px;
@@ -122,3 +123,6 @@ body { margin: 0; background: var(--page-bg); color: var(--text); font-family: v
 
 /* ===== PERFORMANCE: skip layout/paint for cards far off screen ===== */
 .character { content-visibility: auto; contain-intrinsic-size: auto 170px; }
+
+/* Version button icon: white, tinted slightly toward the version's icon color */
+.tabs button i { color: color-mix(in srgb, var(--icon-color, var(--tab-active-text)) var(--tab-tint), var(--tab-active-text)); }
