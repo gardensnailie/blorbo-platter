@@ -116,7 +116,7 @@ body { margin: 0; background: var(--page-bg); color: var(--text); font-family: v
 }
 
 /* ===== FLAGS (see flags.js) ===== */
-.flag { display: inline-block; position: relative; width: 26px; height: 20px; border-radius: var(--radius); overflow: hidden; vertical-align: middle; }
+.flag { flex: none; display: inline-block; position: relative; width: 26px; height: 20px; border-radius: var(--radius); overflow: hidden; vertical-align: middle; }
 .flag > span { position: absolute; inset: 0; clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%); } /* right half */
 .tilt { rotate: -45deg; }
 
