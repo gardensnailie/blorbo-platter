@@ -15,7 +15,7 @@ window.CAST = [
       "race": "Ruska Roma",
       "job": "University Professor",
       "tags": "setting: five-keys; role: crew engineer; age: adult",
-      "desc": "🙏❤️ СЛАВА РОССИИ 🙏❤️"
+      "desc": "Алекса́ндр Никонович Ва́щенко"
     }
   ],
   [
