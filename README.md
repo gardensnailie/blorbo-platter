@@ -22,15 +22,14 @@ This is designed to be used via github pages to allow easy pushes to the reposit
 - Deploy a github page using the main branch /root directory
 - [Generate a personal access token](https://github.com/settings/personal-access-tokens). Read and write are the only required permissions. Make sure to save it because you will need this token for every device you want to enable the dashboard on.
 - Navigate to /editor.html and input your token to connect. This will be kept in that browser only.
-- Go forth, and edit some cards!
+- Go edit some cards! Save when you're done and it will automatically push to the repo and redeploy the updated page. If changes don't show, do a hard refresh and that should fix it.
 
 90% of this project is just a webpage, so you should be able to simply download the files and re-host them wherever you'd like. However, the dashboard is designed to check for github repos to populate its data and uses it's API to save to the directory. I have not tested alternative hosts, but I wouldn't expect the editor to work unless you dig in there and point it in the right direction yourself. 
 
-For those interested in self-hosting, or who just really hate Javascript, the legacy branch has an older version that includes all the character cards as inline HTML instead of using a JS array.
+For those interested in self-hosting, or who just really hate Javascript, the legacy branch has an older version that includes all the character cards as inline HTML instead of using a JS compiler. If you want to change the card layout but the java scares you, then become the compiler yourself.
 
 ### Compatibility
-This exclusively uses HTML5, CSS, and lightweight Javascript and only calls on-screen data which means it should (hopefully) be compatible with basically anything that can run a modern internet browser. I coded the whole thing on a laptop that can't even load a YouTube playlist without any performance issues despite loading hundreds of cards. It also has keyboard controls in case you get tired scrolling through catgirls.
-
+This exclusively uses HTML5, CSS, and lightweight Javascript and only calls on-screen data which means it should (hopefully) be compatible with basically anything that can run a modern internet browser. The only network calls it makes are for a few fonts and a single API call when loading or saving using the editor. I coded the whole thing on a laptop that can't even load a YouTube playlist and had no performance issues despite loading hundreds of cards. It also has keyboard controls in case you get tired scrolling through catgirls.
 
 ## Features
 - Quickly overview large character casts and share them with friends and creative partners.
@@ -46,8 +45,14 @@ This exclusively uses HTML5, CSS, and lightweight Javascript and only calls on-s
 - Accessibility & mobile support with responsive design and proper screen-reader alt texts, plus keyboard controls.
 - The relief of finally being free from TH's god-awful tab system.
 
-## Usage
-The quickstart guide above will get you started. But for detailed notes on the editor, please check the wiki.
+## Under the Hood
+- Data is stored in `character.js`  and `flags.js` which are then compiled by `card.js` using some java regex chicanery. The resulting HTML is then spit out at the index page to be viewed at the front end with a simple filter that sorts using id tags.
+- The dashboard uses an api token to read the repo instead of the published page so it's always up-to-date. It constructs a preview based on `card.js`  and loads the data from `characters.js` to allow edits. When you save, it replaces the entire file with the one you edited by pushing to the repo.
+- Everything uses textContent and createElement and never exposes innerHTML. The flags are HTML gradients, not images.
+- API tokens are also stored locally on your browser, never write to repo, and is never touched by anything else. Hash input is allow-listed on URLs to avoid funny business with filter tags.
+- Runtime order `flags.js` -> `characters.js` -> `card.js` -> `script.js` -> front-end.
+
+I ended up dividing a lot of the javascript into seperate files to make it easier to edit and maintain. Characters and flags are stored separately so they're easy to read and edit since they see the most manual traffic, and making the card compiler it's own file lets everything reference it so only one spot needs changed if you want to edit the layout (very useful since it has a lot of manually set values).
 
 ## Development & Contribution
 I know the fancy people usually include git commands here, but it's literally just a web app. You can just download the files and run it in your browser out of a folder.
