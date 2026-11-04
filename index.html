@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cast of Characters</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.hugeicons.com/font/icons.css">
+  <script type="module" src="script.js" defer></script>
+  <!-- Without JS the filter panel can't work, so hide it -->
+  <noscript><style>#sidebar{display:none}</style></noscript>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
+@font-face { font-family: "big noodle"; src: url('//glen-assets.github.io/fonts/big_noodle_titling_oblique.ttf'); }
+@font-face { font-family: "motor oil"; src: url('//glen-assets.github.io/fonts/Motor Oil 1937 M54.ttf'); }
+</style>
+</head>
+<body>
+<!--
+  HOW TO ADD A CHARACTER
+  Copy a <article class="card"> and edit it. The sidebar builds itself from data-tags.
+
+  data-tags   "category: value value; category: value"
+              - ; separates categories, spaces separate values
+              - Multi-word names use hyphens: space-station  (shown as "Space station")
+              - Any category you invent appears in the sidebar automatically
+  Gender      Add <li><b>Gender</b> ...</li> and it becomes a filter automatically.
+  Info boxes  Add or remove <li><b>Label</b> Info</li> freely.
+
+  ALTERNATE VERSIONS: wrap 2+ cards in <div class="character">. They become tabs.
+              data-label="..." sets the tab text (optional; defaults to the <h3> name).
+              Each version is filtered on its own tags.
+-->
+
+<!-- ===== HEADER (customize) ===== -->
+<header id="site-header">
+  <h1>Cast of Characters</h1>
+  <p>Pick tags in the sidebar to narrow the cast. Characters must match every tag you pick.</p>
+</header>
+
+<div id="layout">
+
+  <!-- ===== SIDEBAR (auto-filled by script.js) ===== -->
+  <aside id="sidebar">
+    <details id="drawer" open>
+      <summary>Filters</summary>
+      <button id="clear-filters" type="button" disabled>Clear filters</button>
+      <div id="filters"></div>
+    </details>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <main id="main">
+
+    <!-- ===== CHARACTER GRID (flexbox) ===== -->
+    <div id="grid">
+
+      <!-- Tabbed character: two versions -->
+<article class="card" data-label="MMX" data-tags="setting: space; role: crew engineer; age: adult">
+  <img src="https://f2.toyhou.se/file/f2-toyhou-se/thumbnails/111465800_cxV.png" alt="" width="150" height="150" loading="lazy">
+  <h3>Eight ( 4A )
+    <i>YKN-0148-A</i>
+    <b><i class="hgi hgi-stroke hgi-rounded hgi-sparkle" aria-hidden="true"></i></b>
+  </h3>
+  <ul class="info info-top">
+    <li class="gender"><b title="Gender"><i class="hgi hgi-stroke hgi-rounded hgi-venus" aria-hidden="true"></i></b> Female</li>
+    <li><b title="Age"><i class="hgi hgi-stroke hgi-rounded hgi-calendar-clock" aria-hidden="true"></i></b> 24</li>
+    <li><b title="Species"><i class="hgi hgi-stroke hgi-rounded hgi-user-round" aria-hidden="true"></i></b> Android</li>
+    <li><b title="Occupation"><i class="hgi hgi-stroke hgi-rounded hgi-work" aria-hidden="true"></i></b> Occup.</li>
+  </ul>
+  <ul class="info">
+    <li><b title="Birthday"><i class="hgi hgi-stroke hgi-rounded hgi-venus" aria-hidden="true"></i></b> Birthday</li>
+    <li><b title="Height"><i class="hgi hgi-stroke hgi-rounded hgi-calendar-clock" aria-hidden="true"></i></b> Height</li>
+    <li><b title="Weight"><i class="hgi hgi-stroke hgi-rounded hgi-user-round" aria-hidden="true"></i></b> Weight</li>
+  </ul>
+  <p>hey have you ever heard of the hit animated tv series pretty kitty mew mew</p>
+</article>
+
+      <!-- Tabbed character: three versions -->
+<div class="character">
+
+  <!-- Version 1 -->
+  <article class="card" data-label="MMX" data-tags="setting: space; role: crew engineer; age: adult">
+    <img src="https://f2.toyhou.se/file/f2-toyhou-se/thumbnails/111465800_cxV.png" alt="" width="150" height="150" loading="lazy">
+    <h3>Eight ( 4A )
+      <i>YKN-0148-A</i>
+      <b><i class="hgi hgi-stroke hgi-rounded hgi-sparkle" aria-hidden="true"></i></b>
+    </h3>
+    <ul class="info info-top">
+      <li class="gender"><b title="Gender"><i class="hgi hgi-stroke hgi-rounded hgi-venus" aria-hidden="true"></i></b> Male</li>
+      <li><b title="Age"><i class="hgi hgi-stroke hgi-rounded hgi-calendar-clock" aria-hidden="true"></i></b> 24</li>
+      <li><b title="Birthday"><i class="hgi hgi-stroke hgi-rounded hgi-birthday-cake"></i></b> Oct. 31</li>
+      <li><b title="Birthday"><i class="hgi hgi-stroke hgi-rounded hgi-ruler" style="rotate: -45deg;"></i></b> 5'8"</li>
+    </ul>
+    <ul class="info">
+            <li>
+        
+        <div class="rounded d-inline-block" style="background-image:linear-gradient(#d70170,#d70170 40%,#734f94 40%,#734f94 60%,#0039a7 60%);line-height:20px;width:26px;">&nbsp;</div>
+      
+      </li>
+      <li><b title="Height"><i class="hgi hgi-stroke hgi-rounded hgi-user-round" aria-hidden="true"></i></b> Reploid</li>
+      <li><b title="Weight"><i class="hgi hgi-stroke hgi-rounded hgi-work" aria-hidden="true"></i></b> Navigator</li>
+    </ul>
+    <p>A ship engineer who keeps the reactor running and the crew guessing.</p>
+  </article>
+
+  <!-- Version 2: different tags, so it filters independently -->
+  <article class="card" data-label="TOK-EIGHT" data-tags="setting: fantasy; role: knight; age: adult">
+    <img src="https://placehold.co/150x150?text=Tok-Eight" alt="" width="150" height="150" loading="lazy">
+    <h3>Tok-Eight
+      <i>YKN-0148-B</i>
+      <b><i class="hgi hgi-stroke hgi-rounded hgi-sparkle" aria-hidden="true"></i></b>
+    </h3>
+    <ul class="info info-top">
+      <li class="gender"><b title="Gender"><i class="hgi hgi-stroke hgi-rounded hgi-venus" aria-hidden="true"></i></b> Female</li>
+      <li><b title="Age"><i class="hgi hgi-stroke hgi-rounded hgi-calendar-clock" aria-hidden="true"></i></b> 27</li>
+      <li><b title="Species"><i class="hgi hgi-stroke hgi-rounded hgi-user-round" aria-hidden="true"></i></b> Human</li>
+      <li><b title="Occupation"><i class="hgi hgi-stroke hgi-rounded hgi-work" aria-hidden="true"></i></b> Knight</li>
+    </ul>
+    <ul class="info">
+      <li><b title="Birthday"><i class="hgi hgi-stroke hgi-rounded hgi-venus" aria-hidden="true"></i></b> 03/14</li>
+      <li><b title="Height"><i class="hgi hgi-stroke hgi-rounded hgi-calendar-clock" aria-hidden="true"></i></b> 5'8"</li>
+      <li><b title="Weight"><i class="hgi hgi-stroke hgi-rounded hgi-user-round" aria-hidden="true"></i></b> 150 lb</li>
+    </ul>
+    <p>The same soul in another age, sworn to guard a ruined keep.</p>
+  </article>
+
+</div>
+
+      <!-- Single characters: no wrapper needed -->
+      <article class="card" data-tags="setting: modern; role: villain; age: adult">
+        <img src="https://placehold.co/200x200?text=Jane" alt="" width="200" height="200" loading="lazy">
+        <h3>Jane Doe</h3>
+        <ul class="info">
+          <li><b>Gender</b> Female</li>
+          <li><b>Age</b> 45</li>
+          <li><b>Species</b> Human</li>
+          <li><b>Job</b> Art dealer</li>
+        </ul>
+        <p>A charming art dealer with a talent for forgery.</p>
+      </article>
+
+      <article class="card" data-tags="setting: space modern; role: scientist villain; age: adult">
+        <img src="https://placehold.co/200x200?text=Dr+Vale" alt="" width="200" height="200" loading="lazy">
+        <h3>Dr. Vale</h3>
+        <ul class="info">
+          <li><b>Gender</b> Male</li>
+          <li><b>Age</b> 52</li>
+          <li><b>Species</b> Human</li>
+          <li><b>Job</b> Physicist</li>
+        </ul>
+        <p>Runs experiments no review board has approved.</p>
+      </article>
+
+      <article class="card" data-tags="setting: fantasy; role: thief; age: young-adult">
+        <img src="https://placehold.co/200x200?text=Rook" alt="" width="200" height="200" loading="lazy">
+        <h3>Rook</h3>
+        <ul class="info">
+          <li><b>Gender</b> Non-binary</li>
+          <li><b>Age</b> 19</li>
+          <li><b>Species</b> Elf</li>
+          <li><b>Job</b> Thief</li>
+        </ul>
+        <p>Picks pockets for coin and locks for fun.</p>
+      </article>
+
+    </div>
+
+    <!-- ===== EMPTY STATE (shown when no character matches) ===== -->
+    <p id="empty-state" role="status" hidden>
+      No characters match these filters. Picking two tags from the same category only shows characters that have both.
+    </p>
+  </main>
+</div>
+
+<!-- ===== FOOTER (customize) ===== -->
+<footer id="site-footer">
+  <p>Made with care.</p>
+</footer>
+
+</body>
+</html>
