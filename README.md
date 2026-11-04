@@ -22,8 +22,7 @@ This is designed to be used via github pages to allow easy pushes to the reposit
 - Clone the repository using your method of choice
 - Deploy a github page using the main branch /root directory
 - [Generate a personal access token](https://github.com/settings/personal-access-tokens). Read and write are the only required permissions. Make sure to save it because you will need this token for every device you want to enable the dashboard on.
-- Open /access-test.html, enter your token, and then run the diagnostics. This step is technically option, but it makes troubleshooting a lot easier if something is being fussy. Your token isn't kept here, it's only used to run connection tests.
-- Assuming no errors, navigate to /editor.html and input your token *there.* This will be kept in that browser only.
+- Navigate to /editor.html and input your token to connect. This will be kept in that browser only.
 - Go forth, and edit some cards!
 
 90% of this project is just a webpage, so you should be able to simply download the files and re-host them wherever you'd like. However, the dashboard is designed to check for github repos to populate its data and uses it's API to save to the directory. I have not tested alternative hosts, but I wouldn't expect the editor to work unless you dig in there and point it in the right direction yourself. 
@@ -46,6 +45,9 @@ This exclusively uses HTML5, CSS, and lightweight Javascript and only calls on-s
 - Easy to use dashboard for editing characters that gives a live preview while working and pushes your changes directly to your page.
 - Accessibility & mobile support with responsive design and proper screen-reader alt texts, plus keyboard controls.
 - The relief of finally being free from TH's god-awful tab system.
+
+## Usage
+The quickstart guide above will get you started. But for detailed notes on the editor, please check the wiki.
 
 ## Development & Contribution
 I know the fancy people usually include git commands here, but it's literally just a web app. You can just download the files and run it in your browser out of a folder.
