@@ -21,7 +21,10 @@ This is designed to be used via github pages to allow easy pushes to the reposit
 
 - Clone the repository using your method of choice
 - Deploy a github page using the main branch /root directory
-- (Token stuff here)
+- [Generate a personal access token](https://github.com/settings/personal-access-tokens). Read and write are the only required permissions. Make sure to save it because you will need this token for every device you want to enable the dashboard on.
+- Open /access-test.html, enter your token, and then run the diagnostics. This step is technically option, but it makes troubleshooting a lot easier if something is being fussy. Your token isn't kept here, it's only used to run connection tests.
+- Assuming no errors, navigate to /editor.html and input your token *there.* This will be kept in that browser only.
+- Go forth, and edit some cards!
 
 90% of this project is just a webpage, so you should be able to simply download the files and re-host them wherever you'd like. However, the dashboard is designed to check for github repos to populate its data and uses it's API to save to the directory. I have not tested alternative hosts, but I wouldn't expect the editor to work unless you dig in there and point it in the right direction yourself. 
 
