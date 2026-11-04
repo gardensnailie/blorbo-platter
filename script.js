@@ -4,7 +4,7 @@
   'use strict';
 
   /* ===== SETTINGS ===== */
-  const CATEGORY_ORDER = ['setting', 'gender', 'role', 'age']; // sidebar order; others follow in page order
+  const CATEGORY_ORDER = ['gender', 'setting', 'role', 'age']; // sidebar order; others follow in page order
 
   const $ = id => document.getElementById(id);
   const grid = $('grid'), filters = $('filters'), clearBtn = $('clear-filters'),
@@ -52,9 +52,9 @@
       const h = v.card.querySelector('h3');
       const name = (v.card.dataset.label || (h && h.textContent) || 'Version ' + (i + 1)).trim().replace(/\s+/g, ' ');
       const ico = (v.card.dataset.icon || '').trim();
-      if (/^hgi-[a-z0-9-]+$/.test(ico)) {          // the version's own icon; only plain icon class names accepted
+      if (/^fa-[a-z0-9-]+$/.test(ico)) {          // the version's own icon; only plain icon class names accepted
         const ic = document.createElement('i');
-        ic.className = 'hgi hgi-stroke hgi-rounded ' + ico;
+        ic.className = window.CastCard.iconClass(ico);
         ic.setAttribute('aria-hidden', 'true');
         b.append(ic);
         if (v.card.dataset.iconColor) b.style.setProperty('--icon-color', v.card.dataset.iconColor); // CSS tints it
