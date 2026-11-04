@@ -25,7 +25,7 @@ window.CAST = [
       "subtitle": "YKN-0148-A",
       "icon": "hgi-sparkle",
       "iconColor": "",
-      "img": "https://f2.toyhou.se/file/f2-toyhou-se/thumbnails/111465800_cxV.png",
+      "img": "icons/haru.png",
       "gender": "Male",
       "age": "24",
       "birthday": "Aug. 8",
