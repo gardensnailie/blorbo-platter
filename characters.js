@@ -6,7 +6,7 @@ window.CAST = [
       "subtitle": "",
       "icon": "hgi-note",
       "iconColor": "",
-      "img": "https://f2.toyhou.se/file/f2-toyhou-se/thumbnails/98982058_ykW.png",
+      "img": "icons/Sasha.png",
       "gender": "Male",
       "age": "37",
       "birthday": "Feb. 12",
