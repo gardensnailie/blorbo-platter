@@ -6,7 +6,10 @@
   <title>Cast of Characters</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://use.hugeicons.com/font/icons.css">
-  <script type="module" src="script.js" defer></script>
+  <script src="flags.js" defer></script>
+  <script src="characters.js" defer></script>
+  <script src="card.js" defer></script>
+  <script src="script.js" defer></script>
   <!-- Without JS the filter panel can't work, so hide it -->
   <noscript><style>#sidebar{display:none}</style></noscript>
 <style>
@@ -17,19 +20,12 @@
 </head>
 <body>
 <!--
-  HOW TO ADD A CHARACTER
-  Copy a <article class="card"> and edit it. The sidebar builds itself from data-tags.
-
-  data-tags   "category: value value; category: value"
-              - ; separates categories, spaces separate values
-              - Multi-word names use hyphens: space-station  (shown as "Space station")
-              - Any category you invent appears in the sidebar automatically
-  Gender      Add <li><b>Gender</b> ...</li> and it becomes a filter automatically.
-  Info boxes  Add or remove <li><b>Label</b> Info</li> freely.
-
-  ALTERNATE VERSIONS: wrap 2+ cards in <div class="character">. They become tabs.
-              data-label="..." sets the tab text (optional; defaults to the <h3> name).
-              Each version is filtered on its own tags.
+  HOW THIS PAGE WORKS
+  Characters live in characters.js (edit with the editor, or by hand). card.js builds the cards from
+  that data (sorted by name) and script.js adds the sidebar filters and version buttons.
+  Scripts run in this order: flags.js (flag designs), characters.js (the cast), card.js (card layout), script.js.
+  Card layout: edit FIELDS in card.js and the CSS in style.css.
+  Tags: "category: value value; category: value" (hyphens for multi-word values, shown as "Space station").
 -->
 
 <!-- ===== HEADER (customize) ===== -->
@@ -53,99 +49,7 @@
   <main id="main">
 
     <!-- ===== CHARACTER GRID (flexbox) ===== -->
-    <div id="grid">
-
-      <!-- Single Character without Tabs -->
-<article class="card" data-label="Default" data-tags="
-  setting: five-keys; 
-  role: crew engineer; 
-  age: adult">
-    <img src="https://f2.toyhou.se/file/f2-toyhou-se/thumbnails/98982058_ykW.png" alt="" width="150" height="150" loading="lazy">
-    <h3>Aleksandr Nikonovich Vashchenko
-      <i> </i>
-  <b> <i class="hgi hgi-stroke hgi-rounded hgi-sparkle" aria-hidden="true"></i>
-      </b></h3>
-    <ul class="info info-top">
-      <li class="gender"><b title="Gender"><i class="hgi hgi-stroke hgi-rounded hgi-venus" aria-hidden="true"></i></b> Female</li>
-      <li><b title="Age"><i class="hgi hgi-stroke hgi-rounded hgi-calendar-clock" aria-hidden="true"></i></b> 37</li>
-      <li><b title="Birthday"><i class="hgi hgi-stroke hgi-rounded hgi-birthday-cake"></i></b> Feb. 12</li>
-      <li><b title="Height"><i class="hgi hgi-stroke hgi-rounded hgi-ruler" style="rotate: -45deg;"></i></b> 5'4"</li>
-                  <li>
-        
-<div class="rounded d-inline-block" style="background-image:linear-gradient(#000,#000 16.7%,#303030 16.7%,#303030 33.4%,#666666 33.3%,#666666 50.1%,#9a9a9a 50.1%,#9a9a9a 66.8%,#bcbcbc 66.8%,#bcbcbc 83.5%,#fff 83.5%);line-height:20px;width:26px;">&nbsp;</div>
-      
-      </li>
-    </ul>
-    <ul class="info">
-      <li><b title="Race"><i class="hgi hgi-stroke hgi-rounded hgi-user-round" aria-hidden="true"></i></b> Ruska Roma</li>
-      <li><b title="Occupation"><i class="hgi hgi-stroke hgi-rounded hgi-work" aria-hidden="true"></i></b> University Professor</li>
-    </ul>
-    <p>🙏❤️ СЛАВА РОССИИ 🙏❤️</p>
-  </article>
-
-      <!-- Tabbed character: two versions -->
-<div class="character">
-
-  <!-- Version 1 -->
-  <article class="card" data-label="MMX" data-tab="hgi-sparkle" data-tags="
-    setting: space; 
-    role: crew engineer; 
-    age: adult" 
-    >
-    <img src="https://f2.toyhou.se/file/f2-toyhou-se/thumbnails/111465800_cxV.png" alt="" width="150" height="150" loading="lazy">
-    <h3>Eight ( 4A )
-      <i>YKN-0148-A</i>
-      <b><i class="hgi hgi-stroke hgi-rounded hgi-sparkle" aria-hidden="true"></i></b>
-    </h3>
-    <ul class="info info-top">
-      <li class="gender"><b title="Gender"><i class="hgi hgi-stroke hgi-rounded hgi-venus" aria-hidden="true"></i></b> Male</li>
-      <li><b title="Age"><i class="hgi hgi-stroke hgi-rounded hgi-calendar-clock" aria-hidden="true"></i></b> 24</li>
-      <li><b title="Birthday"><i class="hgi hgi-stroke hgi-rounded hgi-birthday-cake"></i></b> Aug. 8</li>
-      <li><b title="Height"><i class="hgi hgi-stroke hgi-rounded hgi-ruler" style="rotate: -45deg;"></i></b> 5'8"</li>
-                  <li>
-        
-        <div data-toggle="tooltip" title="Bisexual" class="rounded d-inline-block" style="background-image:linear-gradient(#d70170,#d70170 40%,#734f94 40%,#734f94 60%,#0039a7 60%);line-height:20px;width:26px;">&nbsp;</div>
-      
-      </li>
-    </ul>
-    <ul class="info">
-      <li><b title="Race"><i class="hgi hgi-stroke hgi-rounded hgi-user-round" aria-hidden="true"></i></b> Reploid</li>
-      <li><b title="Occupation"><i class="hgi hgi-stroke hgi-rounded hgi-work" aria-hidden="true"></i></b> Navigator</li>
-    </ul>
-    <p>hey have you ever heard of the hit animated series pretty kitty mew mew</p>
-  </article>
-
-  <!-- Version 2: different tags, so it filters independently -->
-  <article class="card" data-label="TOK-EIGHT" data-tab="hgi-sparkle" data-tags="
-    setting: fantasy; 
-    role: knight; 
-    age: adult">
-    <img src="https://f2.toyhou.se/file/f2-toyhou-se/thumbnails/98979834_dpc.png" alt="" width="150" height="150" loading="lazy">
-    <h3>Kamiya Haru
-      <i>神谷 春</i>
-      <b><i class="hgi hgi-stroke hgi-rounded hgi-sparkle" aria-hidden="true"></i></b>
-    </h3>
-    <ul class="info info-top">
-      <li class="gender"><b title="Gender"><i class="hgi hgi-stroke hgi-rounded hgi-venus" aria-hidden="true"></i></b> Male</li>
-      <li><b title="Age"><i class="hgi hgi-stroke hgi-rounded hgi-calendar-clock" aria-hidden="true"></i></b> 24</li>
-      <li><b title="Birthday"><i class="hgi hgi-stroke hgi-rounded hgi-birthday-cake"></i></b> Aug. 8</li>
-      <li><b title="Height"><i class="hgi hgi-stroke hgi-rounded hgi-ruler" style="rotate: -45deg;"></i></b> 5'8"</li>
-                  <li>
-        
-        <div class="rounded d-inline-block" style="background-image:linear-gradient(#d70170,#d70170 40%,#734f94 40%,#734f94 60%,#0039a7 60%);line-height:20px;width:26px;">&nbsp;</div>
-      
-      </li>
-    </ul>
-    <ul class="info">
-      <li><b title="Race"><i class="hgi hgi-stroke hgi-rounded hgi-user-round" aria-hidden="true"></i></b> Gekko-Dragon</li>
-      <li><b title="Occupation"><i class="hgi hgi-stroke hgi-rounded hgi-work" aria-hidden="true"></i></b> Prince, Captian (Former)</li>
-    </ul>
-    <p>bro what if we were geckos would that be fucked up or what</p>
-  </article>
-
-</div>
-
-
+    <div id="grid"><noscript>This page needs JavaScript to show the cast.</noscript></div>
 
     <!-- ===== EMPTY STATE (shown when no character matches) ===== -->
     <p id="empty-state" role="status" hidden>
