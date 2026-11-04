@@ -5,6 +5,7 @@
 (() => {
   'use strict';
 
+  const ICON_STYLE = 'fa-regular';   // Font Awesome style used for every icon (fa-solid, fa-light, ...)
   const IMG = 150;                 // image size in px (keep equal to --img-size in style.css)
   const FLAGS = window.FLAGS || {};
 
@@ -12,13 +13,13 @@
      row: 'top' or 'bottom' list. cls: class on the <li> (the "gender" class feeds the Gender filter).
      Blank values still draw an empty box so the columns stay aligned. */
   const FIELDS = [
-    { key: 'gender',   title: 'Gender',     icon: 'hgi-venus',          row: 'top', cls: 'gender' },
-    { key: 'age',      title: 'Age',        icon: 'hgi-calendar-clock', row: 'top' },
-    { key: 'birthday', title: 'Birthday',   icon: 'hgi-birthday-cake',  row: 'top' },
-    { key: 'height',   title: 'Height',     icon: 'hgi-ruler',          row: 'top', iconCls: 'tilt' },
+    { key: 'gender',   title: 'Gender',     icon: 'fa-venus',          row: 'top', cls: 'gender' },
+    { key: 'age',      title: 'Age',        icon: 'fa-calendar-clock', row: 'top' },
+    { key: 'birthday', title: 'Birthday',   icon: 'fa-cake-candles',  row: 'top' },
+    { key: 'height',   title: 'Height',     icon: 'fa-ruler',          row: 'top', iconCls: 'tilt' },
     { key: 'flag',     title: 'Flag',                                    row: 'top', flag: true },
-    { key: 'race',     title: 'Race',       icon: 'hgi-user-round',     row: 'bottom' },
-    { key: 'job',      title: 'Occupation', icon: 'hgi-work',           row: 'bottom' },
+    { key: 'race',     title: 'Race',       icon: 'fa-user',     row: 'bottom' },
+    { key: 'job',      title: 'Occupation', icon: 'fa-briefcase',           row: 'bottom' },
   ];
 
   const el = (tag, cls, text) => {
@@ -28,7 +29,7 @@
     return n;
   };
   const icon = (name, extra) => {
-    const i = el('i', 'hgi hgi-stroke hgi-rounded ' + name + (extra ? ' ' + extra : ''));
+    const i = el('i', ICON_STYLE + ' ' + name + (extra ? ' ' + extra : ''));
     i.setAttribute('aria-hidden', 'true');
     return i;
   };
@@ -93,7 +94,7 @@
   }
 
   function buildCard(v) {
-    const iconName = /^hgi-[a-z0-9-]+$/.test(v.icon || '') ? v.icon : '';                  // custom icon (optional)
+    const iconName = /^fa-[a-z0-9-]+$/.test(v.icon || '') ? v.icon : '';                  // custom icon (optional)
     const color = v.iconColor && CSS.supports('color', v.iconColor) ? v.iconColor : '';     // its color (optional)
     const card = el('article', 'card');
     card.dataset.tags = v.tags || '';
@@ -106,7 +107,7 @@
       img.src = v.img;
       card.append(img);
     }
-    const star = el('b'); star.append(icon(iconName || 'hgi-sparkle'));  // sparkle is the default icon
+    const star = el('b'); star.append(icon(iconName || 'fa-sparkles'));  // sparkle is the default icon
     if (color) star.style.color = color;
     const h3 = el('h3', '', v.name);
     h3.append(el('i', '', v.subtitle), star);
@@ -120,7 +121,7 @@
     return wrap;
   }
 
-  window.CastCard = { buildCard, buildCharacter };
+  window.CastCard = { buildCard, buildCharacter, iconClass: n => ICON_STYLE + ' ' + n };
 
   const grid = document.getElementById('grid');
   if (grid && Array.isArray(window.CAST)) {
