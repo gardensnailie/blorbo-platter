@@ -66,19 +66,23 @@
   }
 
   function buildCard(v) {
+    const iconName = /^hgi-[a-z0-9-]+$/.test(v.icon || '') ? v.icon : '';                  // custom icon (optional)
+    const color = v.iconColor && CSS.supports('color', v.iconColor) ? v.iconColor : '';     // its color (optional)
     const card = el('article', 'card');
     card.dataset.tags = v.tags || '';
     if (v.label) card.dataset.label = v.label;   // hover/screen-reader name of the version button
-    if (v.tab) card.dataset.tab = v.tab;         // button content: short text or an hgi- icon name
+    if (iconName) card.dataset.icon = iconName;  // script.js shows this icon on the version button
+    if (color) card.dataset.iconColor = color;   // (tinted down by CSS)
     if (v.img) {
       const img = el('img');
       img.alt = ''; img.width = IMG; img.height = IMG; img.loading = 'lazy'; img.decoding = 'async';
       img.src = v.img;
       card.append(img);
     }
-    const star = el('b'); star.append(icon('hgi-sparkle'));
+    const star = el('b'); star.append(icon(iconName || 'hgi-sparkle'));  // sparkle is the default icon
+    if (color) star.style.color = color;
     const h3 = el('h3', '', v.name);
-    h3.append(el('i', '', v.id), star);
+    h3.append(el('i', '', v.subtitle), star);
     card.append(h3, buildRow(v, 'top', 'info info-top'), buildRow(v, 'bottom', 'info'), el('p', '', v.desc));
     return card;
   }
