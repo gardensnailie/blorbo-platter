@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub access test</title>
+  <style>
+    body { font: 16px/1.5 system-ui, sans-serif; max-width: 680px; margin: 2rem auto; padding: 0 1rem; }
+    input, button { font: inherit; padding: .4rem .6rem; }
+    input { width: 100%; margin: .25rem 0 .75rem; }
+    button { margin: 0 .5rem .5rem 0; cursor: pointer; }
+    pre { background: #f2f2f2; padding: .75rem; white-space: pre-wrap; word-break: break-word; min-height: 6rem; }
+    @media (prefers-color-scheme: dark) { body { background: #1a1a1a; color: #eee; } pre { background: #2a2a2a; } input { background: #2a2a2a; color: #eee; border: 1px solid #555; } }
+  </style>
+</head>
+<body>
+<h1>GitHub access test</h1>
+<p>Checks that this browser can read and write your repository. Nothing here is saved; the token stays in the box until you close the page.</p>
+
+<label for="token">Token (starts with github_pat_)</label>
+<input id="token" type="password" autocomplete="off" spellcheck="false">
+
+<button id="t-read">1. Read characters.js</button>
+<button id="t-write">2. Write and read back a test file</button>
+<button id="t-delete">3. Delete the test file</button>
+<pre id="log" role="log">Ready.</pre>
+
+<script>
+(() => {
+  'use strict';
+  const REPO = 'gardensnailie/blorbo-platter', BRANCH = 'main', TEST_FILE = 'editor-test.txt';
+  const $ = id => document.getElementById(id), logEl = $('log');
+  const log = msg => { logEl.textContent += '\n' + msg; };
+  const b64 = s => { let bin = ''; for (const b of new TextEncoder().encode(s)) bin += String.fromCharCode(b); return btoa(bin); };
+  const unb64 = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g, '')), c => c.charCodeAt(0)));
+
+  // One GitHub contents-API call. cache: 'no-store' so we never see a stale copy of our own write.
+  async function gh(path, method = 'GET', body) {
+    const url = `https://api.github.com/repos/${REPO}/contents/${path}` + (method === 'GET' ? `?ref=${BRANCH}` : '');
+    const res = await fetch(url, {
+      method, cache: 'no-store', body: body && JSON.stringify(body),
+      headers: { Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28',
+                 Authorization: 'Bearer ' + $('token').value.trim(), ...(body ? { 'Content-Type': 'application/json' } : {}) }
+    });
+    let data = null; try { data = await res.json(); } catch { /* no body */ }
+    return { res, data };
+  }
+  function explain(res, data) {
+    const hint = { 401: 'Token is wrong, expired or was revoked.',
+      403: 'Token lacks permission. It needs Contents: Read and write on this repository.',
+      404: 'Not found: check the repository name, or that the token was granted this repository.',
+      409: 'Conflict: the file changed since it was read.', 422: 'Rejected (often a stale file version).' }[res.status] || '';
+    return `FAILED (${res.status}): ${(data && data.message) || res.statusText}${hint ? '\n  -> ' + hint : ''}`;
+  }
+  const guard = fn => async () => {
+    if (!$('token').value.trim()) return log('Paste your token first.');
+    log('\n--');
+    try { await fn(); } catch (e) { log('Request never reached GitHub (browser or network blocked it): ' + e.message); }
+  };
+
+  $('t-read').onclick = guard(async () => {
+    const { res, data } = await gh('characters.js');
+    if (!res.ok) return log(explain(res, data));
+    const text = unb64(data.content);
+    const cast = JSON.parse(text.slice(text.indexOf('['), text.lastIndexOf(';')));
+    log(`OK: read characters.js (${data.size} bytes, version ${data.sha.slice(0, 7)}).`);
+    log(`    ${cast.length} characters, ${cast.reduce((n, c) => n + c.length, 0)} versions.`);
+  });
+
+  $('t-write').onclick = guard(async () => {
+    const old = await gh(TEST_FILE);                       // 404 is fine: the file is created
+    const text = 'Editor access test \u2713 \u{1F64F} \u0421\u041B\u0410\u0412\u0410 ' + new Date().toISOString();
+    const put = await gh(TEST_FILE, 'PUT', { message: 'Editor access test', content: b64(text), branch: BRANCH,
+      ...(old.res.ok ? { sha: old.data.sha } : {}) });
+    if (!put.res.ok) return log('Write ' + explain(put.res, put.data));
+    log(`OK: wrote ${TEST_FILE} (commit ${put.data.commit.sha.slice(0, 7)}).`);
+    const back = await gh(TEST_FILE);
+    if (!back.res.ok) return log('Read-back ' + explain(back.res, back.data));
+    log(unb64(back.data.content) === text ? 'OK: emoji and non-Latin text came back intact.' : 'PROBLEM: text did not round-trip.');
+  });
+
+  $('t-delete').onclick = guard(async () => {
+    const old = await gh(TEST_FILE);
+    if (!old.res.ok) return log(old.res.status === 404 ? 'Nothing to delete.' : explain(old.res, old.data));
+    const del = await gh(TEST_FILE, 'DELETE', { message: 'Remove editor access test file', sha: old.data.sha, branch: BRANCH });
+    log(del.res.ok ? 'OK: test file deleted.' : 'Delete ' + explain(del.res, del.data));
+  });
+})();
+</script>
+</body>
+</html>
