@@ -11,7 +11,7 @@ window.CAST = [
       "age": "37",
       "birthday": "Feb. 12",
       "height": "5'4\"",
-      "flag": "mono",
+      "flag": "straight",
       "race": "Ruska Roma",
       "job": "University Professor",
       "tags": "setting: five-keys; role: crew engineer; age: adult",
