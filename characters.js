@@ -1,13 +1,13 @@
 window.CAST = [
   [
     {
-      "label": "Default",
+      "label": "Sasha",
       "name": "Aleksandr Nikonovich Vashchenko",
       "subtitle": "",
-      "icon": "",
+      "icon": "hgi-note",
       "iconColor": "",
       "img": "https://f2.toyhou.se/file/f2-toyhou-se/thumbnails/98982058_ykW.png",
-      "gender": "Female",
+      "gender": "Male",
       "age": "37",
       "birthday": "Feb. 12",
       "height": "5'4\"",
