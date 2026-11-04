@@ -1,0 +1,116 @@
+/* ===== SETTINGS: change these first ===== */
+:root {
+  --page-bg: #f2f2f2;
+  --text: #1a1a1a;
+  --card-bg: #d4d4d4;      /* card background */
+  --box-bg: #ebebeb;       /* name, info and description boxes */
+  --tab-bg: #6a6a6a;       /* version buttons on the image */
+  --tab-active-bg: #1a1a1a;
+  --tab-active-text: #fff;
+  --tab-size: 22px;
+  --tab-inset: 5px;        /* gap between version buttons and image edge */
+  --accent: #3a3a3a;       /* focus outlines */
+  --card-w: 500px;
+  --img-size: 150px;
+  --sidebar-w: 220px;
+  --gap: 16px;
+  --pad: 9px;
+  --radius: 4px;
+  --font: Roboto, sans-serif;
+  --header-font: "big noodle", sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }  /* needed: our display rules would otherwise override [hidden] */
+body { margin: 0; background: var(--page-bg); color: var(--text); font-family: var(--font); line-height: 1.4; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ===== HEADER / FOOTER ===== */
+#site-header, #site-footer { padding: var(--gap); }
+#site-header h1 { margin: 0 0 4px; }
+#site-header p, #site-footer p { margin: 0; }
+
+/* ===== PAGE LAYOUT ===== */
+#layout { display: flex; align-items: flex-start; gap: var(--gap); padding: 0 var(--gap) var(--gap); }
+#main { flex: 1; min-width: 0; }
+
+/* ===== SIDEBAR (sticky) ===== */
+#sidebar {
+  flex: 0 0 var(--sidebar-w);
+  position: sticky; top: var(--gap);
+  max-height: calc(100vh - 2 * var(--gap)); overflow-y: auto;
+  padding: var(--pad); background: var(--card-bg); border-radius: var(--radius);
+}
+#drawer > summary { display: none; cursor: pointer; font-weight: 700; }
+#clear-filters {
+  position: sticky; top: 0; width: 100%; padding: 6px; font: inherit;
+  background: var(--accent); color: #fff; border: 0; border-radius: var(--radius); cursor: pointer;
+}
+#clear-filters:disabled { opacity: .45; cursor: default; }
+#filters fieldset { border: 0; margin: var(--gap) 0 0; padding: 0; }
+#filters legend { font-weight: 700; padding: 0; margin-bottom: 4px; }
+#filters label { display: block; padding: 2px 0; cursor: pointer; }
+
+/* ===== GRID ===== */
+#grid { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--gap); }
+.character, #grid > .card { flex: 0 1 var(--card-w); min-width: 0; }
+.character { container-type: inline-size; display: flex; flex-direction: column; gap: var(--gap); }
+#empty-state { padding: var(--gap); background: var(--card-bg); border-radius: var(--radius); }
+
+/* ===== CARD: image left; name, two info rows, description right ===== */
+.card {
+  display: grid;
+  grid-template-columns: var(--img-size) 1fr;
+  grid-template-rows: auto auto auto 1fr;
+  grid-template-areas: "img name" "img info-top" "img info" "img desc";
+  column-gap: var(--pad);
+  padding: var(--pad); background: var(--card-bg); border-radius: var(--radius);
+  min-height: calc(var(--img-size) + var(--pad) * 2);
+}
+.card > img { grid-area: img; display: block; width: 100%; height: var(--img-size); object-fit: cover; background: var(--box-bg); border-radius: var(--radius); }
+
+/* Name row: name on the left, ID and icon pushed right */
+.card > h3 {
+  grid-area: name; display: flex; align-items: baseline; gap: 4px;
+  margin: 0 0 4px; padding: 2px 8px;
+  font-size: 1.3rem; font-family: var(--header-font); letter-spacing: 1.2px; text-transform: uppercase;
+  overflow-wrap: anywhere; background: var(--box-bg); border-radius: var(--radius);
+}
+.card > h3 > i { margin-left: auto; font-size: 1.1rem; font-style: normal; font-weight: 400; }
+.card > h3 > b { align-self: center; font-size: 1.7rem; margin: -2px 0px -10px 0px; }
+
+/* Info rows: two lists with their own grid areas; --cols sets items per row */
+.info { grid-area: info; --cols: 3; display: grid; grid-template-columns: 1fr 4fr 6fr; gap: 4px; margin: 0 0 4px; padding: 0; list-style: none; }
+.info-top { grid-area: info-top; --cols: 4; grid-template-columns: 4fr 3fr 4fr 2fr; }
+.info li { display: flex; justify-content: space-between; gap: 8; align-items: center; padding: 4px 5px 3px 5px; font-size: .7rem; line-height: 1; text-align: right; text-transform: uppercase; background: var(--box-bg); border-radius: var(--radius); }
+.info b { display: flex; flex: none; font-size: .9rem; line-height: 1; font-weight: 600;} /* icon only, so no header font */
+
+.card > p { grid-area: desc; margin: 0; padding: 4px 8px; text-align: justify; font-size: .7rem; line-height: .8rem; background: var(--box-bg); border-radius: var(--radius); }
+
+/* Version buttons: small squares in the bottom-right corner of the image.
+   script.js adds this bar only when 2+ versions pass the filter. */
+.tabs {
+  grid-area: img; justify-self: end; align-self: start; z-index: 1; display: flex; gap: 3px;
+  margin: calc(var(--img-size) - var(--tab-size) - var(--tab-inset)) var(--tab-inset) 0 0;
+}
+.tabs button {
+  width: var(--tab-size); height: var(--tab-size); padding: 3px 0 0;
+  font: .9rem/1 var(--header-font); letter-spacing: 1px; text-align: center;
+  color: var(--tab-active-text); background: var(--tab-bg); border: 0; border-radius: var(--radius); cursor: pointer;
+}
+.tabs button[aria-selected="true"] { background: var(--tab-active-bg); }
+
+/* Narrow card: stack everything vertically */
+@container (max-width: 400px) {
+  .card { grid-template-columns: 1fr; grid-template-rows: none; grid-template-areas: "img" "name" "info-top" "info" "desc"; }
+  .card > img { margin-bottom: var(--pad); }
+  .tabs { margin-bottom: 0; }
+}
+
+/* ===== MOBILE: sidebar becomes a collapsible drawer above the grid ===== */
+@media (max-width: 700px) {
+  #layout { flex-direction: column; align-items: stretch; }
+  #sidebar { position: static; flex: none; max-height: none; width: 100%; }
+  #drawer > summary { display: block; }
+  #drawer[open] > summary { margin-bottom: var(--pad); }
+}
