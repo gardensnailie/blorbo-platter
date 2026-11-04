@@ -37,6 +37,16 @@
   // The first layer fills the flag; later layers are drawn on top, optionally cut to a shape with clip.
   const RIGHT_HALF = 'polygon(50% 0, 100% 0, 100% 100%, 50% 100%)';
   const GRADIENT = /^linear-gradient\(/i, SHAPE = /^(polygon|inset|circle|ellipse)\(/i;
+  const IMAGE = /^(https:\/\/[^\s"'()\\]+|[\w./-]+)$/i;   // https URL or a plain relative path
+  // Layer types: { gradient } | { image, size? } | { text, color?, size? }, each with optional clip. The first layer must be a gradient.
+  const layerOk = (l, i) => {
+    if (l.clip && !SHAPE.test(l.clip)) return false;
+    if (l.gradient) return GRADIENT.test(l.gradient);
+    if (i === 0) return false;
+    if (l.image) return IMAGE.test(l.image) && (!l.size || CSS.supports('background-size', l.size));
+    if (l.text) return String(l.text).length <= 8 && (!l.color || CSS.supports('color', l.color)) && (!l.size || CSS.supports('font-size', l.size));
+    return false;
+  };
   const layersOf = d => (d ? (Array.isArray(d.layers) ? d.layers : [d]) : []);
 
   // A character's flag is one name, or "left right": the second flag is layered over the right half of the first
@@ -46,14 +56,17 @@
     if (!defs.length) return null;
     const layers = [];
     defs.forEach((d, i) => layersOf(d).forEach(l => layers.push(i && !l.clip ? { ...l, clip: RIGHT_HALF } : l)));
-    if (defs.includes(null) || !layers.length || layers.some(l => !GRADIENT.test(l.gradient || '') || (l.clip && !SHAPE.test(l.clip)))) {
+    if (defs.includes(null) || !layers.length || layers.some((l, i) => !layerOk(l, i))) {
       console.warn('[cast] Unknown or invalid flag:', names); return null;
     }
     const f = el('span', 'flag');
     layers.forEach((l, i) => {
       if (!i) { f.style.backgroundImage = l.gradient; return; }
       const top = el('span');
-      top.style.backgroundImage = l.gradient; top.style.clipPath = l.clip || 'none';
+      top.style.clipPath = l.clip || 'none';
+      if (l.gradient) top.style.backgroundImage = l.gradient;
+      else if (l.image) Object.assign(top.style, { backgroundImage: `url("${l.image}")`, backgroundSize: l.size || 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' });
+      else { top.textContent = l.text; Object.assign(top.style, { display: 'grid', placeItems: 'center', lineHeight: '1', fontSize: l.size || '12px', color: l.color || '#fff' }); }
       f.append(top);
     });
     const label = defs.map(d => d.label || '').join(' / ');
