@@ -51,14 +51,15 @@
       b.type = 'button'; b.setAttribute('role', 'tab'); b.dataset.i = i;
       const h = v.card.querySelector('h3');
       const name = (v.card.dataset.label || (h && h.textContent) || 'Version ' + (i + 1)).trim().replace(/\s+/g, ' ');
-      const t = (v.card.dataset.tab || '').trim();
-      if (/^hgi-[a-z0-9-]+$/.test(t)) {          // icon name: only plain icon class names are accepted
+      const ico = (v.card.dataset.icon || '').trim();
+      if (/^hgi-[a-z0-9-]+$/.test(ico)) {          // the version's own icon; only plain icon class names accepted
         const ic = document.createElement('i');
-        ic.className = 'hgi hgi-stroke hgi-rounded ' + t;
+        ic.className = 'hgi hgi-stroke hgi-rounded ' + ico;
         ic.setAttribute('aria-hidden', 'true');
         b.append(ic);
+        if (v.card.dataset.iconColor) b.style.setProperty('--icon-color', v.card.dataset.iconColor); // CSS tints it
       } else {
-        b.textContent = t || (i + 1) + '.';      // short text, or the number as a fallback
+        b.textContent = (i + 1) + '.';             // no custom icon: show the number
       }
       b.title = name; b.setAttribute('aria-label', name); // full name for hover and screen readers
       v.btn = b; list.append(b);
