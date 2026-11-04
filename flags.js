@@ -31,7 +31,7 @@ window.FLAGS = {
    
    /* ========================== OTHER ================================ */
    
-   "poly": { label: "Polyamorous", layers: [{ gradient: "linear-gradient((#0000ff,#0000ff 33.3%,#fe0100 33.3%,#fe0100 66.6%,#000 66.6%)" },{ "background:url(https://images2.imgbox.com/b5/f6/eCtGAoBQ_o.png) no-repeat center;background-size:20%;" }] },
+   poly:    { label: "Polyamorous",      gradient: "linear-gradient(#0000ff,#0000ff 33.3%,#fe0100 33.3%,#fe0100 66.6%,#000 66.6%)" },
 
      progress: { label: "Progress Pride", layers: [
     { gradient: "linear-gradient(#e40303,#e40303 16.7%,#ff8c00 16.7%,#ff8c00 33.4%,#ffed00 33.3%,#ffed00 50.1%,#008026 50.1%,#008026 66.8%,#004dff 66.8%,#004dff 83.5%,#750787 83.5%)" },
