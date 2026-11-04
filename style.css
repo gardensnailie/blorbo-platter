@@ -17,7 +17,7 @@
   --pad: 9px;
   --radius: 4px;
   --font: Roboto, sans-serif;
-  --header-font: "big noodle", sans-serif;
+  --header-font: "big noodle", Roboto, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -72,7 +72,7 @@ body { margin: 0; background: var(--page-bg); color: var(--text); font-family: v
 /* Name row: name on the left, ID and icon pushed right */
 .card > h3 {
   grid-area: name; display: flex; align-items: baseline; gap: 4px;
-  margin: 0 0 4px; padding: 2px 8px;
+  margin: 0 0 4px; padding: 2px 0px 2px 8px;
   font-size: 1.3rem; font-family: var(--header-font); letter-spacing: 1.2px; text-transform: uppercase;
   overflow-wrap: anywhere; background: var(--box-bg); border-radius: var(--radius);
 }
@@ -80,8 +80,8 @@ body { margin: 0; background: var(--page-bg); color: var(--text); font-family: v
 .card > h3 > b { align-self: center; font-size: 1.7rem; margin: -2px 0px -10px 0px; }
 
 /* Info rows: two lists with their own grid areas; --cols sets items per row */
-.info { grid-area: info; --cols: 3; display: grid; grid-template-columns: 1fr 4fr 6fr; gap: 4px; margin: 0 0 4px; padding: 0; list-style: none; }
-.info-top { grid-area: info-top; --cols: 4; grid-template-columns: 4fr 3fr 4fr 2fr; }
+.info { grid-area: info; --cols: 2; display: grid; grid-template-columns: 4fr 6fr; gap: 4px; margin: 0 0 4px; padding: 0; list-style: none; }
+.info-top { grid-area: info-top; --cols: 5; grid-template-columns: 6fr 4fr 5fr 3fr 1fr; }
 .info li { display: flex; justify-content: space-between; gap: 8; align-items: center; padding: 4px 5px 3px 5px; font-size: .7rem; line-height: 1; text-align: right; text-transform: uppercase; background: var(--box-bg); border-radius: var(--radius); }
 .info b { display: flex; flex: none; font-size: .9rem; line-height: 1; font-weight: 600;} /* icon only, so no header font */
 
@@ -94,7 +94,7 @@ body { margin: 0; background: var(--page-bg); color: var(--text); font-family: v
   margin: calc(var(--img-size) - var(--tab-size) - var(--tab-inset)) var(--tab-inset) 0 0;
 }
 .tabs button {
-  width: var(--tab-size); height: var(--tab-size); padding: 3px 0 0;
+  min-width: var(--tab-size); height: var(--tab-size); padding: 3px 3px 0 4.5px;
   font: .9rem/1 var(--header-font); letter-spacing: 1px; text-align: center;
   color: var(--tab-active-text); background: var(--tab-bg); border: 0; border-radius: var(--radius); cursor: pointer;
 }
