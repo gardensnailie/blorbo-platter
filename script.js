@@ -1,11 +1,10 @@
-/* Builds the sidebar from card tags, filters cards, and handles version tabs.
+/* Runs after card.js has built the cards. Builds the sidebar from card tags, filters cards, and handles version tabs.
    No libraries. Text is inserted with textContent/append only (never innerHTML). */
 (() => {
   'use strict';
 
   /* ===== SETTINGS ===== */
   const CATEGORY_ORDER = ['gender', 'setting', 'role', 'age']; // sidebar order; others follow in page order
-  const WARN_SINGLE_USE = true; // console-log tags used by only one card (typo check)
 
   const $ = id => document.getElementById(id);
   const grid = $('grid'), filters = $('filters'), clearBtn = $('clear-filters'),
@@ -32,14 +31,6 @@
     return tags;
   }
 
-  // Wrap lone cards so every character has the same structure
-  for (const card of grid.querySelectorAll(':scope > .card')) {
-    const wrap = document.createElement('div');
-    wrap.className = 'character';
-    card.replaceWith(wrap);
-    wrap.append(card);
-  }
-
   const chars = [], byEl = new WeakMap(), tagCount = new Map();
   for (const el of grid.querySelectorAll(':scope > .character')) {
     const cards = [...el.querySelectorAll(':scope > .card')];
@@ -61,14 +52,14 @@
       const h = v.card.querySelector('h3');
       const name = (v.card.dataset.label || (h && h.textContent) || 'Version ' + (i + 1)).trim().replace(/\s+/g, ' ');
       const t = (v.card.dataset.tab || '').trim();
-if (/^hgi-[a-z0-9-]+$/.test(t)) {          // icon: only accept a plain icon class name
-  const ic = document.createElement('i');
-  ic.className = 'hgi hgi-stroke hgi-rounded ' + t;
-  ic.setAttribute('aria-hidden', 'true');
-  b.append(ic);
-} else {
-  b.textContent = t || (i + 1) + '.';      // text, or the number as a fallback
-}                      // visible numeral
+      if (/^hgi-[a-z0-9-]+$/.test(t)) {          // icon name: only plain icon class names are accepted
+        const ic = document.createElement('i');
+        ic.className = 'hgi hgi-stroke hgi-rounded ' + t;
+        ic.setAttribute('aria-hidden', 'true');
+        b.append(ic);
+      } else {
+        b.textContent = t || (i + 1) + '.';      // short text, or the number as a fallback
+      }
       b.title = name; b.setAttribute('aria-label', name); // full name for hover and screen readers
       v.btn = b; list.append(b);
     });
@@ -101,11 +92,6 @@ if (/^hgi-[a-z0-9-]+$/.test(t)) {          // icon: only accept a plain icon cla
     frag.append(set);
   }
   filters.replaceChildren(frag);
-
-  if (WARN_SINGLE_USE) {
-    const once = [...tagCount].filter(([, n]) => n === 1).map(([k]) => k);
-    if (once.length) console.info('[cast] Tags used by only one card (check for typos):', once.join(', '));
-  }
 
   /* ===== 3. FILTER ===== */
   const selected = new Set();
