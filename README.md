@@ -8,13 +8,12 @@ Here, you get a nicely laid out page of quick info character cards including bas
 It also has a dashboard page where you can add and edit cards and have it automatically push any changes to the repo without having to mess with the code. Because nobody should have to open a 10,000 line HTML file to change a character's birthday.
 
 ## Quickstart Guide
-1. To use the page, clone the repo and feed the editor a personal access token to let it read and write to the directory.
-2. Deploy a github page using the main/root directory.
-3. Once you have the page up, navigate to /editor on the the webpage, and you'll have access to a dashboard where you can add, edit, and remove character cards. All the changes you make will be pushed directly to the repo. This dashboard can be accessed from any device so long as you generate a token for it.
+1. Clone the repo and deploy a github page using the main/root directory. You'll also need to generate a granular PAT and allow read/write permissions.
+3. Once you have the page up, navigate to /editor on the the webpage. The first time you load it on any device you'll be met with an authorization page to submit an api token, and after that you'll have access to a live dashboard where you can add, edit, and remove character cards. All the changes you make will be pushed directly to the repo. This dashboard can be accessed from any device so long as you authorize it using the same api token.
 4. Once you're done editing, the main /index page will show them all in alphanumeric order where you can filter them by custom-set tags. These tags apply per-tab on tabbed cards, so only relevant characters show up.
 5. Tags can be included in the URL, so you can send someone the whole hoard, or pre-filter it to relevant characters so they don't waste their time.
 
-Many of the data fields are easily editable by accessing the corresponding file. New flags can be added by pasting them in the flag js and all the icons can be changed if you'd like. I have links and resources for doing this further down in the resource section. 
+Many of the data fields are easily editable by accessing the corresponding file. New flags can be added by pasting them in the flag js and all the icons can be changed if you'd like. I have links and resources for doing this further down in the resource section. For further information, check out the wiki.
 
 ## Installation
 This is designed to be used via github pages to allow easy pushes to the repository when changes are made. 
