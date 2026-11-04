@@ -3,7 +3,7 @@
   'use strict';
   const REPO = 'gardensnailie/blorbo-platter', BRANCH = 'main', FILE = 'characters.js', KEY = 'cast-editor-token';
   const K = ['label','name','subtitle','icon','iconColor','img','gender','age','birthday','height','flag','race','job','tags','desc'];
-  const FIELDS = [['label','Tab / hover name'],['name','Name'],['subtitle','Subtitle'],['icon','Icon (like hgi-sparkle)'],['iconColor','Icon color (like #d70170)'],
+  const FIELDS = [['label','Tab / hover name'],['name','Name'],['subtitle','Subtitle'],['icon','Icon (like fa-sparkles)'],['iconColor','Icon color (like #d70170)'],
     ['img','Image (path like images/eight.png, or https URL)'],['gender','Gender'],['age','Age'],['birthday','Birthday'],['height','Height'],['race','Race'],['job','Occupation']];
   const FLAGS = window.FLAGS || {};
   const $ = id => document.getElementById(id);
@@ -131,7 +131,7 @@
       if (!v.name.trim()) p.push(w + ': name is empty');
       if (v.tags.split(';').some(g => g.trim() && g.indexOf(':') < 1)) p.push(w + ': tags need "category: value" format');
       for (const n of v.flag.split(/\s+/).filter(Boolean)) if (!Object.hasOwn(FLAGS, n)) p.push(w + ': unknown flag ' + n);
-      if (v.icon && !/^hgi-[a-z0-9-]+$/.test(v.icon)) p.push(w + ': icon should look like hgi-name');
+      if (v.icon && !/^fa-[a-z0-9-]+$/.test(v.icon)) p.push(w + ': icon should look like fa-name');
       if (v.iconColor && !CSS.supports('color', v.iconColor)) p.push(w + ': icon color not recognized');
       if (v.img && !/^(https:\/\/\S+|[\w./-]+)$/i.test(v.img)) p.push(w + ': image should be an https URL or a path with no spaces');
     });
