@@ -38,6 +38,7 @@ This exclusively uses HTML5, CSS, and lightweight Javascript and only calls on-s
 - Includes fields for name, gender, age, birthday, height, race/species, occupation, and a short 3-4 description. Has an optional subtitle for additional important info.
 - Per-character customization: each card can be assigned it's own custom icon and character color. These will also show up on each toggle button for tabbed cards.
 - Optionally display character orientation using HTML flags, including mix-and-matching multiple together. All flags are stored in an easily editable file: add your own!
+- Full access to Font Awesome v6 Pro icons.
 - Live filter characters based on any number of categories or tags.
 - Support for character alternates with automatic grouping and per-tab filtering that will smartly hide tabs that don't need to be there.
 - Filters are included in the URL, so you can easily send pre-sorted pages if you only want someone to see your cool robots.
@@ -61,7 +62,7 @@ I haven't had the chance to test this extensively outside my own use case, so do
 - Eventually I'd like to take this base work and expand it to create a lightweight template for hosting worldbuilding and settings, specifically designed for collaborative roleplay and general lore nerdery. Basic map support, optional pages for organizations or bestiaries, etc. If I get my way then someday it'll have discord bot support to automatically populate an archive/timeline with roleplay threads.
 
 ## Resources & References
-- [HugeIcons](https://hugeicons.com/icons/stroke-rounded) is the CSS icon font used, specifically the rounded set. No personal kit needed unlike fontawesome.
+- [You can look through the icons included in FAv6 here](https://fontawesome.com/v6/search). The page runs 6.2.0 so there are a small handful you'll find not showing up, but for the most part the entire free + pro suite is available. Everyone give a big thank you to [AquaWolf04](https://github.com/AquaWolf04/font-awesome-pro/tree/main) for hosting the CDN so I can keep the filesize tiny.
 - [The HTML flags used on character cards](https://github.com/VynxTH/VynxCodes/tree/main/Pride%20Flags) came from here. You can easily add more by copy-pasting the gradient code from these into the flags.js file and making sure you give it a name so it shows up in the editor.
 - [CodePen is my homie](https://codepen.io/) for editing the CSS or card layouts. Nice live editor that loads all the files at once so it looks identical to live but without the ~10 minute deployment time of pages.
 
