@@ -60,7 +60,15 @@
       b.type = 'button'; b.setAttribute('role', 'tab'); b.dataset.i = i;
       const h = v.card.querySelector('h3');
       const name = (v.card.dataset.label || (h && h.textContent) || 'Version ' + (i + 1)).trim().replace(/\s+/g, ' ');
-      b.textContent = (i + 1) + '.';                      // visible numeral
+      const t = (v.card.dataset.tab || '').trim();
+if (/^hgi-[a-z0-9-]+$/.test(t)) {          // icon: only accept a plain icon class name
+  const ic = document.createElement('i');
+  ic.className = 'hgi hgi-stroke hgi-rounded ' + t;
+  ic.setAttribute('aria-hidden', 'true');
+  b.append(ic);
+} else {
+  b.textContent = t || (i + 1) + '.';      // text, or the number as a fallback
+}                      // visible numeral
       b.title = name; b.setAttribute('aria-label', name); // full name for hover and screen readers
       v.btn = b; list.append(b);
     });
