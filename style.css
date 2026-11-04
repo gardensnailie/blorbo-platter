@@ -68,7 +68,7 @@ body { margin: 0; background: var(--page-bg); color: var(--text); font-family: v
   padding: var(--pad); background: var(--card-bg); border-radius: var(--radius);
   min-height: calc(var(--img-size) + var(--pad) * 2);
 }
-.card > img { grid-area: img; display: block; width: 100%; height: var(--img-size); object-fit: cover; background: var(--box-bg); border-radius: var(--radius); }
+.card > img { grid-area: img; display: block; width: 100%; height: var(--img-size); object-fit: cover; border-radius: var(--radius); }
 
 /* Name row: name on the left, ID and icon pushed right */
 .card > h3 {
