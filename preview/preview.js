@@ -450,17 +450,24 @@ window.CAST = [  [    {      "label": "Default",      "name": "Aleksandr Nikonov
   function touch() { dirty = true; $('save').disabled = false; say(''); preview(); }
 
   // Tag buttons: highlighted (.on) when this version already has the tag
-  function renderChips() {
-    const box = document.querySelector('#form .chips'); if (!box || !cur) return;
-    const have = new Set(parseTags(cur[vi].tags).flatMap(([c, vs]) => vs.map(x => c + ':' + x.toLowerCase())));
-    const frag = document.createDocumentFragment();
-    for (const [cat, vals] of allTags()) for (const x of [...vals].sort()) {
-      const on = have.has(cat + ':' + x), b = el('button', on ? 'on' : '', cat + ': ' + x);
+// Tag buttons: one block per category (small header, then its chips); highlighted (.on) when this version has the tag
+function renderChips() {
+  const box = document.querySelector('#form .chips'); if (!box || !cur) return;
+  const have = new Set(parseTags(cur[vi].tags).flatMap(([c, vs]) => vs.map(x => c + ':' + x.toLowerCase())));
+  const frag = document.createDocumentFragment();
+  for (const [cat, vals] of allTags()) {
+    const g = el('div', 'chipgroup'), row = el('div', 'chiprow');
+    g.setAttribute('role', 'group'); g.setAttribute('aria-label', cat); // screen readers still hear the category
+    g.append(el('p', 'chipcat', cat), row);
+    for (const x of [...vals].sort()) {
+      const on = have.has(cat + ':' + x), b = el('button', on ? 'on' : '', x);
       b.type = 'button'; b.dataset.act = 'tag'; b.dataset.c = cat; b.dataset.v = x; b.setAttribute('aria-pressed', String(on));
-      frag.append(b);
+      row.append(b);
     }
-    box.replaceChildren(frag);
+    frag.append(g);
   }
+  box.replaceChildren(frag);
+}
 
   function renderForm() {
     const f = $('form'); f.replaceChildren(); preview();
