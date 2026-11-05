@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cast preview (CSS editing)</title>
+  <!-- Font Awesome: paste your Kit's CSS-only embed code here (Kit settings > Embed method: CSS, Font Awesome 6, web fonts) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aquawolf04/font-awesome-pro@5cd1511/css/all.css">
+  <link rel="stylesheet" href="preview.css">
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
+  @font-face { font-family: "big noodle"; src: url('//glen-assets.github.io/fonts/big_noodle_titling_oblique.ttf'); }
+  @font-face { font-family: "motor oil"; src: url('//glen-assets.github.io/fonts/Motor Oil 1937 M54.ttf'); }
+  </style>
+  <script src="preview.js" defer></script>
+</head>
+<body>
+<!-- PREVIEW-ONLY switcher: pick which real page to look at -->
+<nav id="switch" aria-label="Preview pages">
+  <strong>Preview:</strong>
+  <button type="button" data-view="index">Index page</button>
+  <button type="button" data-view="editor">Editor page</button>
+  <button type="button" data-view="signin">Editor sign-in</button>
+</nav>
+
+<!-- ===== INDEX PAGE (body of index.html) ===== -->
+<div id="index-view">
+<!--
+  HOW THIS PAGE WORKS
+  Characters live in characters.js (edit with the editor, or by hand). card.js builds the cards from
+  that data (sorted by name) and script.js adds the sidebar filters and version buttons.
+  Scripts run in this order: flags.js (flag designs), characters.js (the cast), card.js (card layout), script.js.
+  Card layout: edit FIELDS in card.js and the CSS in style.css.
+  Tags: "category: value value; category: value" (hyphens for multi-word values, shown as "Space station").
+-->
+
+<!-- ===== HEADER (customize) ===== -->
+<header id="site-header">
+  <h1>Character Index</h1>
+  <p>Select tags in the sidebar below to filter results.</p>
+</header>
+
+<div id="layout">
+
+  <!-- ===== SIDEBAR (auto-filled by script.js) ===== -->
+  <aside id="sidebar">
+    <details id="drawer" open>
+      <summary>Filters</summary>
+      <button id="clear-filters" type="button" disabled>Clear Selection</button>
+      <div id="filters"></div>
+    </details>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <main id="main">
+
+    <!-- ===== CHARACTER GRID (flexbox) ===== -->
+    <div id="grid"><noscript>This page needs JavaScript to show entries.</noscript></div>
+
+    <!-- ===== EMPTY STATE (shown when no character matches) ===== -->
+    <p id="empty-state" role="status" hidden>
+      No results match these filters.
+    </p>
+  </main>
+</div>
+
+<!-- ===== FOOTER (customize) ===== -->
+<footer id="site-footer">
+  <p>Made with care.</p>
+</footer>
+
+</div>
+
+<!-- ===== EDITOR PAGE (body of editor.html) ===== -->
+<div id="editor-view" hidden>
+<!-- ===== SIGN-IN (token is kept in this browser only) ===== -->
+<section id="auth">
+  <h1>Cast editor</h1>
+  <p>Paste your GitHub token (fine-grained, this repository only, Contents: Read and write). It is kept in this browser and sent only to GitHub.</p>
+  <input id="token" type="password" autocomplete="off" spellcheck="false" aria-label="GitHub token">
+  <button id="connect" type="button">Connect</button>
+</section>
+
+<!-- ===== TOOLBAR ===== -->
+<div id="bar" hidden>
+  <button id="save" type="button" title="Save to Github" disabled><i class="fa-solid fa-floppy-disk"></i></button>
+  <button id="reload" type="button" title="Reload"><i class="fa-solid fa-rotate"></i></button>
+  <button id="forget" type="button" title="Forget this Device"><i class="fa-solid fa-laptop-slash"></i></button>
+  <button href="index.html" type="button" title="View Site"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+  <span id="status" role="status"></span>
+</div>
+
+<!-- ===== EDITOR ===== -->
+<div id="app" hidden>
+  <aside id="side">
+    <button id="add" type="button" title="New Character"><i class="fa-duotone fa-solid fa-user-plus"></i></button>
+    <input id="q" type="search" placeholder="Search" aria-label="Search">
+    <div id="list"></div>
+  </aside>
+  <main id="edit">
+    <div id="preview"></div>
+    <div id="form"></div>
+  </main>
+</div>
+</div>
+</body>
+</html>
