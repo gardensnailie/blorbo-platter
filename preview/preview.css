@@ -1,0 +1,167 @@
+/* PREVIEW STYLESHEET: edit the two sections below, then paste them back into style.css and editor.html's <style>.
+   Section 1 = style.css (the live site). Section 2 = the editor's own styles (scoped to #editor-view here). */
+
+/* ===== 1. SITE CSS (from style.css) ===== */
+/* ===== SETTINGS: change these first ===== */
+:root {
+  --page-bg: #f2f2f2;
+  --text: #1a1a1a;
+  --card-bg: #d4d4d4;      /* card background */
+  --box-bg: #ebebeb;       /* name, info and description boxes */
+  --tab-bg: #6a6a6a;       /* version buttons on the image */
+  --tab-active-bg: #1a1a1a;
+  --tab-active-text: #fff;
+  --tab-size: 22px;
+  --tab-inset: 5px;        /* gap between version buttons and image edge */
+  --tab-tint: 35%;         /* how much of a version's icon color shows on its button */
+  --accent: #3a3a3a;       /* focus outlines */
+  --card-w: 500px;
+  --img-size: 150px;
+  --sidebar-w: 220px;
+  --gap: 16px;
+  --pad: 9px;
+  --radius: 4px;
+  --font: Roboto, sans-serif;
+  --header-font: "big noodle", Roboto, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }  /* needed: our display rules would otherwise override [hidden] */
+body { margin: 0; background: var(--page-bg); color: var(--text); font-family: var(--font); line-height: 1.4; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ===== HEADER / FOOTER ===== */
+#site-header, #site-footer { padding: var(--gap); }
+#site-header h1 { margin: 0 0 4px; }
+#site-header p, #site-footer p { margin: 0; }
+
+/* ===== PAGE LAYOUT ===== */
+#layout { display: flex; align-items: flex-start; gap: var(--gap); padding: 0 var(--gap) var(--gap); }
+#main { flex: 1; min-width: 0; }
+
+/* ===== SIDEBAR (sticky) ===== */
+#sidebar {
+  flex: 0 0 var(--sidebar-w);
+  position: sticky; top: var(--gap);
+  max-height: calc(100vh - 2 * var(--gap)); overflow-y: auto;
+  padding: var(--pad); background: var(--card-bg); border-radius: var(--radius);
+}
+#drawer > summary { display: none; cursor: pointer; font-weight: 700; }
+#clear-filters {
+  position: sticky; top: 0; width: 100%; padding: 6px; font: inherit;
+  background: var(--accent); color: #fff; border: 0; border-radius: var(--radius); cursor: pointer;
+}
+#clear-filters:disabled { opacity: .45; cursor: default; }
+#filters fieldset { border: 0; margin: var(--gap) 0 0; padding: 0; text-transform: capitalize; display: flex; flex-wrap: wrap; gap: 4px; }
+#filters fieldset + fieldset { padding-top: var(--gap); background: linear-gradient(var(--tab-bg), var(--tab-bg)) top / 100% 1px no-repeat; } /* divider; a background line, because a fieldset border would run through the legend */
+#filters legend { font-weight: 700; padding: 0; margin-bottom: 4px; }
+#filters label { position: relative; padding: 3px 8px; font-size: .8rem; background: var(--box-bg); border-radius: var(--radius); cursor: pointer; user-select: none; }
+#filters label:has(input:checked) { background: var(--tab-active-bg); color: var(--tab-active-text); }
+#filters label:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+#filters input { position: absolute; opacity: 0; pointer-events: none; } /* not display:none, so it stays focusable */
+
+/* ===== GRID ===== */
+#grid { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--gap); }
+.character, #grid > .card { flex: 0 1 var(--card-w); min-width: 0; }
+.character { container-type: inline-size; display: flex; flex-direction: column; gap: var(--gap); }
+#empty-state { padding: var(--gap); background: var(--card-bg); border-radius: var(--radius); }
+
+/* ===== CARD: image left; name, two info rows, description right ===== */
+.card {
+  display: grid;
+  grid-template-columns: var(--img-size) 1fr;
+  grid-template-rows: auto auto auto 1fr;
+  grid-template-areas: "img name" "img info-top" "img info" "img desc";
+  column-gap: var(--pad);
+  padding: var(--pad); background: var(--card-bg); border-radius: var(--radius);
+  min-height: calc(var(--img-size) + var(--pad) * 2);
+}
+.card > img { grid-area: img; display: block; width: 100%; height: var(--img-size); object-fit: cover; background: var(--box-bg); border-radius: var(--radius); }
+
+/* Name row: name on the left, ID and icon pushed right */
+.card > h3 {
+  grid-area: name; display: flex; align-items: baseline; gap: 4px;
+  margin: 0 0 4px; padding: 2px 0px 2px 8px;
+  font-size: 1.3rem; font-family: var(--header-font); letter-spacing: 1.2px; text-transform: uppercase;
+  overflow-wrap: anywhere; background: var(--box-bg); border-radius: var(--radius);
+}
+.card > h3 > i { margin-left: auto; font-size: 1.1rem; font-style: normal; font-weight: 400; }
+.card > h3 > b { align-self: center; font-size: 1.7rem; margin: -2px 0px -10px 0px; }
+
+/* Info rows: two lists with their own grid areas; --cols sets items per row */
+.info { grid-area: info; --cols: 2; display: grid; grid-template-columns: 4fr 6fr; gap: 4px; margin: 0 0 4px; padding: 0; list-style: none; }
+.info-top { grid-area: info-top; --cols: 5; grid-template-columns: 6fr 4fr 5fr 3fr 1fr; }
+.info li { display: flex; justify-content: space-between; gap: 8; align-items: center; padding: 4px 5px 3px 5px; font-size: .7rem; line-height: 1; text-align: right; text-transform: uppercase; background: var(--box-bg); border-radius: var(--radius); }
+.info b { display: flex; flex: none; font-size: .9rem; line-height: 1; font-weight: 600;} /* icon only, so no header font */
+
+.card > p { grid-area: desc; margin: 0; padding: 4px 8px; text-align: justify; font-size: .7rem; line-height: .8rem; background: var(--box-bg); border-radius: var(--radius); }
+
+/* Version buttons: small squares in the bottom-right corner of the image.
+   script.js adds this bar only when 2+ versions pass the filter. */
+.tabs {
+  grid-area: img; justify-self: end; align-self: start; z-index: 1; display: flex; gap: 3px;
+  margin: calc(var(--img-size) - var(--tab-size) - var(--tab-inset)) var(--tab-inset) 0 0;
+}
+.tabs button {
+  min-width: var(--tab-size); height: var(--tab-size); padding: 3px 3px 0 4.5px;
+  font: .9rem/1 var(--header-font); letter-spacing: 1px; text-align: center;
+  color: var(--tab-active-text); background: var(--tab-bg); border: 0; border-radius: var(--radius); cursor: pointer;
+}
+.tabs button[aria-selected="true"] { background: var(--tab-active-bg); }
+
+/* Narrow card: stack everything vertically */
+@container (max-width: 400px) {
+  .card { grid-template-columns: 1fr; grid-template-rows: none; grid-template-areas: "img" "name" "info-top" "info" "desc"; }
+  .card > img { margin-bottom: var(--pad); }
+  .tabs { margin-bottom: 0; }
+}
+
+/* ===== MOBILE: sidebar becomes a collapsible drawer above the grid ===== */
+@media (max-width: 700px) {
+  #layout { flex-direction: column; align-items: stretch; }
+  #sidebar { position: static; flex: none; max-height: none; width: 100%; }
+  #drawer > summary { display: block; }
+  #drawer[open] > summary { margin-bottom: var(--pad); }
+}
+
+/* ===== FLAGS (see flags.js) ===== */
+.flag { flex: none; display: inline-block; position: relative; width: 26px; height: 20px; border-radius: var(--radius); overflow: hidden; vertical-align: middle; }
+.flag > span { position: absolute; inset: 0; clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%); } /* right half */
+.tilt { rotate: -45deg; }
+
+/* ===== PERFORMANCE: skip layout/paint for cards far off screen ===== */
+.character { content-visibility: auto; contain-intrinsic-size: auto 170px; }
+
+/* Version button icon: white, tinted slightly toward the version's icon color */
+.tabs button i { color: color-mix(in srgb, var(--icon-color, var(--tab-active-text)) var(--tab-tint), var(--tab-active-text)); }
+
+
+/* ===== 2. EDITOR CSS (from editor.html, every selector prefixed with #editor-view) ===== */
+#editor-view button { font: inherit; padding: 4px 10px; cursor: pointer; }
+#editor-view button:disabled { opacity: .5; cursor: default; }
+#editor-view button.on { background: var(--accent); color: #fff; }
+#editor-view #bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 10px 16px; background: var(--card-bg); }
+#editor-view #status.bad { color: #a00; font-weight: 700; }
+#editor-view #auth { padding: 16px; max-width: 520px; }
+#editor-view #auth input { width: 100%; font: inherit; padding: 6px; margin: 6px 0; }
+#editor-view #app { display: flex; gap: 16px; padding: 16px; align-items: flex-start; }
+#editor-view #side { flex: 0 0 260px; position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow: auto; }
+#editor-view #side input { width: 80%; font: inherit; padding: 4px 6px; margin: 6px 0; }
+#editor-view #list button { display: block; width: 100%; text-align: left; margin-bottom: 2px; }
+#editor-view #edit { flex: 1; min-width: 0; }
+#editor-view #preview .character { width: var(--card-w); max-width: 100%; }
+#editor-view #preview { display: flex; position: sticky; justify-content: center; top: 0; z-index: 2; padding: 8px 0;background: var(--page-bg);}
+/* the grid goes on the container, not on each label */
+#editor-view #form { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px 12px; }
+#editor-view #form > label { display: block; margin: 0; } #editor-view #form > .vbar, #editor-view #form > .chips, #editor-view #form > .hint, #editor-view #form > label:has(textarea), #editor-view #form > label:has([data-k="tags"]) { grid-column: 1 / -1; }
+#editor-view #form label { display: block; margin: 6px 0; font-size: .85rem; }
+#editor-view #form input, #editor-view #form select, #editor-view #form textarea { display: block; width: 100%; font: inherit; padding: 4px 6px; margin-top: 2px; }
+#editor-view .vbar, #editor-view .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; justify-content:center; }
+#editor-view .vbar .flex-break { flex-basis: 100%; width: 100%; height: 0; margin: 0; }
+#editor-view .hint { color: #666; font-size: .71rem; padding: 0 5px 0 0; margin: 0; float:right; white-space: pre-line; font-style: italic;}
+@media (max-width: 800px) { #editor-view #app { flex-direction: column; } #editor-view #side { position: static; flex: none; width: 100%; max-height: 300px; } }
+
+/* ===== PREVIEW-ONLY: the page switcher at the top (not part of the real site) ===== */
+#switch { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 6px 12px; background: #222; color: #fff; font: 14px system-ui, sans-serif; }
+#switch button { font: inherit; padding: 3px 10px; cursor: pointer; }
+#switch button[aria-pressed="true"] { outline: 2px solid #fff; }
