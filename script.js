@@ -4,8 +4,8 @@
   'use strict';
 
   /* ===== SETTINGS ===== */
-  const CATEGORY_ORDER = ['origin', 'setting', 'theme', 'genre', 'biology', 'gender', 'age', 'tropes' ]; // sidebar order; others follow in page order
-  const NO_HEADER = ['origin','theme','genre' ];  // categories shown without their heading
+  const CATEGORY_ORDER = ['origin', 'setting', 'series', 'genre', 'species', 'gender', 'age', 'misc.' ]; // sidebar order; others follow in page order
+  const NO_HEADER = ['origin','series','genre' ];  // categories shown without their heading
 
   const $ = id => document.getElementById(id);
   const grid = $('grid'), filters = $('filters'), clearBtn = $('clear-filters'),
