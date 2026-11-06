@@ -48,9 +48,13 @@ body { margin: 0; background: var(--page-bg); color: var(--text); font-family: v
   background: var(--accent); color: #fff; border: 0; border-radius: var(--radius); cursor: pointer;
 }
 #clear-filters:disabled { opacity: .45; cursor: default; }
-#filters fieldset { border: 0; margin: var(--gap) 0 0; padding: 0; }
+#filters fieldset { border: 0; margin: var(--gap) 0 0; padding: 0; text-transform: capitalize; display: flex; flex-wrap: wrap; gap: 4px; }
+#filters fieldset + fieldset { padding-top: var(--gap); background: linear-gradient(var(--tab-bg), var(--tab-bg)) top / 100% 1px no-repeat; } /* divider; a background line, because a fieldset border would run through the legend */
 #filters legend { font-weight: 700; padding: 0; margin-bottom: 4px; }
-#filters label { display: block; padding: 2px 0; cursor: pointer; }
+#filters label { position: relative; padding: 3px 8px; font-size: .8rem; background: var(--box-bg); border-radius: var(--radius); cursor: pointer; user-select: none; }
+#filters label:has(input:checked) { background: var(--tab-active-bg); color: var(--tab-active-text); }
+#filters label:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+#filters input { position: absolute; opacity: 0; pointer-events: none; } /* not display:none, so it stays focusable */
 
 /* ===== GRID ===== */
 #grid { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--gap); }
@@ -68,7 +72,9 @@ body { margin: 0; background: var(--page-bg); color: var(--text); font-family: v
   padding: var(--pad); background: var(--card-bg); border-radius: var(--radius);
   min-height: calc(var(--img-size) + var(--pad) * 2);
 }
-.card > img { grid-area: img; display: block; width: 100%; height: var(--img-size); object-fit: cover; border-radius: var(--radius); }
+.pics { grid-area: img; position: relative; height: var(--img-size); overflow: hidden; background: var(--box-bg); border-radius: var(--radius); }
+.pics img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .6s; }
+.pics img.on { opacity: 1; }
 
 /* Name row: name on the left, ID and icon pushed right */
 .card > h3 {
@@ -104,7 +110,7 @@ body { margin: 0; background: var(--page-bg); color: var(--text); font-family: v
 /* Narrow card: stack everything vertically */
 @container (max-width: 400px) {
   .card { grid-template-columns: 1fr; grid-template-rows: none; grid-template-areas: "img" "name" "info-top" "info" "desc"; }
-  .card > img { margin-bottom: var(--pad); }
+  .pics { margin-bottom: var(--pad); }
   .tabs { margin-bottom: 0; }
 }
 
