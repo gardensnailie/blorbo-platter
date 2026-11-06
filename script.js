@@ -4,7 +4,8 @@
   'use strict';
 
   /* ===== SETTINGS ===== */
-  const CATEGORY_ORDER = ['gender', 'setting', 'role', 'age']; // sidebar order; others follow in page order
+  const CATEGORY_ORDER = ['origin', 'setting', 'theme', 'genre', 'biology', 'gender', 'age', 'tropes' ]; // sidebar order; others follow in page order
+  const NO_HEADER = ['origin','theme','genre' ];  // categories shown without their heading
 
   const $ = id => document.getElementById(id);
   const grid = $('grid'), filters = $('filters'), clearBtn = $('clear-filters'),
@@ -81,7 +82,8 @@
     const set = document.createElement('fieldset');
     const legend = document.createElement('legend');
     legend.textContent = pretty(c);
-    set.append(legend);
+    if (NO_HEADER.includes(c)) set.setAttribute('aria-label', pretty(c)); // keeps the group named for screen readers
+    else set.append(legend);
     for (const v of [...cats.get(c)].sort((a, b) => a.localeCompare(b))) {
       const label = document.createElement('label');
       const input = document.createElement('input');
@@ -96,7 +98,12 @@
 
   /* ===== 3. FILTER ===== */
   const selected = new Set();
-  const hasAll = tags => { for (const k of selected) if (!tags.has(k)) return false; return true; };
+  // OR within a category, AND between categories
+  const matches = tags => {
+    const ok = new Map();
+    for (const k of selected) { const c = split(k)[0]; ok.set(c, ok.get(c) || tags.has(k)); }
+    return ![...ok.values()].includes(false);
+  };
 
   function render(ch) {
     const passing = ch.versions.reduce((n, v) => n + (v.ok ? 1 : 0), 0);
@@ -122,7 +129,7 @@
     let shown = 0;
     for (const ch of chars) {
       let first = -1;
-      ch.versions.forEach((v, i) => { v.ok = hasAll(v.tags); if (v.ok && first < 0) first = i; });
+      ch.versions.forEach((v, i) => { v.ok = matches(v.tags); if (v.ok && first < 0) first = i; });
       ch.el.hidden = first < 0;
       if (first < 0) continue;
       shown++;
