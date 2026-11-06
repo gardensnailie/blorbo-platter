@@ -20,12 +20,12 @@ window.CAST = [
   ],
   [
     {
-      "label": "MMX",
+      "label": "4A",
       "name": "Eight ( 4A )",
       "subtitle": "YKN-0148-A",
-      "icon": "fa-sparkles",
+      "icon": "fa-cat-space",
       "iconColor": "",
-      "img": "https://f2.toyhou.se/file/f2-toyhou-se/thumbnails/111465800_cxV.png",
+      "img": "icons/Eight4A.png",
       "gender": "Male",
       "age": "24",
       "birthday": "Aug. 8",
@@ -33,7 +33,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "Reploid",
       "job": "Navigator",
-      "tags": "setting: space; role: crew engineer; age: adult",
+      "tags": "origin:fandom;setting:megaman-x;genre:sci-fi;biology:humanoid robotic;gender:male;age:adult;",
       "desc": "hey have you ever heard of the hit animated series pretty kitty mew mew"
     },
     {
