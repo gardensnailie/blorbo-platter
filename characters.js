@@ -2,7 +2,7 @@ window.CAST = [
   [
     {
       "label": "Default",
-      "name": "Aleksandr Nikonovich Vashchenko",
+      "name": "Temp",
       "subtitle": "",
       "icon": "",
       "iconColor": "",
@@ -14,8 +14,8 @@ window.CAST = [
       "flag": "straight",
       "race": "Ruska Roma",
       "job": "University Professor",
-      "tags": "setting: five-keys; role: crew engineer; age: adult",
-      "desc": "🙏❤️ СЛАВА РОССИИ 🙏❤️"
+      "tags": "origin:original fandom;setting:godsblood five-keys in-1992 the-parish therapy-au;series: megaman pokemon fire-emblem elder-scrolls fallout monster-hunter honkai:-star-rail minecraft terraria;genre:modern-life sci-fi fantasy-(high) fantasy-(low) post-apocalypse historical xianxia/jidaigeki; species: human robot alien hybrid elf undead divine yokai slime  ;gender: male female sexless other ;age: child teenager young-adult adult middle-aged elderly ancient timeless ;misc.: the-fuyu-collective cross--gender-presentation somatic-impairment",
+      "desc": "temp card until my tags are locked in"
     }
   ],
   [
@@ -35,23 +35,6 @@ window.CAST = [
       "job": "Navigator",
       "tags": "origin:fandom;setting:megaman-x;genre:sci-fi;biology:humanoid robotic;gender:male;age:adult;",
       "desc": "hey have you ever heard of the hit animated series pretty kitty mew mew"
-    },
-    {
-      "label": "TOK-EIGHT",
-      "name": "Kamiya Haru",
-      "subtitle": "神谷 春",
-      "icon": "fa-sparkles",
-      "iconColor": "",
-      "img": "https://f2.toyhou.se/file/f2-toyhou-se/thumbnails/98979834_dpc.png",
-      "gender": "Male",
-      "age": "24",
-      "birthday": "Aug. 8",
-      "height": "5'8\"",
-      "flag": "bisexual",
-      "race": "Gekko-Dragon",
-      "job": "Prince, Captian (Former)",
-      "tags": "setting: fantasy; role: knight; age: adult",
-      "desc": "bro what if we were geckos would that be fucked up or what"
     }
   ]
 ];
