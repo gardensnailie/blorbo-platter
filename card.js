@@ -6,7 +6,6 @@
   'use strict';
 
   const ICON_STYLE = 'fa-regular';   // Font Awesome style used for every icon (fa-solid, fa-light, ...)
-  const IMG = 150;                 // image size in px (keep equal to --img-size in style.css)
   const FLAGS = window.FLAGS || {};
 
   /* ===== CARD TEMPLATE: one entry per info box, in display order =====
@@ -101,11 +100,15 @@
     if (v.label) card.dataset.label = v.label;   // hover/screen-reader name of the version button
     if (iconName) card.dataset.icon = iconName;  // script.js shows this icon on the version button
     if (color) card.dataset.iconColor = color;   // (tinted down by CSS)
-    if (v.img) {
-      const img = el('img');
-      img.alt = ''; img.width = IMG; img.height = IMG; img.loading = 'lazy'; img.decoding = 'async';
-      img.src = v.img;
-      card.append(img);
+    const srcs = (v.img || '').split(/\s+/).filter(Boolean);   // one or more images, space-separated
+    if (srcs.length) {
+      const pics = el('div', srcs.length > 1 ? 'pics multi' : 'pics');
+      srcs.forEach((s, i) => {
+        const img = el('img', i ? '' : 'on');
+        img.alt = ''; img.loading = 'lazy'; img.decoding = 'async'; img.src = s;
+        pics.append(img);
+      });
+      card.append(pics);
     }
     const star = el('b'); star.append(icon(iconName || 'fa-sparkles'));  // sparkle is the default icon
     if (color) star.style.color = color;
@@ -122,6 +125,15 @@
   }
 
   window.CastCard = { buildCard, buildCharacter, iconClass: n => ICON_STYLE + ' ' + n };
+  // One timer for every card. shortcut: no pause on hover, and reduced-motion users see only the first image; upgrade if either matters.
+  const SLIDE_MS = 4000;
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(() => {
+    for (const p of document.querySelectorAll('.pics.multi')) {
+      if (p.closest('[hidden]')) continue;                 // skip filtered-out or inactive-tab cards
+      const on = p.querySelector('.on'); on.classList.remove('on');
+      (on.nextElementSibling || p.firstElementChild).classList.add('on');
+    }
+  }, SLIDE_MS);
 
   const grid = document.getElementById('grid');
   if (grid && Array.isArray(window.CAST)) {
