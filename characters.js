@@ -142,5 +142,98 @@ window.CAST = [
       "tags": "",
       "desc": ""
     }
+  ],
+  [
+    {
+      "label": "Shisui",
+      "name": "Furukawa Shisui",
+      "subtitle": "",
+      "icon": "fa-whale",
+      "iconColor": "",
+      "img": "icons/Shisui.png",
+      "gender": "",
+      "age": "",
+      "birthday": "",
+      "height": "",
+      "flag": "gay",
+      "race": "Japanese",
+      "job": "Shinto Priest",
+      "tags": "origin: original; setting: in-1992; genre: modern-life fantasy-(low); species: human; gender: male; age: adult; misc.: somatic-impairment",
+      "desc": ""
+    },
+    {
+      "label": "Nagi",
+      "name": "Nagi",
+      "subtitle": "",
+      "icon": "fa-ice-skate",
+      "iconColor": "",
+      "img": "",
+      "gender": "",
+      "age": "",
+      "birthday": "",
+      "height": "",
+      "flag": "gay",
+      "race": "Japanese",
+      "job": "Olympic Ice Skater",
+      "tags": "origin: original; setting: in-1992; genre: modern-life; species: human; gender: male; age: adult",
+      "desc": ""
+    }
+  ],
+  [
+    {
+      "label": "",
+      "name": "Sho",
+      "subtitle": "",
+      "icon": "fa-volleyball",
+      "iconColor": "",
+      "img": "",
+      "gender": "",
+      "age": "",
+      "birthday": "",
+      "height": "",
+      "flag": "",
+      "race": "Japanese",
+      "job": "",
+      "tags": "origin: original; genre: modern-life; species: human; gender: male; age: adult; misc.: somatic-impairment",
+      "desc": ""
+    }
+  ],
+  [
+    {
+      "label": "Shin'ya",
+      "name": "Aoyama \"Shin'ya\" Shizuka",
+      "subtitle": "",
+      "icon": "fa-motorcycle",
+      "iconColor": "",
+      "img": "icons/Shinya.png",
+      "gender": "Female",
+      "age": "26",
+      "birthday": "",
+      "height": "5'10\"",
+      "flag": "",
+      "race": "Japanese",
+      "job": "",
+      "tags": "origin: original; setting: in-1992; genre: modern-life historical; species: human; gender: female; age: adult; misc.: cross--gender-presentation yakuza",
+      "desc": ""
+    }
+  ],
+  [
+    {
+      "label": "",
+      "name": "Seiros",
+      "subtitle": "",
+      "icon": "fa-snowflake",
+      "iconColor": "",
+      "img": "icons/Seiros.png",
+      "gender": "",
+      "age": "",
+      "birthday": "",
+      "height": "",
+      "flag": "",
+      "race": "Snow Elf",
+      "job": "Crown Prince",
+      "tags": "origin: original; genre: fantasy-(high); species: elf; gender: male; age: young-adult;misc.:royalty;",
+      "desc": ""
+    }
   ]
 ];
