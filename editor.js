@@ -3,9 +3,23 @@
   'use strict';
   const REPO = 'gardensnailie/blorbo-platter', BRANCH = 'main', FILE = 'characters.js', KEY = 'cast-editor-token';
   const K = ['label','name','subtitle','icon','iconColor','img','gender','age','birthday','height','flag','race','job','tags','desc'];
-  const FIELDS = [['label','Tab / hover name'],['name','Name'],['subtitle','Subtitle'],['icon','Icon (like fa-sparkles)'],['iconColor','Icon color (like #d70170)'],
-    ['img','Image (path like images/eight.png, or https URL)'],['gender','Gender'],['age','Age'],['birthday','Birthday'],['height','Height'],['race','Race'],['job','Occupation']];
+  const FIELDS = [['label','Label'],['name','Name'],['subtitle','Subtitle'],['icon','Icon Class'],['iconColor','Icon Color'],
+    ['img','Image'],['gender','Gender'],['age','Age'],['birthday','Birthday'],['height','Height'],['race','Race / Species'],['job','Occupation']];
   const FLAGS = window.FLAGS || {};
+  const HINTS = { // hint text beside a field's label; L and R are the two flag dropdowns
+    label: 'changes display name on tabs',
+    icon: 'ex. fa-sparkles',
+    iconColor: 'css or hex',
+    img: 'relative path or url, separate multiple with a space',
+    L: 'primary',
+    R: 'secondary (optional)',
+  };
+  const flagGroups = new Map(); // flag dropdown headings: group name -> [name, flag] pairs
+  for (const [n, d] of Object.entries(FLAGS)) {
+    const g = d.group || 'Other';
+    if (!flagGroups.has(g)) flagGroups.set(g, []);
+    flagGroups.get(g).push([n, d]);
+  }
   const $ = id => document.getElementById(id);
   const el = (t, c, x) => { const n = document.createElement(t); if (c) n.className = c; if (x) n.textContent = x; return n; };
   const norm = v => Object.fromEntries(K.map(k => [k, v && typeof v[k] === 'string' ? v[k] : '']));
@@ -32,10 +46,13 @@
   /* ---------- tags ---------- */
   const parseTags = s => s.split(';').map(g => { const i = g.indexOf(':'); return i < 1 ? null :
     [g.slice(0, i).trim().toLowerCase().replace(/\s+/g, '-'), g.slice(i + 1).trim().split(/\s+/).filter(Boolean)]; }).filter(Boolean);
-  function addTag(v, cat, val) {
-    const gs = parseTags(v.tags), g = gs.find(x => x[0] === cat);
-    if (!g) gs.push([cat, [val]]); else if (!g[1].includes(val)) g[1].push(val);
-    v.tags = gs.map(([c, vs]) => c + ': ' + vs.join(' ')).join('; ');
+  // Click a tag to add it to this version; click it again to remove it
+  function toggleTag(v, cat, val) {
+    const gs = parseTags(v.tags), g = gs.find(x => x[0] === cat), lv = val.toLowerCase();
+    if (!g) gs.push([cat, [lv]]);
+    else if (g[1].some(x => x.toLowerCase() === lv)) g[1] = g[1].filter(x => x.toLowerCase() !== lv);
+    else g[1].push(lv);
+    v.tags = gs.filter(([, vs]) => vs.length).map(([c, vs]) => c + ': ' + vs.join(' ')).join('; '); // empty categories are dropped
   }
   function allTags() {
     const m = new Map();
@@ -56,34 +73,65 @@
   const preview = () => { const v = cur && cur[vi]; $('preview').replaceChildren(...(v ? [window.CastCard.buildCharacter([v])] : [])); };
   function touch() { dirty = true; $('save').disabled = false; say(''); preview(); }
 
+  // Tag buttons: one block per category (small header, then its chips); highlighted (.on) when this version has the tag
+  function renderChips() {
+    const box = document.querySelector('#form .chips'); if (!box || !cur) return;
+    const have = new Set(parseTags(cur[vi].tags).flatMap(([c, vs]) => vs.map(x => c + ':' + x.toLowerCase())));
+    const frag = document.createDocumentFragment();
+    for (const [cat, vals] of allTags()) {
+      const g = el('div', 'chipgroup'), row = el('div', 'chiprow');
+      g.setAttribute('role', 'group'); g.setAttribute('aria-label', cat); // screen readers still hear the category
+      g.append(el('p', 'chipcat', cat), row);
+      for (const x of [...vals].sort()) {
+        const on = have.has(cat + ':' + x), b = el('button', on ? 'on' : '', x);
+        b.type = 'button'; b.dataset.act = 'tag'; b.dataset.c = cat; b.dataset.v = x; b.setAttribute('aria-pressed', String(on));
+        row.append(b);
+      }
+      frag.append(g);
+    }
+    box.replaceChildren(frag);
+  }
+
   function renderForm() {
     const f = $('form'); f.replaceChildren(); preview();
-    if (!cur) return f.append(el('p', 'hint', 'Pick a character on the left, or add a new one.'));
+    if (!cur) return f.append(el('p', 'hint', 'Pick a character, or add a new one.'));
     const v = cur[vi], bar = el('div', 'vbar');
     cur.forEach((x, i) => { const b = el('button', i === vi ? 'on' : '', x.label || x.name || 'Version ' + (i + 1)); b.type = 'button'; b.dataset.act = 'ver'; b.dataset.i = i; bar.append(b); });
-    for (const [a, t] of [['addv', '+ Version'], ['dupv', 'Duplicate version'], ['delv', 'Remove version'], ['delc', 'Delete character']]) { const b = el('button', '', t); b.type = 'button'; b.dataset.act = a; bar.append(b); }
+    bar.append(el('div', 'flex-break')); // version buttons on the first line, actions on the next
+    for (const [a, t] of [['addv', '+ Alt'], ['delv', '- Alt'], ['dupv', 'Duplicate'], ['delc', 'Delete Character']]) { const b = el('button', '', t); b.type = 'button'; b.dataset.act = a; bar.append(b); }
     f.append(bar);
-    for (const [k, label] of FIELDS) { const l = el('label', '', label), i = el('input'); i.dataset.k = k; i.value = v[k]; l.append(i); f.append(l); }
+    for (const [k, label] of FIELDS) {
+      const l = el('label', '', label), i = el('input');
+      if (HINTS[k]) l.append(el('p', 'hint', HINTS[k]));
+      i.dataset.k = k; i.value = v[k]; l.append(i); f.append(l);
+    }
     const [L = '', R = ''] = v.flag.split(/\s+/);
-    for (const [pos, val, label] of [['L', L, 'Flag (left, or whole flag)'], ['R', R, 'Flag, right half (optional)']]) {
+    for (const [pos, val, label] of [['L', L, 'Flags'], ['R', R, '\u2800']]) { // invisible label keeps the two dropdowns level
       const l = el('label', '', label), s = el('select'); s.dataset.flag = pos;
+      l.append(el('p', 'hint', HINTS[pos]));
       s.append(new Option('(none)', ''));
-      for (const [n, d] of Object.entries(FLAGS)) s.append(new Option(d.label || n, n));
+      for (const [group, flags] of flagGroups) {
+        const og = document.createElement('optgroup'); og.label = group;
+        for (const [n, d] of flags) og.append(new Option(d.label || n, n));
+        s.append(og);
+      }
       if (val && !Object.hasOwn(FLAGS, val)) s.append(new Option('(missing from flags.js: ' + val + ')', val)); // never show a blank
       s.value = val; l.append(s); f.append(l);
     }
-    const tl = el('label', '', 'Tags (category: value value; category: value)'), ti = el('input'); ti.dataset.k = 'tags'; ti.value = v.tags; tl.append(ti); f.append(tl);
-    const chips = el('div', 'chips');
-    for (const [cat, vals] of allTags()) for (const x of [...vals].sort()) { const b = el('button', '', cat + ': ' + x); b.type = 'button'; b.dataset.act = 'tag'; b.dataset.c = cat; b.dataset.v = x; chips.append(b); }
-    f.append(chips, el('p', 'hint', 'Click a tag above to add it. Multi-word values use hyphens (space-station).'));
     const dl = el('label', '', 'Description'), dt = el('textarea'); dt.rows = 3; dt.dataset.k = 'desc'; dt.value = v.desc; dl.append(dt); f.append(dl);
+    const tl = el('label', '', 'Tags'), ti = el('input');
+    tl.append(el('p', 'hint', 'ex. category: value-one value; category: value'));
+    ti.dataset.k = 'tags'; ti.value = v.tags; tl.append(ti); f.append(tl, el('div', 'chips'));
+    renderChips();
   }
+
   const renderAll = () => { renderList(); renderForm(); };
 
   /* ---------- events ---------- */
   $('form').addEventListener('input', e => {
     const k = e.target.dataset.k; if (!k) return;
     cur[vi][k] = e.target.value; touch();
+    if (k === 'tags') renderChips(); // keep the highlighted chips in step with typing
   });
   $('form').addEventListener('change', e => {
     if (e.target.dataset.k === 'name' || e.target.dataset.k === 'label') { renderList(); }
@@ -100,7 +148,7 @@
     else if (a === 'dupv') { cur.splice(vi + 1, 0, { ...cur[vi] }); vi++; dirty = true; }
     else if (a === 'delv') { if (cur.length < 2) return say('A character needs at least one version.', true); if (!confirm('Remove this version?')) return; cur.splice(vi, 1); vi = Math.max(0, vi - 1); dirty = true; }
     else if (a === 'delc') { if (!confirm('Delete this whole character?')) return; cast.splice(cast.indexOf(cur), 1); cur = null; vi = 0; dirty = true; }
-    else if (a === 'tag') { addTag(cur[vi], b.dataset.c, b.dataset.v); dirty = true; }
+    else if (a === 'tag') { toggleTag(cur[vi], b.dataset.c, b.dataset.v); dirty = true; }
     $('save').disabled = !dirty; renderAll();
   });
   $('list').addEventListener('click', e => {
@@ -133,7 +181,7 @@
       for (const n of v.flag.split(/\s+/).filter(Boolean)) if (!Object.hasOwn(FLAGS, n)) p.push(w + ': unknown flag ' + n);
       if (v.icon && !/^fa-[a-z0-9-]+$/.test(v.icon)) p.push(w + ': icon should look like fa-name');
       if (v.iconColor && !CSS.supports('color', v.iconColor)) p.push(w + ': icon color not recognized');
-      if (v.img && !/^(https:\/\/\S+|[\w./-]+)$/i.test(v.img)) p.push(w + ': image should be an https URL or a path with no spaces');
+      if (v.img && !v.img.trim().split(/\s+/).every(s => /^(https:\/\/\S+|[\w./-]+)$/i.test(s))) p.push(w + ': each image should be an https URL or a path with no spaces');
     });
     return p;
   }
