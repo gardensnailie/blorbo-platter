@@ -235,5 +235,98 @@ window.CAST = [
       "tags": "origin: original; genre: fantasy-(high); species: elf; gender: male; age: young-adult;misc.:royalty;",
       "desc": ""
     }
+  ],
+  [
+    {
+      "label": "",
+      "name": "Kalinka \"Zero\"",
+      "subtitle": "DWN-008-A, \"Alpha\"",
+      "icon": "fa-infinity",
+      "iconColor": "",
+      "img": "icons/Zero.png",
+      "gender": "",
+      "age": "",
+      "birthday": "",
+      "height": "6'0\"",
+      "flag": "andro",
+      "race": "Sin Against God",
+      "job": "Lives in the woods",
+      "tags": "origin: original; setting: therapy-au; genre: modern-life sci-fi cyberpunk; species: human undead genetic-experiment",
+      "desc": ""
+    }
+  ],
+  [
+    {
+      "label": "",
+      "name": "Eden",
+      "subtitle": "",
+      "icon": "fa-user-secret",
+      "iconColor": "",
+      "img": "icons/Eden.png",
+      "gender": "Female",
+      "age": "",
+      "birthday": "",
+      "height": "",
+      "flag": "lesbian",
+      "race": "",
+      "job": "Major Crimes Detective",
+      "tags": "origin: original; genre: historical modern-life cyberpunk sci-fi; species: human; gender: female; age: adult",
+      "desc": ""
+    }
+  ],
+  [
+    {
+      "label": "",
+      "name": "Atticus",
+      "subtitle": "",
+      "icon": "fa-signature",
+      "iconColor": "",
+      "img": "icons/Atticus.png",
+      "gender": "Male",
+      "age": "",
+      "birthday": "",
+      "height": "",
+      "flag": "",
+      "race": "Vampire",
+      "job": "Author",
+      "tags": "origin: original; genre: fantasy-(low) historical modern-life; species: vampire undead; gender: male; age: ancient; misc.: somatic-impairment",
+      "desc": ""
+    }
+  ],
+  [
+    {
+      "label": "Vampire",
+      "name": "Amis",
+      "subtitle": "",
+      "icon": "",
+      "iconColor": "",
+      "img": "icons/Amis.png",
+      "gender": "Male",
+      "age": "~300",
+      "birthday": "",
+      "height": "4'7\"",
+      "flag": "",
+      "race": "Vampire",
+      "job": "",
+      "tags": "origin: original; setting: the-parish; species: vampire undead; gender: male; age: timeless child adult; misc.: royalty",
+      "desc": ""
+    },
+    {
+      "label": "Human",
+      "name": "Amis",
+      "subtitle": "",
+      "icon": "fa-electric-guitar",
+      "iconColor": "",
+      "img": "icons/Amis.png",
+      "gender": "Male",
+      "age": "",
+      "birthday": "",
+      "height": "4'8\"",
+      "flag": "",
+      "race": "French",
+      "job": "Logistics, VKEI Musician",
+      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: male; age: adult; misc.: somatic-impairment",
+      "desc": ""
+    }
   ]
 ];
