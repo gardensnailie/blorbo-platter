@@ -3,68 +3,66 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <!-- The token lives in this page, so only allow what it needs. If fonts or icons look wrong here, add their host. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://kit.fontawesome.com https://ka-p.fontawesome.com https://fonts.googleapis.com; font-src https: data:; img-src 'self' https: data:; connect-src https://api.github.com; base-uri 'none'; form-action 'none'">
-  <title>Editing Dashboard</title>
+  <title>Cast of Characters</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css">
   <link rel="stylesheet" href="style.css">
-  <!-- Font Awesome: paste your Kit's CSS-only embed code here (Kit settings > Embed method: CSS, Font Awesome 6, web fonts) -->
-  <link rel="stylesheet" href="https://kit.fontawesome.com/YOUR_KIT_CODE.css" crossorigin="anonymous">
-  <style>
-    @font-face { font-family: "big noodle"; src: url('//glen-assets.github.io/fonts/big_noodle_titling_oblique.ttf'); }
-    button { font: inherit; padding: 4px 10px; cursor: pointer; }
-    button:disabled { opacity: .5; cursor: default; }
-    button.on { background: var(--accent); color: #fff; }
-    #bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 10px 16px; background: var(--card-bg); }
-    #status.bad { color: #a00; font-weight: 700; }
-    #auth { padding: 16px; max-width: 520px; }
-    #auth input { width: 100%; font: inherit; padding: 6px; margin: 6px 0; }
-    #app { display: flex; gap: 16px; padding: 16px; align-items: flex-start; }
-    #side { flex: 0 0 260px; position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow: auto; }
-    #side input { width: 100%; font: inherit; padding: 4px 6px; margin: 6px 0; }
-    #list button { display: block; width: 100%; text-align: left; margin-bottom: 2px; }
-    #edit { flex: 1; min-width: 0; }
-    #preview .character { width: var(--card-w); max-width: 100%; } /* on the site the grid sizes it; here it must be set */
-    #preview { position: sticky; top: 0; z-index: 2; padding-bottom: 12px; background: var(--page-bg); }
-    #form label { display: block; margin: 6px 0; font-size: .85rem; }
-    #form input, #form select, #form textarea { display: block; width: 100%; font: inherit; padding: 4px 6px; margin-top: 2px; }
-    .vbar, .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
-    .hint { color: #666; font-size: .85rem; }
-    @media (max-width: 800px) { #app { flex-direction: column; } #side { position: static; flex: none; width: 100%; max-height: 300px; } }
-  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aquawolf04/font-awesome-pro@5cd1511/css/all.css">
   <script src="flags.js" defer></script>
+  <script src="characters.js" defer></script>
   <script src="card.js" defer></script>
-  <script src="editor.js" defer></script>
+  <script src="script.js" defer></script>
+  <!-- Without JS the filter panel can't work, so hide it -->
+  <noscript><style>#sidebar{display:none}</style></noscript>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
+@font-face { font-family: "big noodle"; src: url('//glen-assets.github.io/fonts/big_noodle_titling_oblique.ttf'); }
+@font-face { font-family: "motor oil"; src: url('//glen-assets.github.io/fonts/Motor Oil 1937 M54.ttf'); }
+</style>
 </head>
 <body>
-<!-- ===== SIGN-IN (token is kept in this browser only) ===== -->
-<section id="auth">
-  <h1>Cast editor</h1>
-  <p>Paste your GitHub token (fine-grained, this repository only, Contents: Read and write). It is kept in this browser and sent only to GitHub.</p>
-  <input id="token" type="password" autocomplete="off" spellcheck="false" aria-label="GitHub token">
-  <button id="connect" type="button">Connect</button>
-</section>
+<!--
+  HOW THIS PAGE WORKS
+  Characters live in characters.js (edit with the editor, or by hand). card.js builds the cards from
+  that data (sorted by name) and script.js adds the sidebar filters and version buttons.
+  Scripts run in this order: flags.js (flag designs), characters.js (the cast), card.js (card layout), script.js.
+  Card layout: edit FIELDS in card.js and the CSS in style.css.
+  Tags: "category: value value; category: value" (hyphens for multi-word values, shown as "Space station").
+-->
 
-<!-- ===== TOOLBAR ===== -->
-<div id="bar" hidden>
-  <button id="save" type="button" disabled>Save to GitHub</button>
-  <button id="reload" type="button">Reload</button>
-  <button id="forget" type="button">Forget this device</button>
-  <a href="index.html"><i class="fa-sharp fa-regular fa-right-to-bracket"></i></a>
-  <span id="status" role="status"></span>
-</div>
+<!-- ===== HEADER (customize) ===== -->
+<header id="site-header">
+  <h1>Character Index</h1>
+  <p>Select tags in the sidebar below to filter results.</p>
+</header>
 
-<!-- ===== EDITOR ===== -->
-<div id="app" hidden>
-  <aside id="side">
-    <button id="add" type="button">+ Add character</button>
-    <input id="q" type="search" placeholder="Search names" aria-label="Search names">
-    <div id="list"></div>
+<div id="layout">
+
+  <!-- ===== SIDEBAR (auto-filled by script.js) ===== -->
+  <aside id="sidebar">
+    <details id="drawer" open>
+      <summary>Filters</summary>
+      <button id="clear-filters" type="button" disabled>Clear Selection</button>
+      <div id="filters"></div>
+    </details>
   </aside>
-  <main id="edit">
-    <div id="preview"></div>
-    <div id="form"></div>
+
+  <!-- ===== MAIN ===== -->
+  <main id="main">
+
+    <!-- ===== CHARACTER GRID (flexbox) ===== -->
+    <div id="grid"><noscript>This page needs JavaScript to show entries.</noscript></div>
+
+    <!-- ===== EMPTY STATE (shown when no character matches) ===== -->
+    <p id="empty-state" role="status" hidden>
+      No results match these filters.
+    </p>
   </main>
 </div>
+
+<!-- ===== FOOTER (customize) ===== -->
+<footer id="site-footer">
+  <p>Made with care.</p>
+</footer>
+
 </body>
 </html>
