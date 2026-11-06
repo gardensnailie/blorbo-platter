@@ -5,30 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <!-- The token lives in this page, so only allow what it needs. If fonts or icons look wrong here, add their host. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://use.hugeicons.com https://fonts.googleapis.com; font-src https: data:; img-src 'self' https: data:; connect-src https://api.github.com; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src https: data:; img-src 'self' https: data:; connect-src https://api.github.com; base-uri 'none'; form-action 'none'">
   <title>Cast editor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aquawolf04/font-awesome-pro@5cd1511/css/all.css">
   <style>
     @font-face { font-family: "big noodle"; src: url('//glen-assets.github.io/fonts/big_noodle_titling_oblique.ttf'); }
-    button { font: inherit; padding: 4px 10px; cursor: pointer; }
+    button, #bar a { font: inherit; padding: 4px 10px; color: inherit; cursor: pointer; } /* #bar a: the "View site" link looks like the buttons */
     button:disabled { opacity: .5; cursor: default; }
     button.on { background: var(--accent); color: #fff; }
     #bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 10px 16px; background: var(--card-bg); }
     #status.bad { color: #a00; font-weight: 700; }
     #auth { padding: 16px; max-width: 520px; }
     #auth input { width: 100%; font: inherit; padding: 6px; margin: 6px 0; }
-    #app { display: flex; gap: 16px; padding: 16px; align-items: flex-start; }
-    #side { flex: 0 0 260px; position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow: auto; }
-    #side input { width: 100%; font: inherit; padding: 4px 6px; margin: 6px 0; }
-    #list button { display: block; width: 100%; text-align: left; margin-bottom: 2px; }
+    #app { display: flex; gap: 16px; padding: 8px 16px; align-items: flex-start; }
+    #side { flex: 0 0 260px; position: sticky; top: 6px; max-height: calc(100vh - 32px); overflow: auto; padding: 6px; box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;}
+    #side input { width: 80%; font: inherit; padding: 4px 6px; margin: 6px 0; }
+    #list button { display: block; width: 100%; text-align: left; margin-bottom: 2px;  }
     #edit { flex: 1; min-width: 0; }
-    #preview .character { width: var(--card-w); max-width: 100%; } /* on the site the grid sizes it; here it must be set */
-    #preview { position: sticky; top: 0; z-index: 2; padding-bottom: 12px; background: var(--page-bg); }
+    #preview .character { width: var(--card-w); max-width: 100%; }
+    #preview { display: flex; position: sticky; justify-content: center; top: 0; z-index: 2; padding: 8px 0;background: var(--page-bg);box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;}
+    /* the grid goes on the container, not on each label */
+    #form { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px 12px; }
+    #form > label { display: block; margin: 0; }
+    #form > .vbar, #form > .chips, #form > .hint, #form > label:has(textarea), #form > label:has([data-k="tags"]) { grid-column: 1 / -1; }
     #form label { display: block; margin: 6px 0; font-size: .85rem; }
     #form input, #form select, #form textarea { display: block; width: 100%; font: inherit; padding: 4px 6px; margin-top: 2px; }
-    .vbar, .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
-    .hint { color: #666; font-size: .85rem; }
+    .vbar, .chips { display: flex; flex-wrap: wrap; gap: 3px 6px; margin: 16px 0 8px 0; justify-content:center; }
+    .vbar .flex-break { flex-basis: 100%; width: 100%; height: 0; margin: 0; }
+    /* tag chips: one block per category (small header, then its chips), blocks stacked vertically */
+    .chips { flex-direction: column; flex-wrap: nowrap; gap: 8px; justify-content: flex-start; }
+    .chipcat { margin: 0 0 3px; font-size: .65rem; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #666; }
+    .chiprow { display: flex; flex-wrap: wrap; gap: 6px; }
+    .hint { color: #666; font-size: .71rem; padding: 0 5px 0 0; margin: 0; float:right; white-space: pre-line; font-style: italic;}
     @media (max-width: 800px) { #app { flex-direction: column; } #side { position: static; flex: none; width: 100%; max-height: 300px; } }
   </style>
   <script src="flags.js" defer></script>
@@ -46,18 +56,18 @@
 
 <!-- ===== TOOLBAR ===== -->
 <div id="bar" hidden>
-  <button id="save" type="button" disabled>Save to GitHub</button>
-  <button id="reload" type="button">Reload</button>
-  <button id="forget" type="button">Forget this device</button>
-  <a href="index.html"><i class="fa-sharp fa-regular fa-left-to-bracket"></i></a>
+  <button id="save" type="button" title="Save to Github" disabled><i class="fa-solid fa-floppy-disk"></i></button>
+  <button id="reload" type="button" title="Reload"><i class="fa-solid fa-rotate"></i></button>
+  <button id="forget" type="button" title="Forget this Device"><i class="fa-solid fa-laptop-slash"></i></button>
+  <a href="index.html" title="View Site" aria-label="View Site"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
   <span id="status" role="status"></span>
 </div>
 
 <!-- ===== EDITOR ===== -->
 <div id="app" hidden>
   <aside id="side">
-    <button id="add" type="button">+ Add character</button>
-    <input id="q" type="search" placeholder="Search names" aria-label="Search names">
+    <button id="add" type="button" title="New Character"><i class="fa-duotone fa-solid fa-user-plus"></i></button>
+    <input id="q" type="search" placeholder="Search" aria-label="Search">
     <div id="list"></div>
   </aside>
   <main id="edit">
