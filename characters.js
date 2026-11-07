@@ -33,7 +33,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "Reploid",
       "job": "Navigator",
-      "tags": "origin: fandom; genre: sci-fi cyberpunk; gender: male; age: adult; series: megaman; misc.: impairment-(somatic) the-fuyu-collective; species: mechanical",
+      "tags": "origin: fandom; genre: sci-fi cyberpunk; gender: male; age: adult; series: megaman; misc: impairment-(somatic) the-fuyu-collective; species: mechanical",
       "desc": "hey have you ever heard of the hit animated series pretty kitty mew mew"
     },
     {
@@ -50,7 +50,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "Japanese",
       "job": "",
-      "tags": "origin: original; setting: therapy-au; genre: modern-life sci-fi; species: human; gender: male; age: young-adult adult; misc.: impairment-(somatic) the-fuyu-collective",
+      "tags": "origin: original; setting: therapy-au; genre: modern-life sci-fi; species: human; gender: male; age: young-adult adult; misc: impairment-(somatic) the-fuyu-collective",
       "desc": ""
     },
     {
@@ -67,7 +67,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "",
       "job": "",
-      "tags": "origin: original; setting: godsblood; genre: fantasy-(high); gender: male; age: adult young-adult; misc.: impairment-(somatic) the-fuyu-collective royalty; species: animal-hybrid",
+      "tags": "origin: original; setting: godsblood; genre: fantasy-(high); gender: male; age: adult young-adult; misc: impairment-(somatic) the-fuyu-collective royalty; species: animal-hybrid",
       "desc": ""
     }
   ],
@@ -86,7 +86,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "Reploid",
       "job": "Navigator",
-      "tags": "origin: fandom; series: megaman; genre: sci-fi cyberpunk; gender: male; age: adult; misc.: the-fuyu-collective impairment-(somatic); species: mechanical",
+      "tags": "origin: fandom; series: megaman; genre: sci-fi cyberpunk; gender: male; age: adult; misc: the-fuyu-collective impairment-(somatic); species: mechanical",
       "desc": ""
     },
     {
@@ -103,7 +103,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "Japanese",
       "job": "",
-      "tags": "origin: original; setting: therapy-au; genre: modern-life sci-fi; species: human; gender: male; age: adult young-adult; misc.: impairment-(somatic) the-fuyu-collective",
+      "tags": "origin: original; setting: therapy-au; genre: modern-life sci-fi; species: human; gender: male; age: adult young-adult; misc: impairment-(somatic) the-fuyu-collective",
       "desc": ""
     },
     {
@@ -120,7 +120,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "origin: original; setting: godsblood; genre: fantasy-(high); species: animal-hybrid; gender: male; age: adult young-adult; misc.: royalty impairment-(somatic) the-fuyu-collective",
+      "tags": "origin: original; setting: godsblood; genre: fantasy-(high); species: animal-hybrid; gender: male; age: adult young-adult; misc: royalty impairment-(somatic) the-fuyu-collective",
       "desc": ""
     }
   ],
@@ -158,7 +158,7 @@ window.CAST = [
       "flag": "gay",
       "race": "Japanese",
       "job": "Shinto Priest",
-      "tags": "origin: original; setting: in-1992; genre: modern-life fantasy-(low); species: human; gender: male; age: adult; misc.: impairment-(somatic)",
+      "tags": "origin: original; setting: in-1992; genre: modern-life fantasy-(low); species: human; gender: male; age: adult; misc: impairment-(somatic)",
       "desc": ""
     },
     {
@@ -194,7 +194,7 @@ window.CAST = [
       "flag": "",
       "race": "Japanese",
       "job": "",
-      "tags": "origin: original; genre: modern-life; species: human; gender: male; age: adult; misc.: impairment-(somatic); setting: unspecified",
+      "tags": "origin: original; genre: modern-life; species: human; gender: male; age: adult; misc: impairment-(somatic); setting: unspecified",
       "desc": ""
     }
   ],
@@ -213,7 +213,7 @@ window.CAST = [
       "flag": "",
       "race": "Japanese",
       "job": "",
-      "tags": "origin: original; setting: in-1992; genre: modern-life fantasy-(low); species: human; gender: female; age: adult young-adult; misc.: cross--gender-presentation yakuza impairment-(somatic)",
+      "tags": "origin: original; setting: in-1992; genre: modern-life fantasy-(low); species: human; gender: female; age: adult young-adult; misc: cross--gender-presentation yakuza impairment-(somatic)",
       "desc": ""
     },
     {
@@ -230,7 +230,7 @@ window.CAST = [
       "flag": "",
       "race": "Japanese",
       "job": "",
-      "tags": "origin: original; species: human; gender: female; age: adult young-adult; misc.: cross--gender-presentation yakuza impairment-(somatic); setting: neo-arcadia; genre: cyberpunk sci-fi",
+      "tags": "origin: original; species: human; gender: female; age: adult young-adult; misc: cross--gender-presentation yakuza impairment-(somatic); setting: neo-arcadia; genre: cyberpunk sci-fi",
       "desc": ""
     }
   ],
@@ -249,7 +249,7 @@ window.CAST = [
       "flag": "",
       "race": "Snow Elf",
       "job": "Crown Prince",
-      "tags": "origin: original; genre: fantasy-(high); gender: male; age: young-adult; misc.: royalty; setting: unspecified; species: elven",
+      "tags": "origin: original; genre: fantasy-(high); gender: male; age: young-adult; misc: royalty; setting: unspecified; species: elven",
       "desc": ""
     }
   ],
@@ -306,7 +306,7 @@ window.CAST = [
       "flag": "",
       "race": "Vampire",
       "job": "Author",
-      "tags": "origin: original; genre: fantasy-(low) historical modern-life; species: vampire undead animal; gender: male; age: ancient immortal adult; misc.: impairment-(somatic) shapeshifter; setting: unspecified",
+      "tags": "origin: original; genre: fantasy-(low) historical modern-life; species: vampire undead animal; gender: male; age: ancient immortal adult; misc: impairment-(somatic) shapeshifter; setting: unspecified",
       "desc": ""
     }
   ],
@@ -325,7 +325,7 @@ window.CAST = [
       "flag": "",
       "race": "Vampire",
       "job": "",
-      "tags": "origin: original; setting: the-parish; species: vampire undead; gender: male; age: immortal ancient; misc.: royalty; genre: fantasy-(low) historical",
+      "tags": "origin: original; setting: the-parish; species: vampire undead; gender: male; age: immortal ancient; misc: royalty; genre: fantasy-(low) historical",
       "desc": ""
     },
     {
@@ -342,7 +342,7 @@ window.CAST = [
       "flag": "",
       "race": "French",
       "job": "Logistics, VKEI Musician",
-      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: male; age: adult young-adult; misc.: impairment-(somatic)",
+      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: male; age: adult young-adult; misc: impairment-(somatic)",
       "desc": ""
     }
   ],
@@ -361,7 +361,7 @@ window.CAST = [
       "flag": "",
       "race": "Red-Crowned Crane",
       "job": "",
-      "tags": "origin: original; genre: fantasy-(low) xianxia/jidaigeki fantasy-(high) historical modern-life; gender: male; age: adult; misc.: shapeshifter; setting: unspecified; species: animal",
+      "tags": "origin: original; genre: fantasy-(low) xianxia/jidaigeki fantasy-(high) historical modern-life; gender: male; age: adult; misc: shapeshifter; setting: unspecified; species: animal",
       "desc": ""
     }
   ],
@@ -380,7 +380,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "Sankta",
       "job": "Saint",
-      "tags": "origin: original; setting: five-keys; genre: fantasy-(high) fantasy-(low); species: divine human undead; age: ancient immortal; misc.: the-fuyu-collective mage",
+      "tags": "origin: original; setting: five-keys; genre: fantasy-(high) fantasy-(low); species: divine human undead; age: ancient immortal; misc: the-fuyu-collective mage",
       "desc": ""
     },
     {
@@ -397,7 +397,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "Japanese",
       "job": "Funeral Director",
-      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: male; age: adult middle-aged; misc.: cross--gender-presentation impairment-(somatic) the-fuyu-collective",
+      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: male; age: adult middle-aged; misc: cross--gender-presentation impairment-(somatic) the-fuyu-collective",
       "desc": ""
     },
     {
@@ -414,7 +414,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "Japanese",
       "job": "",
-      "tags": "origin: original; genre: historical fantasy-(low); gender: male; misc.: impairment-(somatic) the-fuyu-collective royalty; setting: the-parish; species: vampire undead; age: minor",
+      "tags": "origin: original; genre: historical fantasy-(low); gender: male; misc: impairment-(somatic) the-fuyu-collective royalty; setting: the-parish; species: vampire undead; age: minor",
       "desc": ""
     },
     {
@@ -431,7 +431,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "",
       "job": "",
-      "tags": "origin: original; genre: fantasy-(high) xianxia/jidaigeki; species: divine human undead yokai; age: ancient immortal; misc.: royalty the-fuyu-collective; setting: unspecified",
+      "tags": "origin: original; genre: fantasy-(high) xianxia/jidaigeki; species: divine human undead yokai; age: ancient immortal; misc: royalty the-fuyu-collective; setting: unspecified",
       "desc": ""
     }
   ],
@@ -469,7 +469,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "Dragon",
       "job": "Prince, Military General",
-      "tags": "origin: original; setting: godsblood; genre: fantasy-(high); gender: female; age: adult ancient; misc.: cross--gender-presentation royalty; species: animal-hybrid",
+      "tags": "origin: original; setting: godsblood; genre: fantasy-(high); gender: female; age: adult ancient; misc: cross--gender-presentation royalty; species: animal-hybrid",
       "desc": ""
     },
     {
@@ -486,7 +486,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "Japanese",
       "job": "Chief Financial Officer",
-      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: female; age: adult middle-aged; misc.: cross--gender-presentation yakuza",
+      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: female; age: adult middle-aged; misc: cross--gender-presentation yakuza",
       "desc": ""
     },
     {
@@ -522,7 +522,7 @@ window.CAST = [
       "flag": "",
       "race": "Galarian",
       "job": "",
-      "tags": "origin: fandom; series: pokemon; species: human; gender: unknown; age: young-adult; misc.: impairment-(somatic)",
+      "tags": "origin: fandom; series: pokemon; species: human; gender: unknown; age: young-adult; misc: impairment-(somatic)",
       "desc": ""
     }
   ],
@@ -596,7 +596,7 @@ window.CAST = [
       "flag": "",
       "race": "Demon",
       "job": "Contract Demon",
-      "tags": "origin: original; genre: fantasy-(high) fantasy-(low); gender: male; age: ancient immortal; misc.: shapeshifter; setting: unspecified; species: animal-hybrid demonic",
+      "tags": "origin: original; genre: fantasy-(high) fantasy-(low); gender: male; age: ancient immortal; misc: shapeshifter; setting: unspecified; species: animal-hybrid demonic",
       "desc": ""
     }
   ],
@@ -615,7 +615,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "origin: original; setting: five-keys; genre: fantasy-(high) fantasy-(low); gender: male; misc.: the-fuyu-collective",
+      "tags": "origin: original; setting: five-keys; genre: fantasy-(high) fantasy-(low); gender: male; misc: the-fuyu-collective",
       "desc": ""
     },
     {
@@ -632,7 +632,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "Japanese",
       "job": "",
-      "tags": "origin: original; genre: modern-life; species: human; gender: male; age: adult; misc.: the-fuyu-collective deceased; setting: therapy-au",
+      "tags": "origin: original; genre: modern-life; species: human; gender: male; age: adult; misc: the-fuyu-collective deceased; setting: therapy-au",
       "desc": ""
     },
     {
@@ -649,7 +649,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "Vampire",
       "job": "Apothecary Assistant",
-      "tags": "origin: original; genre: historical fantasy-(low); gender: male; misc.: the-fuyu-collective impairment-(somatic) royalty; setting: the-parish; species: undead vampire; age: minor",
+      "tags": "origin: original; genre: historical fantasy-(low); gender: male; misc: the-fuyu-collective impairment-(somatic) royalty; setting: the-parish; species: undead vampire; age: minor",
       "desc": ""
     },
     {
@@ -666,7 +666,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "",
       "job": "",
-      "tags": "origin: original; genre: fantasy-(high) xianxia/jidaigeki; species: human; gender: male; age: adult; misc.: the-fuyu-collective; setting: unspecified",
+      "tags": "origin: original; genre: fantasy-(high) xianxia/jidaigeki; species: human; gender: male; age: adult; misc: the-fuyu-collective; setting: unspecified",
       "desc": ""
     }
   ],
@@ -723,7 +723,7 @@ window.CAST = [
       "flag": "gay",
       "race": "Chinese",
       "job": "Ding Sect Leader",
-      "tags": "origin: original; species: human; gender: male; age: middle-aged adult immortal; misc.: impairment-(somatic); setting: unspecified; genre: xianxia/jidaigeki fantasy-(high) fantasy-(low)",
+      "tags": "origin: original; species: human; gender: male; age: middle-aged adult immortal; misc: impairment-(somatic); setting: unspecified; genre: xianxia/jidaigeki fantasy-(high) fantasy-(low)",
       "desc": "Ruling the Ding sect with an iron hand, Ding Bai Lian is known as the “Core Eater” due to his forbidden techniques surrounding their absorption. Some say he uses the music of his Erhu named Aichang to steal the life force of his enemies."
     },
     {
@@ -740,7 +740,7 @@ window.CAST = [
       "flag": "gay",
       "race": "Chinese",
       "job": "",
-      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: male; age: middle-aged adult; misc.: impairment-(somatic)",
+      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: male; age: middle-aged adult; misc: impairment-(somatic)",
       "desc": ""
     },
     {
@@ -757,7 +757,7 @@ window.CAST = [
       "flag": "gay",
       "race": "Jiangshi",
       "job": "Apothecary",
-      "tags": "origin: original; setting: the-parish; genre: fantasy-(low) historical; species: vampire undead; gender: male; age: ancient immortal; misc.: impairment-(somatic)",
+      "tags": "origin: original; setting: the-parish; genre: fantasy-(low) historical; species: vampire undead; gender: male; age: ancient immortal; misc: impairment-(somatic)",
       "desc": ""
     }
   ],
@@ -776,7 +776,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "Incubus",
       "job": "General Nuisance",
-      "tags": "origin: original; genre: fantasy-(low) modern-life fantasy-(high); species: demonic animal-hybrid; gender: male; age: ancient immortal; misc.: impairment-(somatic); setting: unspecified",
+      "tags": "origin: original; genre: fantasy-(low) modern-life fantasy-(high); species: demonic animal-hybrid; gender: male; age: ancient immortal; misc: impairment-(somatic); setting: unspecified",
       "desc": ""
     }
   ],
@@ -795,7 +795,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "Automaton",
       "job": "Temple Guardian",
-      "tags": "origin: fandom; series: pokemon; genre: omegaverse xianxia/jidaigeki; species: genetic-experiment animal-hybrid; age: adult immortal; misc.: shapeshifter; setting: unspecified; gender: sexless",
+      "tags": "origin: fandom; series: pokemon; genre: omegaverse xianxia/jidaigeki; species: genetic-experiment animal-hybrid; age: adult immortal; misc: shapeshifter; setting: unspecified; gender: sexless",
       "desc": "An automata that protects Arceus’ holy temple and all those who live within its realm. Like the stone statues that guard from evil spirits, Shùnzhì protects the realm from beings that may threaten its harmony without want, desire, or emotion."
     }
   ],
@@ -814,7 +814,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "Xianzhou Native",
       "job": "",
-      "tags": "origin: fandom; series: honkai:-star-rail; genre: sci-fi xianxia/jidaigeki fantasy-(high); gender: male; species: human; age: immortal ancient; misc.: the-fuyu-collective",
+      "tags": "origin: fandom; series: honkai:-star-rail; genre: sci-fi xianxia/jidaigeki fantasy-(high); gender: male; species: human; age: immortal ancient; misc: the-fuyu-collective",
       "desc": "An undead emissary of the Abundance who was exiled from his homeland of the Xianzhou Alliance centuries ago. He travels dutifully with a feral demon named A’Xiao with the hopes of healing him."
     }
   ],
@@ -852,7 +852,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "Saw-Scale Viper",
       "job": "Royal Appraiser",
-      "tags": "origin: original; setting: godsblood; genre: fantasy-(high); species: animal-hybrid; gender: male; age: middle-aged adult; misc.: mage",
+      "tags": "origin: original; setting: godsblood; genre: fantasy-(high); species: animal-hybrid; gender: male; age: middle-aged adult; misc: mage",
       "desc": ""
     },
     {
@@ -888,7 +888,7 @@ window.CAST = [
       "flag": "heteroflex",
       "race": "Bird of Paradise",
       "job": "Prince Consort",
-      "tags": "origin: original; setting: godsblood; genre: fantasy-(high); species: animal-hybrid; gender: male; age: minor; misc.: cross--gender-presentation royalty impairment-(somatic)",
+      "tags": "origin: original; setting: godsblood; genre: fantasy-(high); species: animal-hybrid; gender: male; age: minor; misc: cross--gender-presentation royalty impairment-(somatic)",
       "desc": ""
     },
     {
@@ -905,7 +905,7 @@ window.CAST = [
       "flag": "heteroflex",
       "race": "Chinese",
       "job": "",
-      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: male; age: minor; misc.: cross--gender-presentation impairment-(somatic)",
+      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: male; age: minor; misc: cross--gender-presentation impairment-(somatic)",
       "desc": ""
     },
     {
@@ -922,7 +922,7 @@ window.CAST = [
       "flag": "",
       "race": "CompanDroid",
       "job": "",
-      "tags": "gender: sexless other; origin: original; setting: neo-arcadia; genre: cyberpunk sci-fi; species: mechanical; age: adult; misc.: impairment-(somatic) cross--gender-presentation",
+      "tags": "gender: sexless other; origin: original; setting: neo-arcadia; genre: cyberpunk sci-fi; species: mechanical; age: adult; misc: impairment-(somatic) cross--gender-presentation",
       "desc": ""
     }
   ],
@@ -941,7 +941,7 @@ window.CAST = [
       "flag": "",
       "race": "Jackal",
       "job": "Royal Advisor, Servant",
-      "tags": "origin: original; setting: godsblood; genre: fantasy-(high); species: animal-hybrid; gender: male; age: middle-aged; misc.: impairment-(somatic)",
+      "tags": "origin: original; setting: godsblood; genre: fantasy-(high); species: animal-hybrid; gender: male; age: middle-aged; misc: impairment-(somatic)",
       "desc": ""
     },
     {
@@ -958,7 +958,7 @@ window.CAST = [
       "flag": "straight",
       "race": "Black",
       "job": "Mortician",
-      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: male; age: middle-aged; misc.: impairment-(somatic)",
+      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: male; age: middle-aged; misc: impairment-(somatic)",
       "desc": ""
     }
   ],
@@ -977,7 +977,7 @@ window.CAST = [
       "flag": "",
       "race": "Ruska Roma",
       "job": "University Professor",
-      "tags": "origin: original; setting: therapy-au; genre: modern-life sci-fi; species: human; gender: male; age: adult middle-aged; misc.: impairment-(somatic)",
+      "tags": "origin: original; setting: therapy-au; genre: modern-life sci-fi; species: human; gender: male; age: adult middle-aged; misc: impairment-(somatic)",
       "desc": ""
     },
     {
@@ -994,7 +994,7 @@ window.CAST = [
       "flag": "",
       "race": "Northern Nomad",
       "job": "Hunter's Guild Researcher",
-      "tags": "origin: original; setting: five-keys; genre: fantasy-(high) fantasy-(low); species: human; gender: male; age: adult middle-aged; misc.: impairment-(somatic) sankta",
+      "tags": "origin: original; setting: five-keys; genre: fantasy-(high) fantasy-(low); species: human; gender: male; age: adult middle-aged; misc: impairment-(somatic) sankta",
       "desc": ""
     }
   ],
@@ -1013,7 +1013,7 @@ window.CAST = [
       "flag": "",
       "race": "Oni",
       "job": "Crown Princess",
-      "tags": "origin: original; setting: unspecified; genre: xianxia/jidaigeki fantasy-(high) fantasy-(low); species: yokai demonic; gender: female; age: young-adult; misc.: royalty impairment-(somatic)",
+      "tags": "origin: original; setting: unspecified; genre: xianxia/jidaigeki fantasy-(high) fantasy-(low); species: yokai demonic; gender: female; age: young-adult; misc: royalty impairment-(somatic)",
       "desc": ""
     }
   ],
@@ -1032,7 +1032,7 @@ window.CAST = [
       "flag": "",
       "race": "Slime",
       "job": "Impersonating Royalty",
-      "tags": "origin: original; setting: unspecified; genre: fantasy-(high); species: slime; gender: sexless other; age: adult; misc.: shapeshifter royalty",
+      "tags": "origin: original; setting: unspecified; genre: fantasy-(high); species: slime; gender: sexless other; age: adult; misc: shapeshifter royalty",
       "desc": "A Lv.1 slime who learned magic after obtaining a forbidden tome from a duke he killed on accident. Unfortunately, the only spell he knows is transmogrify. Filled with ambition for exactly three things: wealth, knowledge, and monster emancipation."
     }
   ],
@@ -1051,7 +1051,7 @@ window.CAST = [
       "flag": "",
       "race": "Manekete",
       "job": "Priest",
-      "tags": "origin: fandom; series: fire-emblem; genre: fantasy-(high); species: beastmen animal animal-hybrid; gender: male; age: ancient; misc.: shapeshifter",
+      "tags": "origin: fandom; series: fire-emblem; genre: fantasy-(high); species: beastmen animal animal-hybrid; gender: male; age: ancient; misc: shapeshifter",
       "desc": ""
     }
   ],
@@ -1087,7 +1087,7 @@ window.CAST = [
       "flag": "bisexual trans",
       "race": "English",
       "job": "Entomologist",
-      "tags": "origin: original; setting: unspecified; genre: historical; species: human; gender: male; age: adult young-adult; misc.: impairment-(somatic)",
+      "tags": "origin: original; setting: unspecified; genre: historical; species: human; gender: male; age: adult young-adult; misc: impairment-(somatic)",
       "desc": ""
     }
   ],
@@ -1106,7 +1106,7 @@ window.CAST = [
       "flag": "heteroflex",
       "race": "Human",
       "job": "Hunter Guildmaster",
-      "tags": "origin: original; setting: five-keys; genre: fantasy-(high) fantasy-(low); species: human; gender: male; age: middle-aged adult; misc.: impairment-(somatic) shade-touched",
+      "tags": "origin: original; setting: five-keys; genre: fantasy-(high) fantasy-(low); species: human; gender: male; age: middle-aged adult; misc: impairment-(somatic) shade-touched",
       "desc": ""
     },
     {
@@ -1377,7 +1377,7 @@ window.CAST = [
       "flag": "",
       "race": "Kaibyo",
       "job": "",
-      "tags": "origin: original; setting: unspecified; genre: fantasy-(high) fantasy-(low) xianxia/jidaigeki; species: animal-hybrid yokai; gender: male; age: ancient adult immortal; misc.: shapeshifter",
+      "tags": "origin: original; setting: unspecified; genre: fantasy-(high) fantasy-(low) xianxia/jidaigeki; species: animal-hybrid yokai; gender: male; age: ancient adult immortal; misc: shapeshifter",
       "desc": ""
     }
   ],
@@ -1396,7 +1396,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "origin: original; setting: neo-arcadia; gender: male; age: adult young-adult; misc.: impairment-(somatic); species: mechanical; genre: cyberpunk sci-fi",
+      "tags": "origin: original; setting: neo-arcadia; gender: male; age: adult young-adult; misc: impairment-(somatic); species: mechanical; genre: cyberpunk sci-fi",
       "desc": ""
     }
   ],
@@ -1451,7 +1451,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "origin: original; setting: unspecified; genre: fantasy-(low) historical; species: demonic animal human; gender: male; age: adult ancient immortal; misc.: shapeshifter",
+      "tags": "origin: original; setting: unspecified; genre: fantasy-(low) historical; species: demonic animal human; gender: male; age: adult ancient immortal; misc: shapeshifter",
       "desc": ""
     }
   ],
@@ -1487,7 +1487,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "origin: original; setting: therapy-au; genre: modern-life sci-fi; species: human; gender: male; age: adult young-adult; misc.: impairment-(somatic)",
+      "tags": "origin: original; setting: therapy-au; genre: modern-life sci-fi; species: human; gender: male; age: adult young-adult; misc: impairment-(somatic)",
       "desc": ""
     }
   ],
@@ -1542,7 +1542,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "misc.: cross--gender-presentation impairment-(somatic); age: adult young-adult; gender: other; species: genetic-experiment animal-hybrid; genre: modern-life sci-fi; setting: therapy-au neo-arcadia; origin: original",
+      "tags": "misc: cross--gender-presentation impairment-(somatic); age: adult young-adult; gender: other; species: genetic-experiment animal-hybrid; genre: modern-life sci-fi; setting: therapy-au neo-arcadia; origin: original",
       "desc": ""
     }
   ],
@@ -1823,7 +1823,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "misc.: yakuza; age: adult young-adult; gender: male; species: human; genre: fantasy-(low) modern-life; setting: in-1992; origin: original",
+      "tags": "misc: yakuza; age: adult young-adult; gender: male; species: human; genre: fantasy-(low) modern-life; setting: in-1992; origin: original",
       "desc": ""
     },
     {
@@ -1859,7 +1859,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "origin: original; setting: in-1992; genre: fantasy-(low) modern-life; species: human; gender: male; age: adult middle-aged; misc.: yakuza",
+      "tags": "origin: original; setting: in-1992; genre: fantasy-(low) modern-life; species: human; gender: male; age: adult middle-aged; misc: yakuza",
       "desc": ""
     },
     {
@@ -1895,7 +1895,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "origin: original; setting: in-1992; genre: fantasy-(low) modern-life; species: human; gender: male; age: adult young-adult; misc.: cross--gender-presentation impairment-(somatic) yakuza",
+      "tags": "origin: original; setting: in-1992; genre: fantasy-(low) modern-life; species: human; gender: male; age: adult young-adult; misc: cross--gender-presentation impairment-(somatic) yakuza",
       "desc": ""
     },
     {
@@ -2098,7 +2098,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "misc.: yakuza; age: adult elderly; gender: male; species: human; genre: fantasy-(low) modern-life; origin: original; setting: in-1992",
+      "tags": "misc: yakuza; age: adult elderly; gender: male; species: human; genre: fantasy-(low) modern-life; origin: original; setting: in-1992",
       "desc": ""
     },
     {
@@ -2303,7 +2303,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "age: adult young-adult; gender: male; species: human; misc.: impairment-(somatic) the-fuyu-collective royalty; origin: original; setting: in-1992; genre: modern-life",
+      "tags": "age: adult young-adult; gender: male; species: human; misc: impairment-(somatic) the-fuyu-collective royalty; origin: original; setting: in-1992; genre: modern-life",
       "desc": ""
     },
     {
@@ -2320,7 +2320,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "origin: original; setting: unspecified; genre: fantasy-(high) historical xianxia/jidaigeki; species: human; gender: male; age: adult young-adult; misc.: impairment-(somatic) the-fuyu-collective",
+      "tags": "origin: original; setting: unspecified; genre: fantasy-(high) historical xianxia/jidaigeki; species: human; gender: male; age: adult young-adult; misc: impairment-(somatic) the-fuyu-collective",
       "desc": ""
     }
   ],
@@ -2542,7 +2542,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "origin: original; setting: in-1992; genre: modern-life; species: human; gender: male; age: adult young-adult; misc.: impairment-(somatic) royalty the-fuyu-collective",
+      "tags": "origin: original; setting: in-1992; genre: modern-life; species: human; gender: male; age: adult young-adult; misc: impairment-(somatic) royalty the-fuyu-collective",
       "desc": ""
     }
   ],
@@ -2595,7 +2595,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "origin: original; setting: neo-arcadia; genre: cyberpunk sci-fi; gender: male; age: adult middle-aged; misc.: yakuza; species: human",
+      "tags": "origin: original; setting: neo-arcadia; genre: cyberpunk sci-fi; gender: male; age: adult middle-aged; misc: yakuza; species: human",
       "desc": ""
     }
   ]
