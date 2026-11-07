@@ -104,7 +104,7 @@ const TAG_HINTS = {
 
   function renderForm() {
     const f = $('form'); f.replaceChildren(); preview();
-    if (!cur) return f.append(el('p', 'hint', 'Pick a character, or add a new one.'));
+    if (!cur) return f.append(el('div', 'vbar'), el('p', 'hint', 'Pick a character, or add a new one.'));
     const v = cur[vi], bar = el('div', 'vbar');
     cur.forEach((x, i) => { const b = el('button', i === vi ? 'on' : '', x.label || x.name || 'Version ' + (i + 1)); b.type = 'button'; b.dataset.act = 'ver'; b.dataset.i = i; bar.append(b); });
     bar.append(el('div', 'flex-break')); // version buttons on the first line, actions on the next
