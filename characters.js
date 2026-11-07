@@ -833,7 +833,7 @@ window.CAST = [
       "flag": "",
       "race": "Quilin",
       "job": "",
-      "tags": "origin: fandom; series: honkai:-star-rail; genre: fantasy-(high) sci-fi xianxia/jidaigeki; species: yokai animal-hybrid undead; gender: male; age: adult immortal ancient",
+      "tags": "origin: fandom; series: honkai:-star-rail; genre: fantasy-(high) sci-fi xianxia/jidaigeki; species: yokai animal-hybrid undead; gender: male; age: immortal ancient adult",
       "desc": ""
     }
   ],
@@ -1470,7 +1470,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "origin: original; setting: godsblood; genre: fantasy-(high); species: human; gender: male; age: adult young-adult; misc.: somatic-impairment",
+      "tags": "",
       "desc": ""
     },
     {
@@ -1969,7 +1969,7 @@ window.CAST = [
       "flag": "heteroflex",
       "race": "Japanese",
       "job": "Jewelry Smith",
-      "tags": "origin: original; setting: in-1992; genre: modern-life; species: human; gender: male; age: adult young-adult",
+      "tags": "origin: original; setting: in-1992; genre: modern-life; species: human; gender: male; age: young-adult adult",
       "desc": ""
     }
   ],
@@ -2303,7 +2303,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "age: adult young-adult; gender: male; species: human; misc.: somatic-impairment; origin: original; setting: in-1992; genre: modern-life",
+      "tags": "age: adult young-adult; gender: male; species: human; misc.: somatic-impairment the-fuyu-collective royalty; origin: original; setting: in-1992; genre: modern-life",
       "desc": ""
     },
     {
