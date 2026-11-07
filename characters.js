@@ -833,7 +833,7 @@ window.CAST = [
       "flag": "",
       "race": "Quilin",
       "job": "",
-      "tags": "",
+      "tags": "origin: fandom; series: honkai:-star-rail; genre: sci-fi xianxia/jidaigeki; species: yokai undead animal-hybrid; gender: male; age: ancient immortal (all)-adult",
       "desc": ""
     }
   ],
@@ -1192,6 +1192,7 @@ window.CAST = [
       "height": "",
       "flag": "straight",
       "race": "Human",
+      "job": "",
       "tags": "",
       "desc": ""
     }
@@ -1338,7 +1339,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-       "tags": "",
+      "tags": "",
       "desc": ""
     }
   ],
@@ -1822,7 +1823,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-         "tags": "",
+      "tags": "",
       "desc": ""
     },
     {
@@ -1968,7 +1969,7 @@ window.CAST = [
       "flag": "heteroflex",
       "race": "Japanese",
       "job": "Jewelry Smith",
-      "tags": "",
+      "tags": "origin: original; setting: in-1992; genre: modern-life; species: human; gender: male; age: young-adult (all)-adult; misc: impairment-(psychological) impairment-(neurological)",
       "desc": ""
     }
   ],
@@ -2097,7 +2098,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-        "tags": "",
+      "tags": "",
       "desc": ""
     },
     {
