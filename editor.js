@@ -58,29 +58,29 @@ const IMPLIES = {
 'series:elder-scrolls':['genre:fantasy-(high)', 'genre:fantasy-(low)', 'origin:fandom'],
 'series:fallout':['genre: post-apocalypse', 'origin:fandom'],
 'series:fire-emblem':['genre: fantasy-(high)', 'origin:fandom'],
-'series:honkai:-star-rail':['genre: sci-fi', 'origin:fandom'],
+'series:honkai:-star-rail':['genre:sci-fi', 'origin:fandom'],
 'series:megaman':['genre: sci-fi', 'origin:fandom'],
 'series:monster-hunter':['genre:fantasy-(high)', 'genre:fantasy-(low)', 'origin:fandom'],
 
 'genre:cyberpunk':['genre:sci-fi'],
-'genre: xianxia/jidaigeki':['genre: fantasy-(low)'],
+'genre: xianxia/jidaigeki':['genre:fantasy-(low)'],
 
 'species:vampire':['species:undead','species:immortal'],
 'species:mechanical':['gender:none'],
 'species:slime':['gender:none'],
 
-'age:young-adult':['(all)-adult'],
-'age:middle-aged':['(all)-adult'],
-'age:elderly':['(all)-adult'],
-'age:ancient':['(all)-adult'],
-'age:child':['(all)-minor'],
-'age:teenager':['(all)-minor'],
+'age:young-adult':['age:(all)-adult'],
+'age:middle-aged':['age:(all)-adult'],
+'age:elderly':['age:(all)-adult'],
+'age:ancient':['age:(all)-adult'],
+'age:child':['age:(all)-minor'],
+'age:teenager':['age:(all)-minor'],
 
-'misc:sankta':['five-keys'],
-'misc:shade-touched':['five-keys'],
-'misc:shade-touched':['impairment-(terminal)'],
+'misc:sankta':['setting:five-keys'],
+'misc:shade-touched':['setting:five-keys'],
+'misc:shade-touched':['misc:impairment-(terminal)'],
 
-'misc:impairment-(terminal)':['misc"dude-what-the-fuck']
+'misc:impairment-(terminal)':['misc:misc"dude-what-the-fuck']
 };
   
   const parseTags = s => s.split(';').map(g => { const i = g.indexOf(':'); return i < 1 ? null :
