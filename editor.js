@@ -67,7 +67,7 @@ const IMPLIES = {
 'genre:cyberpunk':['genre:sci-fi'],
 'genre: xianxia/jidaigeki':['genre:fantasy-(low)'],
 
-'species:vampire':['species:undead','species:immortal'],
+'species:vampire':['species:undead','age:immortal'],
 'species:mechanical':['gender:none'],
 'species:slime':['gender:none'],
 
