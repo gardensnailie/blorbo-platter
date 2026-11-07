@@ -256,7 +256,7 @@ window.CAST = [
   [
     {
       "label": "",
-      "name": "Kalinka \"Zero\"",
+      "name": "Zero",
       "subtitle": "DWN-008-A, \"Alpha\"",
       "icon": "fa-infinity",
       "iconColor": "",
@@ -456,23 +456,6 @@ window.CAST = [
   ],
   [
     {
-      "label": "",
-      "name": "Dragoon",
-      "subtitle": "",
-      "icon": "fa-dragon",
-      "iconColor": "",
-      "img": "icons/KiyokoDragoon.png",
-      "gender": "Female",
-      "age": "",
-      "birthday": "",
-      "height": "",
-      "flag": "bisexual",
-      "race": "Robot",
-      "job": "Fighter, Security Guard",
-      "tags": "origin: original fandom; genre: cyberpunk sci-fi; gender: female; age: adult ancient; misc.: cross--gender-presentation yakuza; setting: neo-arcadia; series: megaman; species: beastfolk mechanical",
-      "desc": ""
-    },
-    {
       "label": "Godsblood",
       "name": "Kamiya Kiyoko",
       "subtitle": "",
@@ -504,6 +487,23 @@ window.CAST = [
       "race": "Japanese",
       "job": "Chief Financial Officer",
       "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: female; age: adult middle-aged; misc.: cross--gender-presentation yakuza",
+      "desc": ""
+    },
+    {
+      "label": "",
+      "name": "Dragoon",
+      "subtitle": "",
+      "icon": "",
+      "iconColor": "",
+      "img": "",
+      "gender": "",
+      "age": "",
+      "birthday": "",
+      "height": "",
+      "flag": "",
+      "race": "",
+      "job": "",
+      "tags": "",
       "desc": ""
     }
   ],
@@ -588,8 +588,8 @@ window.CAST = [
       "subtitle": "",
       "icon": "fa-book-skull",
       "iconColor": "",
-      "img": "icons/Alloces",
-      "gender": "",
+      "img": "icons/Alloces.png",
+      "gender": "Male",
       "age": "",
       "birthday": "",
       "height": "",
@@ -712,19 +712,19 @@ window.CAST = [
     {
       "label": "Xianxia",
       "name": "Ding Bai Lian",
-      "subtitle": "",
+      "subtitle": "顶 白蓮",
       "icon": "fa-spa",
       "iconColor": "",
       "img": "icons/BaiLian.png",
       "gender": "Male",
-      "age": "",
+      "age": "48",
       "birthday": "",
-      "height": "",
+      "height": "5'10\"",
       "flag": "",
       "race": "Chinese",
-      "job": "",
+      "job": "Ding Sect Leader",
       "tags": "origin: original; species: human; gender: male; age: middle-aged adult immortal; misc.: somatic-impairment; setting: unspecified; genre: xianxia/jidaigeki fantasy-(high) fantasy-(low)",
-      "desc": ""
+      "desc": "Ruling the Ding sect with an iron hand, Ding Bai Lian is known by many  as the “Core Eater” due to his usage of forbidden techniques surrounding the fusion and disruption of golden cores. They say he uses his music to steal the life force of his enemies."
     },
     {
       "label": "Modern",
@@ -796,7 +796,7 @@ window.CAST = [
       "race": "Automaton",
       "job": "Temple Guardian",
       "tags": "origin: fandom; series: pokemon; genre: omegaverse xianxia/jidaigeki; species: genetic-experiment animal-hybrid; age: adult immortal; misc.: shapeshifter; setting: unspecified; gender: sexless",
-      "desc": "An automata that protects Arceus’ holy temple and all those who live within its realm. Like the stone statues that guard from evil spirits, Shùnzhì protect the realm from beings that may threaten its harmony without want, desire, or emotion.\n"
+      "desc": "An automata that protects Arceus’ holy temple and all those who live within its realm. Like the stone statues that guard from evil spirits, Shùnzhì protects the realm from beings that may threaten its harmony without want, desire, or emotion."
     }
   ],
   [
@@ -829,7 +829,7 @@ window.CAST = [
       "gender": "Male",
       "age": "",
       "birthday": "",
-      "height": "",
+      "height": "7'6\"",
       "flag": "",
       "race": "Quilin",
       "job": "",
@@ -965,8 +965,8 @@ window.CAST = [
   [
     {
       "label": "Therapy AU",
-      "name": "Aleksandr Nikonovich Vashchenko",
-      "subtitle": "",
+      "name": "Sasha",
+      "subtitle": "Aleksandr Nikonovich Vashchenko",
       "icon": "",
       "iconColor": "",
       "img": "icons/Sasha.png",
@@ -1252,12 +1252,29 @@ window.CAST = [
       "job": "",
       "tags": "origin: original; setting: neo-arcadia",
       "desc": ""
+    },
+    {
+      "label": "Therapy AU",
+      "name": "Algernon \"Nonny\" Baker",
+      "subtitle": "",
+      "icon": "",
+      "iconColor": "",
+      "img": "icons/Algernon.png",
+      "gender": "",
+      "age": "",
+      "birthday": "",
+      "height": "",
+      "flag": "",
+      "race": "",
+      "job": "",
+      "tags": "origin: original; setting: neo-arcadia",
+      "desc": ""
     }
   ],
   [
     {
       "label": "",
-      "name": "Ana",
+      "name": "Ana Jackdaw",
       "subtitle": "",
       "icon": "",
       "iconColor": "",
@@ -1267,7 +1284,7 @@ window.CAST = [
       "birthday": "",
       "height": "",
       "flag": "",
-      "race": "",
+      "race": "Egyptian",
       "job": "",
       "tags": "origin: original; setting: godsblood therapy-au",
       "desc": ""
@@ -1408,7 +1425,7 @@ window.CAST = [
     {
       "label": "Godsblood",
       "name": "Belladonna",
-      "subtitle": "",
+      "subtitle": "Arya Khansari",
       "icon": "",
       "iconColor": "",
       "img": "icons/Bella.png",
@@ -1424,8 +1441,8 @@ window.CAST = [
     },
     {
       "label": "Therapy AU",
-      "name": "Arya \"Belladonna\" Khansari",
-      "subtitle": "",
+      "name": "Belladonna",
+      "subtitle": "Arya Khansari",
       "icon": "",
       "iconColor": "",
       "img": "icons/Bella.png",
@@ -1480,7 +1497,7 @@ window.CAST = [
     {
       "label": "",
       "name": "Birdie",
-      "subtitle": "",
+      "subtitle": "DWN-014, \"Birdie\"",
       "icon": "",
       "iconColor": "",
       "img": "icons/Birdie.png",
@@ -1635,7 +1652,7 @@ window.CAST = [
       "subtitle": "",
       "icon": "",
       "iconColor": "",
-      "img": "icons/Esme",
+      "img": "icons/Esme.png",
       "gender": "",
       "age": "",
       "birthday": "",
@@ -1650,8 +1667,8 @@ window.CAST = [
   [
     {
       "label": "",
-      "name": "Evangeline Nikonovna Vashchenko",
-      "subtitle": "",
+      "name": "Eva",
+      "subtitle": "Evangeline Nikonovna Vashchenko",
       "icon": "",
       "iconColor": "",
       "img": "icons/Eva.png",
@@ -2071,7 +2088,7 @@ window.CAST = [
   [
     {
       "label": "",
-      "name": "Akihisa Kiku",
+      "name": "Kobayashi Kiku",
       "subtitle": "",
       "icon": "",
       "iconColor": "",
@@ -2128,8 +2145,8 @@ window.CAST = [
   [
     {
       "label": "",
-      "name": "Emmanuel Aston",
-      "subtitle": "\"Manny\"",
+      "name": "Manny",
+      "subtitle": "Emmanuel Cherrington Aston",
       "icon": "",
       "iconColor": "",
       "img": "icons/Manny.png",
@@ -2137,7 +2154,7 @@ window.CAST = [
       "age": "",
       "birthday": "",
       "height": "",
-      "flag": "",
+      "flag": "gay",
       "race": "",
       "job": "",
       "tags": "",
@@ -2185,8 +2202,8 @@ window.CAST = [
   [
     {
       "label": "",
-      "name": "Evan \"Narcii\" Agueda",
-      "subtitle": "",
+      "name": "Narcii",
+      "subtitle": "Evan Agueda",
       "icon": "",
       "iconColor": "",
       "img": "icons/Narcii.png",
@@ -2443,7 +2460,7 @@ window.CAST = [
   [
     {
       "label": "Default",
-      "name": "YuHua Liu",
+      "name": "Liu YuHua",
       "subtitle": "",
       "icon": "",
       "iconColor": "",
@@ -2498,8 +2515,8 @@ window.CAST = [
   [
     {
       "label": "",
-      "name": "Alistair McGuinness",
-      "subtitle": "\"Priest\"",
+      "name": "Alistair \"Priest\" McGuinness",
+      "subtitle": "",
       "icon": "",
       "iconColor": "",
       "img": "",
