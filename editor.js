@@ -44,16 +44,29 @@
     ({ 401: ' (token wrong or expired)', 403: ' (token needs Contents: Read and write)', 404: ' (check repo name and token access)' }[res.status] || '');
 
   /* ---------- tags ---------- */
+  /* ===== TAG LINKS: adding the left tag also adds the tags on its right (chains work).
+   Lowercase "category:value". Only chip clicks trigger this, and removing a tag never removes the others. ===== */
+const IMPLIES = {
+  'setting:five-keys': ['origin:original-character'],
+};
+  
   const parseTags = s => s.split(';').map(g => { const i = g.indexOf(':'); return i < 1 ? null :
     [g.slice(0, i).trim().toLowerCase().replace(/\s+/g, '-'), g.slice(i + 1).trim().split(/\s+/).filter(Boolean)]; }).filter(Boolean);
   // Click a tag to add it to this version; click it again to remove it
-  function toggleTag(v, cat, val) {
-    const gs = parseTags(v.tags), g = gs.find(x => x[0] === cat), lv = val.toLowerCase();
-    if (!g) gs.push([cat, [lv]]);
-    else if (g[1].some(x => x.toLowerCase() === lv)) g[1] = g[1].filter(x => x.toLowerCase() !== lv);
-    else g[1].push(lv);
-    v.tags = gs.filter(([, vs]) => vs.length).map(([c, vs]) => c + ': ' + vs.join(' ')).join('; '); // empty categories are dropped
-  }
+function toggleTag(v, cat, val) {
+  const gs = parseTags(v.tags), lv = val.toLowerCase();
+  const has = (g, x) => g[1].some(y => y.toLowerCase() === x);
+  const add = (c, x) => {
+    const g = gs.find(y => y[0] === c);
+    if (g && has(g, x)) return;                       // already there (also stops loops)
+    if (g) g[1].push(x); else gs.push([c, [x]]);
+    for (const k of IMPLIES[c + ':' + x] || []) add(...k.split(':'));
+  };
+  const g = gs.find(x => x[0] === cat);
+  if (g && has(g, lv)) g[1] = g[1].filter(x => x.toLowerCase() !== lv);
+  else add(cat, lv);
+  v.tags = gs.filter(([, vs]) => vs.length).map(([c, vs]) => c + ': ' + vs.join(' ')).join('; ');
+}
   function allTags() {
     const m = new Map();
     for (const c of cast) for (const v of c) for (const [cat, vs] of parseTags(v.tags)) { if (!m.has(cat)) m.set(cat, new Set()); vs.forEach(x => m.get(cat).add(x.toLowerCase())); }
@@ -76,13 +89,10 @@
   // Tag buttons: one block per category (small header, then its chips); highlighted (.on) when this version has the tag
   // Hints shown next to each tag category; edit freely. Categories not listed get no hint.
 const TAG_HINTS = { 
-  setting: 'Keys: BothF | Godsblood: HighF | 1992: Modern | NA: CyP, Sci-Fi | Parish: LowF, Historical', 
-  series: 'TES: BothF | FO: Cyp, PostApoc, Sci-Fi | FE: HighF | HSR: HighF, Sci-Fi, Xian for Luofu | MM: CyP, Sci-Fi | MonHun: BothF, Sci-Fi',
-  origin: 'where the character comes from', 
   genre: 'LowF: Can be on Earth, includes UrbF | HighF: Has own world, different universal laws', 
-  species: 'Hybrids are monster girls, Beastfolk are furries',
-  age: 'Young Adult: 20 - 39 | Middle Aged: 40 - 65 | Elderly: 65+ | Ancient: 100+ || Everyone gets Adult or Minor',
-  misc:'Gender tag for people who pass as the other gender | Somatic is for any meaningful physical condition'};
+  species: 'Hybrids are monster girls, Beastmen are furries',
+  age: 'Young Adult: 20 - 39 | Middle Aged: 40 - 65 | Elderly: 65+ | Ancient: 100+',
+  misc:'Gender tag for people who pass as the other gender | Somatic is for any physical condition'};
   
   function renderChips() {
     const box = document.querySelector('#form .chips'); if (!box || !cur) return;
