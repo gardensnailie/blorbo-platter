@@ -720,11 +720,11 @@ window.CAST = [
       "age": "48",
       "birthday": "",
       "height": "5'10\"",
-      "flag": "",
+      "flag": "gay",
       "race": "Chinese",
       "job": "Ding Sect Leader",
       "tags": "origin: original; species: human; gender: male; age: middle-aged adult immortal; misc.: somatic-impairment; setting: unspecified; genre: xianxia/jidaigeki fantasy-(high) fantasy-(low)",
-      "desc": "Ruling the Ding sect with an iron hand, Ding Bai Lian is known by many  as the “Core Eater” due to his usage of forbidden techniques surrounding the fusion and disruption of golden cores. They say he uses his music to steal the life force of his enemies."
+      "desc": "Ruling the Ding sect with an iron hand, Ding Bai Lian is known by many  as the “Core Eater” due to his usage of forbidden techniques surrounding the absorption of golden cores. Some say he uses the music of his Erhu named 'Aichang' to steal the life force of his enemies. His courtesy is Fenghou (鳳后)."
     },
     {
       "label": "Modern",
@@ -737,7 +737,7 @@ window.CAST = [
       "age": "",
       "birthday": "",
       "height": "",
-      "flag": "",
+      "flag": "gay",
       "race": "Chinese",
       "job": "",
       "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: male; age: middle-aged adult; misc.: somatic-impairment",
