@@ -4,7 +4,7 @@
   'use strict';
 
   /* ===== SETTINGS ===== */
-  const CATEGORY_ORDER = ['origin', 'setting', 'series', 'genre', 'species', 'gender', 'age', 'misc.' ]; // sidebar order; others follow in page order
+  const CATEGORY_ORDER = ['origin', 'setting', 'series', 'genre', 'species', 'gender', 'age', 'misc' ]; // sidebar order; others follow in page order
   const NO_HEADER = ['origin','series','genre' ];  // categories shown without their heading
 
   const $ = id => document.getElementById(id);
