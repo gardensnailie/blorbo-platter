@@ -74,20 +74,30 @@
   function touch() { dirty = true; $('save').disabled = false; say(''); preview(); }
 
   // Tag buttons: one block per category (small header, then its chips); highlighted (.on) when this version has the tag
+  // Hints shown next to each tag category; edit freely. Categories not listed get no hint.
+const TAG_HINTS = { 
+  setting: 'Keys: BothF | Godsblood: HighF | 1992: Modern | NA: CyP, Sci-Fi | Parish: LowF, Historical', 
+  series: 'TES: BothF | FO: Cyp, PostApoc, Sci-Fi | FE: HighF | HSR: HighF, Sci-Fi, Xian for Luofu | MM: CyP, Sci-Fi | MonHun: BothF, Sci-Fi',
+  origin: 'where the character comes from', 
+  genre: 'LowF: Can be on Earth, includes UrbF | HighF: Has own world, different universal laws', 
+  species: 'Hybrids are monster girls, Beastfolk are furries',
+  age: 'Young Adult: 20 - 39 | Middle Aged: 40 - 65 | Elderly: 65+ | Ancient: 100+ || Everyone gets Adult or Minor',
+  misc.:'Gender tag for people who pass as the other gender | Somatic is for any meaningful physical condition'};
+  
   function renderChips() {
     const box = document.querySelector('#form .chips'); if (!box || !cur) return;
     const have = new Set(parseTags(cur[vi].tags).flatMap(([c, vs]) => vs.map(x => c + ':' + x.toLowerCase())));
     const frag = document.createDocumentFragment();
     for (const [cat, vals] of allTags()) {
-      const g = el('div', 'chipgroup'), row = el('div', 'chiprow');
-      g.setAttribute('role', 'group'); g.setAttribute('aria-label', cat); // screen readers still hear the category
-      g.append(el('p', 'chipcat', cat), row);
+      const row = el('div', 'chip-row'), name = el('span', 'chip-cat', cat);
+      if (TAG_HINTS[cat]) name.append(el('em', 'chip-hint', ' ' + TAG_HINTS[cat]));
+      row.append(name);
       for (const x of [...vals].sort()) {
         const on = have.has(cat + ':' + x), b = el('button', on ? 'on' : '', x);
         b.type = 'button'; b.dataset.act = 'tag'; b.dataset.c = cat; b.dataset.v = x; b.setAttribute('aria-pressed', String(on));
         row.append(b);
       }
-      frag.append(g);
+      frag.append(row);
     }
     box.replaceChildren(frag);
   }
