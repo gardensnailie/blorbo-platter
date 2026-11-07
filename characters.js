@@ -784,38 +784,38 @@ window.CAST = [
     {
       "label": "",
       "name": "Shunzhi",
-      "subtitle": "",
+      "subtitle": "顺志",
       "icon": "fa-scale-unbalanced",
       "iconColor": "",
       "img": "icons/Shunzhi.png",
-      "gender": "???",
-      "age": "",
-      "birthday": "",
-      "height": "",
-      "flag": "",
-      "race": "",
-      "job": "",
-      "tags": "origin: fandom; series: pokemon; genre: omegaverse xianxia/jidaigeki; species: genetic-experiment animal-hybrid; gender: unknown; age: adult immortal; misc.: shapeshifter; setting: unspecified",
-      "desc": ""
+      "gender": "Sexless",
+      "age": "25",
+      "birthday": "Mar. 3",
+      "height": "5'10\"",
+      "flag": "bisexual",
+      "race": "Automaton",
+      "job": "Temple Guardian",
+      "tags": "origin: fandom; series: pokemon; genre: omegaverse xianxia/jidaigeki; species: genetic-experiment animal-hybrid; age: adult immortal; misc.: shapeshifter; setting: unspecified; gender: sexless",
+      "desc": "An automata that protects Arceus’ holy temple and all those who live within its realm. Like the stone statues that guard from evil spirits, Shùnzhì protect the realm from beings that may threaten its harmony without want, desire, or emotion.\n"
     }
   ],
   [
     {
       "label": "",
       "name": "Qiushan",
-      "subtitle": "",
+      "subtitle": "秋山",
       "icon": "",
       "iconColor": "",
       "img": "icons/Qiushan.png",
       "gender": "Male",
-      "age": "",
-      "birthday": "",
-      "height": "",
+      "age": "1,300",
+      "birthday": "Sept. 14",
+      "height": "5'1\"",
       "flag": "bisexual",
       "race": "Xianzhou Native",
       "job": "",
       "tags": "origin: fandom; series: honkai:-star-rail; genre: sci-fi xianxia/jidaigeki fantasy-(high); gender: male; species: human; age: immortal ancient; misc.: the-fuyu-collective",
-      "desc": ""
+      "desc": "An undead emissary of the Abundance who was exiled from his homeland of the Xianzhou Alliance centuries ago. He travels dutifully with a feral demon named A’Xiao with the hopes of healing him."
     }
   ],
   [
@@ -929,8 +929,8 @@ window.CAST = [
   [
     {
       "label": "Hybrid (Godsblood)",
-      "name": "Setekh, \"Set\"",
-      "subtitle": "",
+      "name": "Set",
+      "subtitle": "Setekh",
       "icon": "",
       "iconColor": "",
       "img": "icons/SetGodsblood.png",
@@ -1002,12 +1002,12 @@ window.CAST = [
     {
       "label": "",
       "name": "Yome",
-      "subtitle": "",
+      "subtitle": "よめ",
       "icon": "",
       "iconColor": "",
       "img": "icons/Yome.png",
       "gender": "Female",
-      "age": "",
+      "age": "26",
       "birthday": "",
       "height": "",
       "flag": "",
@@ -1021,19 +1021,19 @@ window.CAST = [
     {
       "label": "",
       "name": "Seelie",
-      "subtitle": "Duke Reverie of Sol...?",
+      "subtitle": "Duke Michaels Reverie of Sol...?",
       "icon": "",
       "iconColor": "",
       "img": "icons/SeelieHuman.png icons/SeelieSlime.png",
       "gender": "other",
-      "age": "",
+      "age": "3",
       "birthday": "",
-      "height": "",
+      "height": "5'3\"",
       "flag": "",
       "race": "Slime",
       "job": "Impersonating Royalty",
       "tags": "origin: original; setting: unspecified; genre: fantasy-(high); species: slime; gender: sexless other; age: adult; misc.: shapeshifter royalty",
-      "desc": ""
+      "desc": "A Lv.1 slime who learned magic after obtaining a forbidden tome from a duke he killed on accident. Unfortunately, the only spell he knows is transmogrify. Filled with ambition for exactly three things: wealth, knowledge, and monster emancipation."
     }
   ],
   [
@@ -1556,16 +1556,16 @@ window.CAST = [
     {
       "label": "",
       "name": "N180-Delta",
-      "subtitle": "",
+      "subtitle": "\"No, I do not have a 'name'.\"",
       "icon": "",
       "iconColor": "",
       "img": "icons/Delta.png",
-      "gender": "",
-      "age": "",
-      "birthday": "",
-      "height": "",
+      "gender": "Sexless",
+      "age": "~500",
+      "birthday": "June 4",
+      "height": "4'5\"",
       "flag": "",
-      "race": "",
+      "race": "Robot",
       "job": "",
       "tags": "",
       "desc": ""
@@ -2484,6 +2484,25 @@ window.CAST = [
       "icon": "",
       "iconColor": "",
       "img": "icons/Yuuki.png",
+      "gender": "",
+      "age": "",
+      "birthday": "",
+      "height": "",
+      "flag": "",
+      "race": "",
+      "job": "",
+      "tags": "",
+      "desc": ""
+    }
+  ],
+  [
+    {
+      "label": "",
+      "name": "Alistair McGuinness",
+      "subtitle": "\"Priest\"",
+      "icon": "",
+      "iconColor": "",
+      "img": "",
       "gender": "",
       "age": "",
       "birthday": "",
