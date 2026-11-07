@@ -213,7 +213,7 @@ window.CAST = [
       "flag": "",
       "race": "Japanese",
       "job": "",
-      "tags": "origin: original; setting: in-1992; genre: modern-life fantasy-(low); species: human; gender: female; age: adult; misc.: cross--gender-presentation yakuza",
+      "tags": "origin: original; setting: in-1992; genre: modern-life fantasy-(low); species: human; gender: female; age: adult young-adult; misc.: cross--gender-presentation yakuza somatic-impairment",
       "desc": ""
     },
     {
@@ -230,7 +230,7 @@ window.CAST = [
       "flag": "",
       "race": "Japanese",
       "job": "",
-      "tags": "origin: original; setting: in-1992; genre: modern-life fantasy-(low); species: human; gender: female; age: adult; misc.: cross--gender-presentation yakuza",
+      "tags": "origin: original; species: human; gender: female; age: adult young-adult; misc.: cross--gender-presentation yakuza somatic-impairment; setting: neo-arcadia; genre: cyberpunk sci-fi",
       "desc": ""
     }
   ],
@@ -306,7 +306,7 @@ window.CAST = [
       "flag": "",
       "race": "Vampire",
       "job": "Author",
-      "tags": "origin: original; genre: fantasy-(low) historical modern-life; species: vampire undead; gender: male; age: ancient immortal; misc.: somatic-impairment shapeshifter; setting: unspecified",
+      "tags": "origin: original; genre: fantasy-(low) historical modern-life; species: vampire undead animal; gender: male; age: ancient immortal adult; misc.: somatic-impairment shapeshifter; setting: unspecified",
       "desc": ""
     }
   ],
@@ -342,7 +342,7 @@ window.CAST = [
       "flag": "",
       "race": "French",
       "job": "Logistics, VKEI Musician",
-      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: male; age: adult; misc.: somatic-impairment",
+      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: male; age: adult young-adult; misc.: somatic-impairment",
       "desc": ""
     }
   ],
@@ -833,7 +833,7 @@ window.CAST = [
       "flag": "",
       "race": "Quilin",
       "job": "",
-      "tags": "origin: fandom; series: honkai:-star-rail; genre: fantasy-(high) sci-fi xianxia/jidaigeki; species: yokai animal-hybrid; gender: male; age: adult",
+      "tags": "origin: fandom; series: honkai:-star-rail; genre: fantasy-(high) sci-fi xianxia/jidaigeki; species: yokai animal-hybrid undead; gender: male; age: adult immortal ancient",
       "desc": ""
     }
   ],
@@ -852,7 +852,7 @@ window.CAST = [
       "flag": "bisexual",
       "race": "Saw-Scale Viper",
       "job": "Royal Appraiser",
-      "tags": "origin: original; setting: godsblood; genre: fantasy-(high); species: animal-hybrid; gender: male; age: middle-aged; misc.: ichor-mage",
+      "tags": "origin: original; setting: godsblood; genre: fantasy-(high); species: animal-hybrid; gender: male; age: middle-aged adult; misc.: ichor-mage",
       "desc": ""
     },
     {
@@ -922,7 +922,7 @@ window.CAST = [
       "flag": "",
       "race": "CompanDroid",
       "job": "",
-      "tags": "gender: sexless; origin: original; setting: neo-arcadia; genre: cyberpunk sci-fi; species: mechanical; age: adult; misc.: somatic-impairment",
+      "tags": "gender: sexless other; origin: original; setting: neo-arcadia; genre: cyberpunk sci-fi; species: mechanical; age: adult; misc.: somatic-impairment cross--gender-presentation",
       "desc": ""
     }
   ],
@@ -1231,7 +1231,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "origin: original; setting: five-keys",
+      "tags": "origin: original; setting: five-keys; age: immortal; gender: sexless; species: mechanical; genre: fantasy-(high) fantasy-(low)",
       "desc": ""
     }
   ],
@@ -1250,7 +1250,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "origin: original; setting: neo-arcadia",
+      "tags": "origin: original; setting: neo-arcadia; genre: cyberpunk sci-fi; gender: male; age: adult middle-aged; species: human",
       "desc": ""
     },
     {
@@ -1267,13 +1267,13 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "origin: original; setting: neo-arcadia",
+      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: male; age: adult middle-aged",
       "desc": ""
     }
   ],
   [
     {
-      "label": "",
+      "label": "Default",
       "name": "Ana Jackdaw",
       "subtitle": "",
       "icon": "",
@@ -1286,13 +1286,30 @@ window.CAST = [
       "flag": "",
       "race": "Egyptian",
       "job": "",
-      "tags": "origin: original; setting: godsblood therapy-au",
+      "tags": "origin: original; setting: godsblood therapy-au; age: minor; gender: female; species: human; genre: modern-life fantasy-(high)",
+      "desc": ""
+    },
+    {
+      "label": "MMX",
+      "name": "Ana Jackdaw",
+      "subtitle": "",
+      "icon": "",
+      "iconColor": "",
+      "img": "icons/Ana.png",
+      "gender": "",
+      "age": "",
+      "birthday": "",
+      "height": "",
+      "flag": "",
+      "race": "Egyptian",
+      "job": "",
+      "tags": "origin: original; age: minor; gender: female; species: human; genre: sci-fi cyberpunk; series: megaman",
       "desc": ""
     }
   ],
   [
     {
-      "label": "",
+      "label": "Neo Arcadia",
       "name": "Ana Baker",
       "subtitle": "",
       "icon": "",
@@ -1305,7 +1322,24 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "origin: original; setting: neo-arcadia",
+      "tags": "origin: original; setting: neo-arcadia; genre: cyberpunk sci-fi; species: human; gender: female; age: adult young-adult",
+      "desc": ""
+    },
+    {
+      "label": "Therapy AU",
+      "name": "Ana Baker",
+      "subtitle": "",
+      "icon": "",
+      "iconColor": "",
+      "img": "icons/AnaTwin.png",
+      "gender": "",
+      "age": "",
+      "birthday": "",
+      "height": "",
+      "flag": "",
+      "race": "",
+      "job": "",
+      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: female; age: minor",
       "desc": ""
     }
   ],
@@ -1341,9 +1375,9 @@ window.CAST = [
       "birthday": "",
       "height": "",
       "flag": "",
-      "race": "",
+      "race": "Kaibyo",
       "job": "",
-      "tags": "origin: original; setting: unspecified",
+      "tags": "origin: original; setting: unspecified; genre: fantasy-(high) fantasy-(low) xianxia/jidaigeki; species: animal-hybrid yokai; gender: male; age: ancient adult immortal; misc.: shapeshifter",
       "desc": ""
     }
   ],
@@ -1362,7 +1396,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "origin: original; setting: neo-arcadia",
+      "tags": "origin: original; setting: neo-arcadia; gender: male; age: adult young-adult; misc.: somatic-impairment; species: mechanical; genre: cyberpunk sci-fi",
       "desc": ""
     }
   ],
@@ -1381,7 +1415,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "",
+      "tags": "age: adult young-adult; gender: female; species: human; genre: fantasy-(high) fantasy-(low); setting: five-keys; origin: original",
       "desc": ""
     },
     {
@@ -1398,7 +1432,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "",
+      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: female; age: adult young-adult",
       "desc": ""
     }
   ],
@@ -1417,7 +1451,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "origin: original; setting: unspecified",
+      "tags": "origin: original; setting: unspecified; genre: fantasy-(low) historical; species: demonic animal human; gender: male; age: adult ancient immortal; misc.: shapeshifter",
       "desc": ""
     }
   ],
@@ -1436,7 +1470,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "",
+      "tags": "origin: original; setting: godsblood; genre: fantasy-(high); species: human; gender: male; age: adult young-adult; misc.: somatic-impairment",
       "desc": ""
     },
     {
@@ -1453,7 +1487,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "",
+      "tags": "origin: original; setting: therapy-au; genre: modern-life sci-fi; species: human; gender: male; age: adult young-adult; misc.: somatic-impairment",
       "desc": ""
     }
   ],
@@ -1508,7 +1542,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "",
+      "tags": "misc.: cross--gender-presentation somatic-impairment; age: adult young-adult; gender: other; species: genetic-experiment animal-hybrid; genre: modern-life sci-fi; setting: therapy-au neo-arcadia; origin: original",
       "desc": ""
     }
   ],
@@ -1789,7 +1823,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "",
+      "tags": "misc.: yakuza; age: adult young-adult; gender: male; species: human; genre: fantasy-(low) modern-life; setting: in-1992; origin: original",
       "desc": ""
     },
     {
@@ -1825,7 +1859,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "",
+      "tags": "origin: original; setting: in-1992; genre: fantasy-(low) modern-life; species: human; gender: male; age: adult middle-aged; misc.: yakuza",
       "desc": ""
     },
     {
@@ -1861,7 +1895,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "",
+      "tags": "origin: original; setting: in-1992; genre: fantasy-(low) modern-life; species: human; gender: male; age: adult young-adult; misc.: cross--gender-presentation somatic-impairment yakuza",
       "desc": ""
     },
     {
@@ -1935,7 +1969,7 @@ window.CAST = [
       "flag": "heteroflex",
       "race": "Japanese",
       "job": "Jewelry Smith",
-      "tags": "",
+      "tags": "origin: original; setting: in-1992; genre: modern-life; species: human; gender: male; age: adult young-adult",
       "desc": ""
     }
   ],
@@ -2064,7 +2098,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "",
+      "tags": "misc.: yakuza; age: adult elderly; gender: male; species: human; genre: fantasy-(low) modern-life; origin: original; setting: in-1992",
       "desc": ""
     },
     {
@@ -2269,7 +2303,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "",
+      "tags": "age: adult young-adult; gender: male; species: human; misc.: somatic-impairment; origin: original; setting: in-1992; genre: modern-life",
       "desc": ""
     },
     {
@@ -2286,7 +2320,7 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "",
+      "tags": "origin: original; setting: unspecified; genre: fantasy-(high) historical xianxia/jidaigeki; species: human; gender: male; age: adult young-adult; misc.: somatic-impairment the-fuyu-collective",
       "desc": ""
     }
   ],
@@ -2508,13 +2542,13 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "",
+      "tags": "origin: original; setting: in-1992; genre: modern-life; species: human; gender: male; age: adult young-adult; misc.: somatic-impairment royalty the-fuyu-collective",
       "desc": ""
     }
   ],
   [
     {
-      "label": "",
+      "label": "Fallout",
       "name": "Alistair \"Priest\" McGuinness",
       "subtitle": "",
       "icon": "",
@@ -2527,7 +2561,41 @@ window.CAST = [
       "flag": "",
       "race": "",
       "job": "",
-      "tags": "",
+      "tags": "origin: fandom; series: fallout; genre: cyberpunk post-apocalypse sci-fi; gender: male; age: adult middle-aged; species: human",
+      "desc": ""
+    },
+    {
+      "label": "Therapy AU",
+      "name": "Alistair \"Priest\" McGuinness",
+      "subtitle": "",
+      "icon": "",
+      "iconColor": "",
+      "img": "",
+      "gender": "",
+      "age": "",
+      "birthday": "",
+      "height": "",
+      "flag": "",
+      "race": "",
+      "job": "",
+      "tags": "origin: original; setting: therapy-au; genre: modern-life; species: human; gender: male; age: adult middle-aged",
+      "desc": ""
+    },
+    {
+      "label": "Neo Arcadia",
+      "name": "Alistair \"Priest\" McGuinness",
+      "subtitle": "",
+      "icon": "",
+      "iconColor": "",
+      "img": "",
+      "gender": "",
+      "age": "",
+      "birthday": "",
+      "height": "",
+      "flag": "",
+      "race": "",
+      "job": "",
+      "tags": "origin: original; setting: neo-arcadia; genre: cyberpunk sci-fi; gender: male; age: adult middle-aged; misc.: yakuza; species: human",
       "desc": ""
     }
   ]
