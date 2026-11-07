@@ -10,7 +10,7 @@
     label: 'changes display name on tabs',
     icon: 'ex. fa-sparkles',
     iconColor: 'css or hex',
-    img: 'relative path or url, separate multiple with a space',
+    img: 'relative path/url, separate with spaces',
     L: 'primary',
     R: 'secondary (optional)',
   };
