@@ -92,7 +92,7 @@ body { margin: 0; background: var(--page-bg); color: var(--text); font-family: v
 .info li { display: flex; justify-content: space-between; gap: 8; align-items: center; padding: 4px 5px 3px 5px; font-size: .7rem; line-height: 1; text-align: right; text-transform: uppercase; background: var(--box-bg); border-radius: var(--radius); }
 .info b { display: flex; flex: none; font-size: .9rem; line-height: 1; font-weight: 600;} /* icon only, so no header font */
 
-.card > p { grid-area: desc; margin: 0; padding: 4px 8px; text-align: justify; font-size: .7rem; line-height: .8rem; background: var(--box-bg); border-radius: var(--radius); }
+.card > p { grid-area: desc; margin: 0; padding: 4px 8px; text-align: justify; font-size: .7rem; line-height: .7rem; background: var(--box-bg); border-radius: var(--radius); }
 
 /* Version buttons: small squares in the bottom-right corner of the image.
    script.js adds this bar only when 2+ versions pass the filter. */
