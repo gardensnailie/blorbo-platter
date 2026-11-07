@@ -47,7 +47,40 @@
   /* ===== TAG LINKS: adding the left tag also adds the tags on its right (chains work).
    Lowercase "category:value". Only chip clicks trigger this, and removing a tag never removes the others. ===== */
 const IMPLIES = {
-  'setting:five-keys': ['origin:original-character'],
+'setting:five-keys':['genre:fantasy-(high)', 'genre:fantasy-(low)', 'origin:original'],
+'setting:godsblood':['fantasy-(high)', 'origin:original'],
+'setting:in-1992':['genre: modern-life', 'origin:original'],
+'setting:neo-arcadia':['genre: cyberpunk','genre: sci-fi', 'origin:original'],
+'setting:the-parish':['genre: fantasy-(low)','genre: historical', 'origin:original'],
+'setting:therapy-au':['genre: modern-life','origin:original'],
+'setting:challengers-deep':['genre:sci-fi', 'origin:original'],
+
+'series:elder-scrolls':['genre:fantasy-(high)', 'genre:fantasy-(low)', 'origin:fandom'],
+'series:fallout':['genre: post-apocalypse', 'origin:fandom'],
+'series:fire-emblem':['genre: fantasy-(high)', 'origin:fandom'],
+'series:honkai:-star-rail':['genre: sci-fi', 'origin:fandom'],
+'series:megaman':['genre: sci-fi', 'origin:fandom'],
+'series:monster-hunter':['genre:fantasy-(high)', 'genre:fantasy-(low)', 'origin:fandom'],
+
+'genre:cyberpunk':['genre:sci-fi'],
+'genre: xianxia/jidaigeki':['genre: fantasy-(low)'],
+
+'species:vampire':['species:undead','species:immortal'],
+'species:mechanical':['gender:none'],
+'species:slime':['gender:none'],
+
+'age:young-adult':['(all)-adult'],
+'age:middle-aged':['(all)-adult'],
+'age:elderly':['(all)-adult'],
+'age:ancient':['(all)-adult'],
+'age:child':['(all)-minor'],
+'age:teenager':['(all)-minor'],
+
+'misc:sankta':['five-keys'],
+'misc:shade-touched':['five-keys'],
+'misc:shade-touched':['impairment-(terminal)'],
+
+'misc:impairment-(terminal)':['misc"dude-what-the-fuck']
 };
   
   const parseTags = s => s.split(';').map(g => { const i = g.indexOf(':'); return i < 1 ? null :
