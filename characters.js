@@ -2321,7 +2321,6 @@ window.CAST = [
       "job": "",
       "tags": "",
       "desc": ""
-      "desc": ""
     }
   ],
   [
