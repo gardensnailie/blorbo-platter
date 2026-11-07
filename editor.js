@@ -82,7 +82,7 @@ const TAG_HINTS = {
   genre: 'LowF: Can be on Earth, includes UrbF | HighF: Has own world, different universal laws', 
   species: 'Hybrids are monster girls, Beastfolk are furries',
   age: 'Young Adult: 20 - 39 | Middle Aged: 40 - 65 | Elderly: 65+ | Ancient: 100+ || Everyone gets Adult or Minor',
-  misc.:'Gender tag for people who pass as the other gender | Somatic is for any meaningful physical condition'};
+  misc:'Gender tag for people who pass as the other gender | Somatic is for any meaningful physical condition'};
   
   function renderChips() {
     const box = document.querySelector('#form .chips'); if (!box || !cur) return;
