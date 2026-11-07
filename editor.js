@@ -48,7 +48,7 @@
    Lowercase "category:value". Only chip clicks trigger this, and removing a tag never removes the others. ===== */
 const IMPLIES = {
 'setting:five-keys':['genre:fantasy-(high)', 'genre:fantasy-(low)', 'origin:original'],
-'setting:godsblood':['fantasy-(high)', 'origin:original'],
+'setting:godsblood':['genre:fantasy-(high)', 'origin:original'],
 'setting:in-1992':['genre: modern-life', 'origin:original'],
 'setting:neo-arcadia':['genre: cyberpunk','genre: sci-fi', 'origin:original'],
 'setting:the-parish':['genre: fantasy-(low)','genre: historical', 'origin:original'],
