@@ -60,6 +60,8 @@ const IMPLIES = {
 'series:fire-emblem':['genre: fantasy-(high)', 'origin:fandom'],
 'series:honkai:-star-rail':['genre:sci-fi', 'origin:fandom'],
 'series:megaman':['genre: sci-fi', 'origin:fandom'],
+'series:pokemon':['origin:fandom'],
+'series:terraria':['origin:fandom],
 'series:monster-hunter':['genre:fantasy-(high)', 'genre:fantasy-(low)', 'origin:fandom'],
 
 'genre:cyberpunk':['genre:sci-fi'],
