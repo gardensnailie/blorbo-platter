@@ -704,7 +704,7 @@ window.CAST = [
       "flag": "",
       "race": "German",
       "job": "Psychiatrist",
-      "tags": "origin: original; species: human; gender: male; age: middle-aged (all)-adult; misc: military-&-government impairment-(psychological); genre: modern-life sci-fi modern-life historical; setting: therapy-au",
+      "tags": "origin: original; species: human; gender: male; age: middle-aged (all)-adult; misc: military-&-government impairment-(psychological) impairment-(somatic); genre: modern-life sci-fi modern-life historical; setting: therapy-au",
       "desc": ""
     }
   ],
@@ -888,7 +888,7 @@ window.CAST = [
       "flag": "heteroflex",
       "race": "Bird of Paradise",
       "job": "Prince Consort",
-      "tags": "setting: godsblood; origin: original; species: animal-hybrid; gender: male; age: teenager (all)-minor; misc: cross--gender-presentation royalty parent military-&-government impairment-(somatic)",
+      "tags": "setting: godsblood; origin: original; species: animal-hybrid; gender: male; age: teenager (all)-minor; misc: cross--gender-presentation royalty parent military-&-government impairment-(somatic) impairment-(major-disability)",
       "desc": ""
     },
     {
@@ -905,7 +905,7 @@ window.CAST = [
       "flag": "heteroflex",
       "race": "Chinese",
       "job": "",
-      "tags": "misc: dude-what-the-fuck impairment-(somatic) impairment-(psychological) cross--gender-presentation parent; age: teenager (all)-minor; gender: male; species: human; setting: therapy-au; genre:  modern-life; origin: original",
+      "tags": "misc: dude-what-the-fuck impairment-(somatic) impairment-(psychological) cross--gender-presentation parent impairment-(major-disability); age: teenager (all)-minor; gender: male; species: human; setting: therapy-au; genre: modern-life; origin: original",
       "desc": ""
     },
     {
@@ -922,7 +922,7 @@ window.CAST = [
       "flag": "",
       "race": "CompanDroid",
       "job": "",
-      "tags": "setting: neo-arcadia; genre: cyberpunk sci-fi; origin: original; species: mechanical; gender: none; age: young-adult (all)-adult; misc: cross--gender-presentation dude-what-the-fuck impairment-(somatic)",
+      "tags": "setting: neo-arcadia; genre: cyberpunk sci-fi; origin: original; species: mechanical; gender: none; age: young-adult (all)-adult; misc: cross--gender-presentation dude-what-the-fuck impairment-(somatic) impairment-(major-disability)",
       "desc": ""
     }
   ],
